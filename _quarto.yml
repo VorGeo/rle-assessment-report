@@ -14,8 +14,8 @@ book:
     - 01_foreword.qmd
     - 02_preface.qmd
     - 03_acknowledgments.qmd
-    - coordinating-orgs.qmd
-    - summary.qmd
+    - 04_coordinating-orgs.qmd
+    - 05_summary.qmd
     - intro.qmd
     - ecosystem_overview.qmd
     - assessments/overview.qmd
