@@ -3,7 +3,7 @@ project:
   output-dir: _book
 
 book:
-  title: "Threatend ecosystems of Myanmar"
+  title: "Threatened ecosystems of Myanmar"
   subtitle: "An IUCN Red List of Ecosystems Assessment"
   author: 
     - name: "Norah Jones"
@@ -11,9 +11,9 @@ book:
   date: "9/18/2025"
   chapters:
     - index.qmd
-    - foreword.qmd
-    - preface.qmd
-    - acknowledgments.qmd
+    - 01_foreword.qmd
+    - 02_preface.qmd
+    - 03_acknowledgments.qmd
     - coordinating-orgs.qmd
     - summary.qmd
     - intro.qmd
@@ -26,6 +26,12 @@ book:
     - assessment_outcomes.qmd
     - recommendations.qmd
     - references.qmd
+  appendices:
+    - appendix_1.qmd
+
+crossref:
+  appendix-title: "App."
+  appendix-delim: ":"
 
 bibliography: references.bib
 
