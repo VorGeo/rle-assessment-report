@@ -11,12 +11,12 @@ book:
   date: "9/18/2025"
   chapters:
     - index.qmd
-    - 01_foreword.qmd
-    - 02_preface.qmd
-    - 03_acknowledgments.qmd
-    - 04_coordinating-orgs.qmd
-    - 05_summary.qmd
-    - intro.qmd
+    - 0.1_foreword.qmd
+    - 0.2_preface.qmd
+    - 0.3_acknowledgments.qmd
+    - 0.4_coordinating-orgs.qmd
+    - 0.5_summary.qmd
+    - 1_intro.qmd
     - ecosystem_overview.qmd
     - assessments/overview.qmd
     - part: "Ecosystem Assessments"

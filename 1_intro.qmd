@@ -1,0 +1,22 @@
+# Introduction
+
+## Background
+
+The Myanmar National Ecosystem Assessment contributes to the GEF funded Strengthening Sustainability of Protected Area Management in Myanmar project.
+To support the Myanmar National Ecosystem Assessment, Myanmar’s terrestrial ecosystems were assessed under the International Union for the Conservation of Nature (IUCN) Red List of Ecosystems Categories and Criteria.
+
+This report describes the development of the IUCN Red List of Ecosystems for Myanmar, which included:
+
+- A detailed literature review of all published and unpublished material relevant to the status of
+ecosystems in Myanmar;
+- The development of an ecosystem typology for Myanmar suitable for conducting a national scale IUCN Red List of Ecosystems assessment;
+- Production of a guide to the terrestrial ecosystems of Myanmar to describe the units assessed under the red listing criteria (see ecosystem descriptions);
+- More than 4000 km of reconnaissance transects traversed across Myanmar to collect georeferenced field data relevant to the mapping and assessment of Myanmar’s ecosystems;
+- A country-wide satellite remote sensing analysis to develop high resolution maps of Myanmar’s terrestrial ecosystems from earth observation data;
+- The analysis of spatial, biotic and abiotic changes to ecosystems to identify those ecosystems at the greatest risk of ecosystem collapse;
+- Application of the IUCN Red List of Ecosystems categories and criteria to each ecosystem in the national typology to develop a list of threatened terrestrial ecosystems of Myanmar; and
+- An expert review process for the ecosystem typology, descriptions and assessments.
+
+To promote ecosystem conservation in Myanmar and support national-scale conservation planning
+and environmental reporting, all data and analysis code have been made open access (see data
+availability, see Appendices).
