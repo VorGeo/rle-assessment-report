@@ -208,3 +208,7 @@ __marimo__/
 
 /.quarto/
 */libs/quarto-html/tippy.umd.min.js
+
+# pixi environments
+.pixi
+*.egg-info
