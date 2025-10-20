@@ -1,3 +1,5 @@
-# Home {.unnumbered}
+# {.unnumbered}
 
-yada yada yada...
+2020 | Version 1.0
+
+![](images/myanmar_cover_image.png)
