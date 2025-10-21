@@ -1,28 +1,26 @@
-## {{ params.ecosystem_name }} {.unnumbered .parameter}
+## {{ params.ecosystem_name }} {.unnumbered}
 
 ```{python}
-#| tags: [parameters]
 #| echo: false
 # Parameters used in Python code blocks.
 country_name = '{{ params.country_name }}'
 ecosystem_names = {{ params.ecosystem_names }}
 ```
 
-[Authors:]{.parameter} {{ ", ".join(params.authors) }}
-
 ```{python}
 #| echo: false
 from IPython.display import Markdown, display
 
 if ecosystem_names:
-    name_str = ", ".join([f"{ecosystem_name['name']} ({ecosystem_name['reference']})"
+    ecosystem_name_str = ", ".join([f"{ecosystem_name['name']} ({ecosystem_name['reference']})"
                 for ecosystem_name in ecosystem_names])
-    # display(Markdown(f'**{country_name} Ecosystem Names:** {name_str}'))
 else:
-    name_str = 'No ecosystem names available.'
+    ecosystem_name_str = 'No ecosystem names available.'
 ```
 
-[`{python} country_name` ecosystem names:]{.parameter} `{python} name_str`
+[Authors:]{.parameter} {{ ", ".join(params.authors) }}
+
+[`{python} country_name` ecosystem names:]{.parameter} `{python} ecosystem_name_str`
 
 [Global Classification:]{.parameter} {{ params.global_classification }}
 
