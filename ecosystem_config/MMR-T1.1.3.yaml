@@ -39,10 +39,10 @@ distribution: >
   landscapes in southern Myanmar is recommended.
 
 characteristic_native_biota: >
-  Characteristic species of this ecosystem remain relatively unknown. Stamp
-  (1924b) lists the tree species occurring in this ecosystem as including
-  Dipterocarpus alatus, D. grandiflorus, and D. turbinatus, Shorea spp,
-  Anisoptera sp., Hopea odorata, and Parashorea stellata.
+  Characteristic species of this ecosystem remain relatively unknown.
+  @stamp1925vegetation lists the tree species occurring in this ecosystem as
+  including Dipterocarpus alatus, D. grandiflorus, and D. turbinatus, Shorea
+  spp, Anisoptera sp., Hopea odorata, and Parashorea stellata.
 
   This ecosystem occurs in isolated fragments and has high physical complexity,
   a suite of microhabitats, and relatively stable climate, this ecosystem
@@ -63,8 +63,8 @@ characteristic_native_biota: >
   Presbytis femoralis robinsoni (NT), Dusky Langur Trachypithecus obscurus (NT),
   Lar Gibbon Hylobates lar (EN), Banded Civet Hemigalus derbyanus (NT), Tiger
   Panthera tigris (EN), Mainland Clouded Leopard Neofelis nebulosa (VU), Asian
-  Elephant Elephas maximus (EN) and Malayan Tapir Tapirus indicus (EN; Eames et
-  al., 2005).
+  Elephant Elephas maximus (EN) and Malayan Tapir Tapirus indicus (EN;
+  @eames2005priority).
 
 abiotic_environment: >
   Shallow soils that can be fairly acidic, topographically complex and reliable
@@ -83,7 +83,7 @@ major_threats: >
   region, primarily for the development of oil palm plantations, rubber
   plantations and other agroforestry, with deforestation rates reaching 7.85% in
   some areas of Tanintharyi, the highest rate of forest loss so far recorded in
-  Myanmar (Connette et al., 2017).
+  Myanmar [@connette2017rapid].
 
 ecosystem_collapse_definition: >
   This ecosystem is regarded as collapsed when its area has declined to zero, or
