@@ -18,9 +18,9 @@ else:
     ecosystem_name_str = 'No ecosystem names available.'
 ```
 
-[Authors:]{.parameter} {{ ", ".join(params.authors) }}
+[Authors:]{.parameter .ecosystem-description-list} {{ ", ".join(params.authors) }}
 
-[`{python} country_name` ecosystem names:]{.parameter} `{python} ecosystem_name_str`
+[`{python} country_name` ecosystem names:]{.parameter .ecosystem-description-list} `{python} ecosystem_name_str`
 
 [Global Classification:]{.parameter} {{ params.global_classification }}
 
@@ -28,26 +28,37 @@ else:
 
 [Global classification:]{.parameter} {{ params.global_classification }}
 
-[IUCN Status:]{.parameter} {{ params.iucn_status }}
-
-[Description:]{.parameter} {{ params.description }}
-
-[Distribution:]{.parameter} {{ params.distribution }}
-
-[Characteristic Native Biota:]{.parameter} {{ params.characteristic_native_biota }}
-
-## Ecosystem Overview
-
-This is an assessment report for {{ params.ecosystem_name }}.
+[IUCN Status:]{.parameter} **{{ params.iucn_status }}**
 
 
-## Assessment Details
+###### [Description]{.parameter}
 
-*This section would contain detailed ecosystem assessment information including:*
+{{ params.description }}
 
-- Distribution and extent
-- Key ecological processes
-- Characteristic species
-- Threats and pressures
-- Conservation status
-- Management recommendations
+###### [Distribution]{.parameter}
+
+{{ params.distribution }}
+
+###### [Characteristic Native Biota]{.parameter}
+
+{{ params.characteristic_native_biota }}
+
+###### [Abiotic environment]{.parameter}
+
+{{ params.abiotic_environment }}
+
+###### [Key processes and interactions]{.parameter}
+
+{{ params.key_processes_and_interactions }}
+
+###### [Major threats]{.parameter}
+
+{{ params.major_threats }}
+
+###### [Ecosystem collapse definition]{.parameter}
+
+{{ params.ecosystem_collapse_definition }}
+
+###### [Assessment summary]{.parameter}
+
+{{ params.assessment_summary }}

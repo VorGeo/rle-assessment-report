@@ -18,9 +18,9 @@ else:
     ecosystem_name_str = 'No ecosystem names available.'
 ```
 
-[Authors:]{.parameter} N.J. Murray, R. Tizard, D.A. Keith
+[Authors:]{.parameter .ecosystem-description-list} N.J. Murray, R. Tizard, D.A. Keith
 
-[`{python} country_name` ecosystem names:]{.parameter} `{python} ecosystem_name_str`
+[`{python} country_name` ecosystem names:]{.parameter .ecosystem-description-list} `{python} ecosystem_name_str`
 
 [Global Classification:]{.parameter} MMR-T1.1.3
 
@@ -28,31 +28,47 @@ else:
 
 [Global classification:]{.parameter} MMR-T1.1.3
 
-[IUCN Status:]{.parameter} Endangered
-
-[Description:]{.parameter} Tanintharyi has extensive patches of limestone karst scattered across the region. In these karst landscapes Tanintharyi limestone tropical evergreen forest occurs. Primary tree species are Dipterocarps that form a closed canopy, although they occur at lower density and lower tree height than surrounding lowland and upland evergreen forest ecosystems. Soils are characteristically extremely shallow and acidic, and may be humusrich. These forests can be found across the Tanintharyi lowlands on limestone hills and slopes, and in some cases may occur on very steep slopes and cliffs. As a result of the discontinuous distribution of limestone in Myanmar, which can frequently become very dry, endemism is very high. For example, 12 new karst-adapted species of gecko were recently discovered in karst environments, some of which are restricted to isolated caves and limestone towers (Grismer et al. 2018). Reliable year round rainfall, averaging in excess of 100 mm per month and between around 1,900 mm and 3,000 mm per year."
+[IUCN Status:]{.parameter} **Endangered**
 
 
-[Distribution:]{.parameter} Occurs in karst landscapes in southern Tanintharyi. We used a global karst layer to refine our maps of this ecosystem type, and further work to map karst landscapes in southern Myanmar is recommended.
+###### [Description]{.parameter}
+
+Tanintharyi has extensive patches of limestone karst scattered across the region. In these karst landscapes Tanintharyi limestone tropical evergreen forest occurs. Primary tree species are Dipterocarps that form a closed canopy, although they occur at lower density and lower tree height than surrounding lowland and upland evergreen forest ecosystems. Soils are characteristically extremely shallow and acidic, and may be humusrich. These forests can be found across the Tanintharyi lowlands on limestone hills and slopes, and in some cases may occur on very steep slopes and cliffs. As a result of the discontinuous distribution of limestone in Myanmar, which can frequently become very dry, endemism is very high. For example, 12 new karst-adapted species of gecko were recently discovered in karst environments, some of which are restricted to isolated caves and limestone towers (Grismer et al. 2018). Reliable year round rainfall, averaging in excess of 100 mm per month and between around 1,900 mm and 3,000 mm per year.
 
 
-[Characteristic Native Biota:]{.parameter} Characteristic species of this ecosystem remain relatively unknown. Stamp (1924b) lists the tree species occurring in this ecosystem as including Dipterocarpus alatus, D. grandiflorus, and D. turbinatus, Shorea spp, Anisoptera sp., Hopea odorata, and Parashorea stellata.
+###### [Distribution]{.parameter}
+
+Occurs in karst landscapes in southern Tanintharyi. We used a global karst layer to refine our maps of this ecosystem type, and further work to map karst landscapes in southern Myanmar is recommended.
+
+
+###### [Characteristic Native Biota]{.parameter}
+
+Characteristic species of this ecosystem remain relatively unknown. Stamp (1924b) lists the tree species occurring in this ecosystem as including Dipterocarpus alatus, D. grandiflorus, and D. turbinatus, Shorea spp, Anisoptera sp., Hopea odorata, and Parashorea stellata.
 This ecosystem occurs in isolated fragments and has high physical complexity, a suite of microhabitats, and relatively stable climate, this ecosystem provides habitat for a large number of endemic species, including gekkos and molluscs (Whitten et al., 1997; Grismer et al., 2018).
 This ecosystem supports some of the remaining populations of sundaic avifauna in Myanmar. This includes Great Argus Argusianus argus (NT), Storm's Stork Ciconia stormi (EN), White-crowned Hornbill Berenicornis comatus (EN), Helmeted Hornbill Rhinoplax vigil (CR), Red-throated Barbet Psilopogon mystacophanos (NT), Blue-rumped Parrot Psittinus cyanurus (NT), Banded Broadbill Eurylaimus harterti, Black-and-yellow Broadbill Eurylaimus ochromalus (NT), Green Broadbill Calyptomena viridis (NT), Crested Jay Platylophus galericulatus (NT), as well as a range of Bulbuls (Pycnonotidae) and Ground Babblers (Pellorneidae).
 The mammalian fauna is equally impressive with populations of Banded Langur Presbytis femoralis robinsoni (NT), Dusky Langur Trachypithecus obscurus (NT), Lar Gibbon Hylobates lar (EN), Banded Civet Hemigalus derbyanus (NT), Tiger Panthera tigris (EN), Mainland Clouded Leopard Neofelis nebulosa (VU), Asian Elephant Elephas maximus (EN) and Malayan Tapir Tapirus indicus (EN; Eames et al., 2005).
 
-## Ecosystem Overview
 
-This is an assessment report for Tanintharyi limestone tropical evergreen forest.
+###### [Abiotic environment]{.parameter}
+
+Shallow soils that can be fairly acidic, topographically complex and reliable year-round rainfall of >100 mm per month and warm temperature that rarely fall below 10° C.
 
 
-## Assessment Details
+###### [Key processes and interactions]{.parameter}
 
-*This section would contain detailed ecosystem assessment information including:*
+Distribution is largely defined by the occurrence of Karst landscapes coinciding with a mean monthly rainfall of around 100 mm per month. This ecosystem may periodically become very dry, but a dense evergreen canopy can support humid microclimates throughout these periods (Whitten et al., 1997).
 
-- Distribution and extent
-- Key ecological processes
-- Characteristic species
-- Threats and pressures
-- Conservation status
-- Management recommendations
+
+###### [Major threats]{.parameter}
+
+Unregulated quarrying is considered a primary threat to this ecosystem (Grismer et al., 2018). In addition, deforestation is widespread in this region, primarily for the development of oil palm plantations, rubber plantations and other agroforestry, with deforestation rates reaching 7.85% in some areas of Tanintharyi, the highest rate of forest loss so far recorded in Myanmar (Connette et al., 2017).
+
+
+###### [Ecosystem collapse definition]{.parameter}
+
+This ecosystem is regarded as collapsed when its area has declined to zero, or when the proportion of the ecosystem considered primary forest declines to 0.
+
+
+###### [Assessment summary]{.parameter}
+
+This ecosystem is highly restricted to limestone substrates and ongoing threats, particularly from quarrying, suggest that this ecosystem is undergoing a continuing decline. **Endangered.**
