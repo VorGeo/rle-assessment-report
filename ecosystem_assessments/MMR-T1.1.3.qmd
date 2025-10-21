@@ -4,7 +4,7 @@
 #| echo: false
 # Parameters used in Python code blocks.
 country_name = 'Myanmar'
-ecosystem_names = [{'name': 'Tropical rainforest', 'reference': 'Kress et al., 2003'}, {'name': 'Lowland evergreen rainforest', 'reference': 'Connette et al., 2016'}, {'name': 'Forest on Limestone', 'reference': 'Whitten et al., 1997'}]
+ecosystem_names = [{'name': 'Tropical rainforest', 'reference': '@kress2003checklist'}, {'name': 'Lowland evergreen rainforest', 'reference': '@connette2016mapping'}, {'name': 'Forest on Limestone', 'reference': 'Whitten et al., 1997'}]
 ```
 
 ```{python}
@@ -12,7 +12,7 @@ ecosystem_names = [{'name': 'Tropical rainforest', 'reference': 'Kress et al., 2
 from IPython.display import Markdown, display
 
 if ecosystem_names:
-    ecosystem_name_str = ", ".join([f"{ecosystem_name['name']} ({ecosystem_name['reference']})"
+    ecosystem_name_str = ", ".join([f"{ecosystem_name['name']} [{ecosystem_name['reference']}]"
                 for ecosystem_name in ecosystem_names])
 else:
     ecosystem_name_str = 'No ecosystem names available.'
@@ -25,6 +25,7 @@ else:
 [Global Classification:]{.parameter} MMR-T1.1.3
 
 [Functional Group:]{.parameter} T1.1
+
 
 [Global classification:]{.parameter} MMR-T1.1.3
 
@@ -43,10 +44,10 @@ Occurs in karst landscapes in southern Tanintharyi. We used a global karst layer
 
 ###### [Characteristic Native Biota]{.parameter}
 
-Characteristic species of this ecosystem remain relatively unknown. Stamp (1924b) lists the tree species occurring in this ecosystem as including Dipterocarpus alatus, D. grandiflorus, and D. turbinatus, Shorea spp, Anisoptera sp., Hopea odorata, and Parashorea stellata.
+Characteristic species of this ecosystem remain relatively unknown. @stamp1925vegetation lists the tree species occurring in this ecosystem as including Dipterocarpus alatus, D. grandiflorus, and D. turbinatus, Shorea spp, Anisoptera sp., Hopea odorata, and Parashorea stellata.
 This ecosystem occurs in isolated fragments and has high physical complexity, a suite of microhabitats, and relatively stable climate, this ecosystem provides habitat for a large number of endemic species, including gekkos and molluscs (Whitten et al., 1997; Grismer et al., 2018).
 This ecosystem supports some of the remaining populations of sundaic avifauna in Myanmar. This includes Great Argus Argusianus argus (NT), Storm's Stork Ciconia stormi (EN), White-crowned Hornbill Berenicornis comatus (EN), Helmeted Hornbill Rhinoplax vigil (CR), Red-throated Barbet Psilopogon mystacophanos (NT), Blue-rumped Parrot Psittinus cyanurus (NT), Banded Broadbill Eurylaimus harterti, Black-and-yellow Broadbill Eurylaimus ochromalus (NT), Green Broadbill Calyptomena viridis (NT), Crested Jay Platylophus galericulatus (NT), as well as a range of Bulbuls (Pycnonotidae) and Ground Babblers (Pellorneidae).
-The mammalian fauna is equally impressive with populations of Banded Langur Presbytis femoralis robinsoni (NT), Dusky Langur Trachypithecus obscurus (NT), Lar Gibbon Hylobates lar (EN), Banded Civet Hemigalus derbyanus (NT), Tiger Panthera tigris (EN), Mainland Clouded Leopard Neofelis nebulosa (VU), Asian Elephant Elephas maximus (EN) and Malayan Tapir Tapirus indicus (EN; Eames et al., 2005).
+The mammalian fauna is equally impressive with populations of Banded Langur Presbytis femoralis robinsoni (NT), Dusky Langur Trachypithecus obscurus (NT), Lar Gibbon Hylobates lar (EN), Banded Civet Hemigalus derbyanus (NT), Tiger Panthera tigris (EN), Mainland Clouded Leopard Neofelis nebulosa (VU), Asian Elephant Elephas maximus (EN) and Malayan Tapir Tapirus indicus (EN; @eames2005priority).
 
 
 ###### [Abiotic environment]{.parameter}
@@ -61,7 +62,7 @@ Distribution is largely defined by the occurrence of Karst landscapes coinciding
 
 ###### [Major threats]{.parameter}
 
-Unregulated quarrying is considered a primary threat to this ecosystem (Grismer et al., 2018). In addition, deforestation is widespread in this region, primarily for the development of oil palm plantations, rubber plantations and other agroforestry, with deforestation rates reaching 7.85% in some areas of Tanintharyi, the highest rate of forest loss so far recorded in Myanmar (Connette et al., 2017).
+Unregulated quarrying is considered a primary threat to this ecosystem (Grismer et al., 2018). In addition, deforestation is widespread in this region, primarily for the development of oil palm plantations, rubber plantations and other agroforestry, with deforestation rates reaching 7.85% in some areas of Tanintharyi, the highest rate of forest loss so far recorded in Myanmar [@connette2017rapid].
 
 
 ###### [Ecosystem collapse definition]{.parameter}
@@ -71,4 +72,53 @@ This ecosystem is regarded as collapsed when its area has declined to zero, or w
 
 ###### [Assessment summary]{.parameter}
 
-This ecosystem is highly restricted to limestone substrates and ongoing threats, particularly from quarrying, suggest that this ecosystem is undergoing a continuing decline. **Endangered.**
+This ecosystem is highly restricted to limestone substrates and ongoing threats, particularly from quarrying, suggest that this ecosystem is undergoing a continuing decline.
+**Endangered.**
+
+###### [Assessment information]{.parameter}
+
+TODO
+
+###### [Assessment Outcome]{.parameter}
+
+**Endangered.**
+
+###### [Year Published]{.parameter}
+
+2020
+
+###### [Date Assessed]{.parameter}
+
+24th January 2020
+
+###### [Assessment Credits]{.parameter}
+
+Assessed by: Nicholas Murray
+
+Reviewed by: David Keith
+
+Contributions by: Lee Grismer
+
+###### [Criterion A]{.parameter}
+
+No time-series map data was available for assessing reduction in distribution of this ecosystem over any of the assessment time frames. **Data Deficient**.
+
+
+###### [Criterion B]{.parameter}
+
+This ecosystem is highly restricted in limestone landscapes and has an AOO of 56 10 x 10 km grid cells and an EOO of 3,796 km2 There is evidence that limestone quarrying and other threats are leading to continuing decline, meeting subcriteria a(i) and a(iii). The ecosystem is assessed as **Endangered**.
+
+
+###### [Criterion C]{.parameter}
+
+Climate simulation models suggest that environmental conditions within the limestone landscapes of southern Myanmar are unlikely to reduce suitable areas sufficiently to result in this ecosystem becoming threatened by 2050. It should be noted that the occurrence of Karst landscapes is a key distributional driver of this ecosystem, and the scale at which the suitability models were run may not adequately depict the fine-scale changes expected over the next three decades. We recommend further work to refine maps of Karst landscape to better limit the distribution of our model. **Least Concern**.
+
+
+###### [Criterion D]{.parameter}
+
+Remote sensing analyses suggest that 72.4% of the remaining extent of this ecosystem meets criteria to be classified as primary forest (Potapov et al., 2019). If 100% of the ecosystem is assumed to be primary forest in 1750, there has been an 27.6% loss in primary forest extent since 1750. We assume that loss of primary forest has a relative severity of >90%, and use the extent of primary forest loss as a biotic variable for assessing Criterion D. With an 27.6% loss of primary forest extent, the ecosystem is assessed as Least Concern under Criterion D3. Analyses of the time-series of primary forest data (n = 18 time points) indicate that there has been 8.4% reduction in primary forest cover over the period 2000-2017. A linear model fit to this dataset, assuming that collapse occurs at 100% loss of primary forest cover, suggests that primary forest loss in this ecosystem will not occur to an extent to meet any category thresholds over a 50 year period (1984- 2034). The ecosystem is assessed as Least Concern under Criterion D2b. **Least Concern**.
+
+
+###### [Criterion E]{.parameter}
+
+No models were used to assess Criterion E. **Not Evaluated**.
