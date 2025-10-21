@@ -30,6 +30,8 @@ else:
 
 [IUCN Status:]{.parameter} **{{ params.iucn_status }}**
 
+![Map of {{ params.ecosystem_name }}](../images/{{ params.global_classification }}_map.png){height=400px}
+
 
 ###### [Description]{.parameter}
 
@@ -65,7 +67,89 @@ else:
 
 ###### [Assessment information]{.parameter}
 
-TODO
+<table class="criteria-table">
+  <thead>
+    <tr>
+      <th colspan="2">Criteria</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="4">Criterion A</td>
+      <td>A1</td>
+      <td>{{ params.criteria_status.A.A1 }}</td>
+    </tr>
+    <tr>
+      <td>A2a</td>
+      <td>{{ params.criteria_status.A.A2a }}</td>
+    </tr>
+    <tr>
+      <td>A2b</td>
+      <td>{{ params.criteria_status.A.A2b }}</td>
+    </tr>
+    <tr>
+      <td>A3</td>
+      <td>{{ params.criteria_status.A.A3 }}</td>
+    </tr>
+    <tr>
+      <td rowspan="4">Criterion B</td>
+      <td>B1</td>
+      <td>{{ params.criteria_status.B.B1 }}</td>
+    </tr>
+    <tr>
+      <td>B2</td>
+      <td>{{ params.criteria_status.B.B2 }}</td>
+    </tr>
+    <tr>
+      <td>subcriteria</td>
+      <td>{{ params.criteria_status.B.subcriteria }}</td>
+    </tr>
+    <tr>
+      <td>B3</td>
+      <td>{{ params.criteria_status.B.B3 }}</td>
+    </tr>
+    <tr>
+      <td rowspan="4">Criterion C</td>
+      <td>C1</td>
+      <td>{{ params.criteria_status.C.C1 }}</td>
+    </tr>
+    <tr>
+      <td>C2a</td>
+      <td>{{ params.criteria_status.C.C2a }}</td>
+    </tr>
+    <tr>
+      <td>C2b</td>
+      <td>{{ params.criteria_status.C.C2b }}</td>
+    </tr>
+    <tr>
+      <td>C3</td>
+      <td>{{ params.criteria_status.C.C3 }}</td>
+    </tr>
+    <tr>
+      <td rowspan="4">Criterion D</td>
+      <td>D1</td>
+      <td>{{ params.criteria_status.D.D1 }}</td>
+    </tr>
+    <tr>
+      <td>D2a</td>
+      <td>{{ params.criteria_status.D.D2a }}</td>
+    </tr>
+    <tr>
+      <td>D2b</td>
+      <td>{{ params.criteria_status.D.D2b }}</td>
+    </tr>
+    <tr>
+      <td>D3</td>
+      <td>{{ params.criteria_status.D.D3 }}</td>
+    </tr>
+    <tr>
+      <td>Criterion E</td>
+      <td>E</td>
+      <td>{{ params.criteria_status.E.E }}</td>
+    </tr>
+  </tbody>
+</table>
 
 ###### [Assessment Outcome]{.parameter}
 
