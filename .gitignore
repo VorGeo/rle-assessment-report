@@ -212,3 +212,8 @@ __marimo__/
 # pixi environments
 .pixi
 *.egg-info
+
+_book/*
+
+**/*.quarto_ipynb
+ecosystem_assessments/TEMPLATE_ecosystem_assessment_files/libs/*
