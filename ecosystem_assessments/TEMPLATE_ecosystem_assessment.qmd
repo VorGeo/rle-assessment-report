@@ -22,10 +22,9 @@ else:
 
 [`{python} country_name` ecosystem names:]{.parameter .ecosystem-description-list} `{python} ecosystem_name_str`
 
-[Global Classification:]{.parameter} {{ params.global_classification }}
+[Biome:]{.parameter} {{ params.biome }}
 
 [Functional Group:]{.parameter} {{ params.functional_group }}
-
 
 [Global classification:]{.parameter} {{ params.global_classification }}
 
