@@ -1,40 +1,45 @@
 ## Tanintharyi limestone tropical evergreen forest {.unnumbered}
 
 ```{python}
-#| tags: [parameters]
 #| echo: false
 # Parameters used in Python code blocks.
 country_name = 'Myanmar'
 ecosystem_names = [{'name': 'Tropical rainforest', 'reference': 'Kress et al., 2003'}, {'name': 'Lowland evergreen rainforest', 'reference': 'Connette et al., 2016'}, {'name': 'Forest on Limestone', 'reference': 'Whitten et al., 1997'}]
 ```
 
-**Authors:** N.J. Murray, R. Tizard, D.A. Keith
-
 ```{python}
 #| echo: false
 from IPython.display import Markdown, display
 
 if ecosystem_names:
-    name_str = ", ".join([f"{ecosystem_name['name']} ({ecosystem_name['reference']})"
+    ecosystem_name_str = ", ".join([f"{ecosystem_name['name']} ({ecosystem_name['reference']})"
                 for ecosystem_name in ecosystem_names])
-    display(Markdown(f'**{country_name} Ecosystem Names:** {name_str}'))
 else:
-    print(f'No {country_name} ecosystem names available.')
+    ecosystem_name_str = 'No ecosystem names available.'
 ```
 
-**Global Classification:** MMR-T1.1.3
+[Authors:]{.parameter} N.J. Murray, R. Tizard, D.A. Keith
 
-**Functional Group:** T1.1
+[`{python} country_name` ecosystem names:]{.parameter} `{python} ecosystem_name_str`
 
-**Global classification:** MMR-T1.1.3
+[Global Classification:]{.parameter} MMR-T1.1.3
 
-**IUCN Status:** Endangered
+[Functional Group:]{.parameter} T1.1
 
-**Distribution:** Occurs in karst landscapes in southern Tanintharyi. We used a global karst layer to refine our maps of this ecosystem type, and further work to map karst landscapes in southern Myanmar is recommended.
+[Global classification:]{.parameter} MMR-T1.1.3
 
-**Characteristic Native Biota:** Characteristic species of this ecosystem remain relatively unknown. Stamp (1924b) lists the tree species occurring in this ecosystem as including Dipterocarpus alatus, D. grandiflorus, and D. turbinatus, Shorea spp, Anisoptera sp., Hopea odorata, and Parashorea stellata.
-This ecosystem occurs in isolated fragments and has high physical complexity, a suite of microhabitats, and relatively stable climate, this ecosystem provides habitat for a large number of endemic species, including gekkos and molluscs (Whitten et al., 1997; Grismer et al., 2018
-This ecosystem supports some of the remaining populations of sundaic avifauna in Myanmar. This includes Great Argus Argusianus argus (NT), Storm's Stork Ciconia stormi (EN), White-crowned Hornbill Berenicornis comatus (EN), Helmeted Hornbill Rhinoplax vigil (CR), Red-throated Barbet Psilopogon mystacophanos (NT), Blue-rumped Parrot Psittinus cyanurus (NT), Banded Broadbill Eurylaimus harterti, Black-and-yellow Broadbill Eurylaimus ochromalus (NT), Green Broadbill Calyptomena viridis (NT), Crested Jay Platylophus galericulatus (NT), as well as a range of Bulbuls (Pycnonotidae) and Ground Babblers (Pellorneidae). The mammalian fauna is equally impressive with populations of Banded Langur Presbytis femoralis robinsoni (NT), Dusky Langur Trachypithecus obscurus (NT), Lar Gibbon Hylobates lar (EN), Banded Civet Hemigalus derbyanus (NT), Tiger Panthera tigris (EN), Mainland Clouded Leopard Neofelis nebulosa (VU), Asian Elephant Elephas maximus (EN) and Malayan Tapir Tapirus indicus (EN; Eames et al., 2005).
+[IUCN Status:]{.parameter} Endangered
+
+[Description:]{.parameter} Tanintharyi has extensive patches of limestone karst scattered across the region. In these karst landscapes Tanintharyi limestone tropical evergreen forest occurs. Primary tree species are Dipterocarps that form a closed canopy, although they occur at lower density and lower tree height than surrounding lowland and upland evergreen forest ecosystems. Soils are characteristically extremely shallow and acidic, and may be humusrich. These forests can be found across the Tanintharyi lowlands on limestone hills and slopes, and in some cases may occur on very steep slopes and cliffs. As a result of the discontinuous distribution of limestone in Myanmar, which can frequently become very dry, endemism is very high. For example, 12 new karst-adapted species of gecko were recently discovered in karst environments, some of which are restricted to isolated caves and limestone towers (Grismer et al. 2018). Reliable year round rainfall, averaging in excess of 100 mm per month and between around 1,900 mm and 3,000 mm per year."
+
+
+[Distribution:]{.parameter} Occurs in karst landscapes in southern Tanintharyi. We used a global karst layer to refine our maps of this ecosystem type, and further work to map karst landscapes in southern Myanmar is recommended.
+
+
+[Characteristic Native Biota:]{.parameter} Characteristic species of this ecosystem remain relatively unknown. Stamp (1924b) lists the tree species occurring in this ecosystem as including Dipterocarpus alatus, D. grandiflorus, and D. turbinatus, Shorea spp, Anisoptera sp., Hopea odorata, and Parashorea stellata.
+This ecosystem occurs in isolated fragments and has high physical complexity, a suite of microhabitats, and relatively stable climate, this ecosystem provides habitat for a large number of endemic species, including gekkos and molluscs (Whitten et al., 1997; Grismer et al., 2018).
+This ecosystem supports some of the remaining populations of sundaic avifauna in Myanmar. This includes Great Argus Argusianus argus (NT), Storm's Stork Ciconia stormi (EN), White-crowned Hornbill Berenicornis comatus (EN), Helmeted Hornbill Rhinoplax vigil (CR), Red-throated Barbet Psilopogon mystacophanos (NT), Blue-rumped Parrot Psittinus cyanurus (NT), Banded Broadbill Eurylaimus harterti, Black-and-yellow Broadbill Eurylaimus ochromalus (NT), Green Broadbill Calyptomena viridis (NT), Crested Jay Platylophus galericulatus (NT), as well as a range of Bulbuls (Pycnonotidae) and Ground Babblers (Pellorneidae).
+The mammalian fauna is equally impressive with populations of Banded Langur Presbytis femoralis robinsoni (NT), Dusky Langur Trachypithecus obscurus (NT), Lar Gibbon Hylobates lar (EN), Banded Civet Hemigalus derbyanus (NT), Tiger Panthera tigris (EN), Mainland Clouded Leopard Neofelis nebulosa (VU), Asian Elephant Elephas maximus (EN) and Malayan Tapir Tapirus indicus (EN; Eames et al., 2005).
 
 ## Ecosystem Overview
 

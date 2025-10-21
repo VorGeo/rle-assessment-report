@@ -1,4 +1,4 @@
-## {{ params.ecosystem_name }} {.unnumbered}
+## {{ params.ecosystem_name }} {.unnumbered .parameter}
 
 ```{python}
 #| tags: [parameters]
@@ -8,7 +8,7 @@ country_name = '{{ params.country_name }}'
 ecosystem_names = {{ params.ecosystem_names }}
 ```
 
-**Authors:** {{ ", ".join(params.authors) }}
+[Authors:]{.parameter} {{ ", ".join(params.authors) }}
 
 ```{python}
 #| echo: false
@@ -17,22 +17,26 @@ from IPython.display import Markdown, display
 if ecosystem_names:
     name_str = ", ".join([f"{ecosystem_name['name']} ({ecosystem_name['reference']})"
                 for ecosystem_name in ecosystem_names])
-    display(Markdown(f'**{country_name} Ecosystem Names:** {name_str}'))
+    # display(Markdown(f'**{country_name} Ecosystem Names:** {name_str}'))
 else:
-    print(f'No {country_name} ecosystem names available.')
+    name_str = 'No ecosystem names available.'
 ```
 
-**Global Classification:** {{ params.global_classification }}
+[`{python} country_name` ecosystem names:]{.parameter} `{python} name_str`
 
-**Functional Group:** {{ params.functional_group }}
+[Global Classification:]{.parameter} {{ params.global_classification }}
 
-**Global classification:** {{ params.global_classification }}
+[Functional Group:]{.parameter} {{ params.functional_group }}
 
-**IUCN Status:** {{ params.iucn_status }}
+[Global classification:]{.parameter} {{ params.global_classification }}
 
-**Distribution:** {{ params.distribution }}
+[IUCN Status:]{.parameter} {{ params.iucn_status }}
 
-**Characteristic Native Biota:** {{ params.characteristic_native_biota }}
+[Description:]{.parameter} {{ params.description }}
+
+[Distribution:]{.parameter} {{ params.distribution }}
+
+[Characteristic Native Biota:]{.parameter} {{ params.characteristic_native_biota }}
 
 ## Ecosystem Overview
 
