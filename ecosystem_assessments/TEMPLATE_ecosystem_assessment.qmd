@@ -12,7 +12,7 @@ ecosystem_names = {{ params.ecosystem_names }}
 from IPython.display import Markdown, display
 
 if ecosystem_names:
-    ecosystem_name_str = ", ".join([f"{ecosystem_name['name']} ({ecosystem_name['reference']})"
+    ecosystem_name_str = ", ".join([f"{ecosystem_name['name']} [{ecosystem_name['reference']}]"
                 for ecosystem_name in ecosystem_names])
 else:
     ecosystem_name_str = 'No ecosystem names available.'
@@ -25,6 +25,7 @@ else:
 [Global Classification:]{.parameter} {{ params.global_classification }}
 
 [Functional Group:]{.parameter} {{ params.functional_group }}
+
 
 [Global classification:]{.parameter} {{ params.global_classification }}
 
@@ -61,4 +62,48 @@ else:
 
 ###### [Assessment summary]{.parameter}
 
-{{ params.assessment_summary }}
+{{ params.assessment_summary }}**{{ params.assessment_outcome }}.**
+
+###### [Assessment information]{.parameter}
+
+TODO
+
+###### [Assessment Outcome]{.parameter}
+
+**{{ params.assessment_outcome }}.**
+
+###### [Year Published]{.parameter}
+
+{{ params.year_published }}
+
+###### [Date Assessed]{.parameter}
+
+{{ params.date_assessed }}
+
+###### [Assessment Credits]{.parameter}
+
+Assessed by: {{ params.assessed_by }}
+
+Reviewed by: {{ params.reviewed_by }}
+
+Contributions by: {{ params.contributions_by }}
+
+###### [Criterion A]{.parameter}
+
+{{ params.criterion_a_description }}
+
+###### [Criterion B]{.parameter}
+
+{{ params.criterion_b_description }}
+
+###### [Criterion C]{.parameter}
+
+{{ params.criterion_c_description }}
+
+###### [Criterion D]{.parameter}
+
+{{ params.criterion_d_description }}
+
+###### [Criterion E]{.parameter}
+
+{{ params.criterion_e_description }}
