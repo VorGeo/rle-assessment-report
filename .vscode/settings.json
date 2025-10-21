@@ -1,0 +1,21 @@
+{
+  "cSpell.words": [
+    "IUCN",
+    "organisation"
+  ],
+  "python.defaultInterpreterPath": "/Users/tylere/Documents/GitHub/VorGeo/rle-assessment-report/.pixi/envs/default/bin/python",
+  "editor.rulers": [
+        80
+  ],
+  "[yaml]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 80,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.rulers": [80]
+  },
+  "yaml.format.printWidth": 80,
+  "yaml.format.enable": true,
+  "yaml.format.singleQuote": false,
+  "yaml.format.proseWrap": "always"
+}
