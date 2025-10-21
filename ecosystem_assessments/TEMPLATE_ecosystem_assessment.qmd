@@ -1,0 +1,51 @@
+## {{ params.ecosystem_name }} {.unnumbered}
+
+```{python}
+#| tags: [parameters]
+#| echo: false
+# Parameters used in Python code blocks.
+country_name = '{{ params.country_name }}'
+ecosystem_names = {{ params.ecosystem_names }}
+```
+
+**Authors:** {{ ", ".join(params.authors) }}
+
+```{python}
+#| echo: false
+from IPython.display import Markdown, display
+
+if ecosystem_names:
+    name_str = ", ".join([f"{ecosystem_name['name']} ({ecosystem_name['reference']})"
+                for ecosystem_name in ecosystem_names])
+    display(Markdown(f'**{country_name} Ecosystem Names:** {name_str}'))
+else:
+    print(f'No {country_name} ecosystem names available.')
+```
+
+**Global Classification:** {{ params.global_classification }}
+
+**Functional Group:** {{ params.functional_group }}
+
+**Global classification:** {{ params.global_classification }}
+
+**IUCN Status:** {{ params.iucn_status }}
+
+**Distribution:** {{ params.distribution }}
+
+**Characteristic Native Biota:** {{ params.characteristic_native_biota }}
+
+## Ecosystem Overview
+
+This is an assessment report for {{ params.ecosystem_name }}.
+
+
+## Assessment Details
+
+*This section would contain detailed ecosystem assessment information including:*
+
+- Distribution and extent
+- Key ecological processes
+- Characteristic species
+- Threats and pressures
+- Conservation status
+- Management recommendations
