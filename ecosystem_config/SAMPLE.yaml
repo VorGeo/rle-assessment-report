@@ -1,0 +1,30 @@
+name: "ECOSYSTEM_NAME_PLACEHOLDER"
+# authors:
+#   - "Author 1"
+#   - "Author 2"
+# country_name: "Myanmar"
+# ecosystem_name: "Tanintharyi limestone tropical evergreen forest"
+description: Placeholder description.
+criteria_status:
+  A:
+    A1: DD
+    A2a: DD
+    A2b: DD
+    A3: DD
+  B:
+    B1: EN
+    B2: LC
+    subcriteria: "B1a(i), B1a(iii)"
+    B3: LC
+  C:
+    C1: DD
+    C2a: LC
+    C2b: DD
+    C3: DD
+  D:
+    D1: DD
+    D2a: DD
+    D2b: LC
+    D3: LC
+  E:
+    E: NE

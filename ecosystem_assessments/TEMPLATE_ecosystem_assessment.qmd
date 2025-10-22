@@ -2,44 +2,82 @@
 
 ```{python}
 #| echo: false
-# Parameters used in Python code blocks.
-country_name = '{{ params.country_name }}'
-ecosystem_names = {{ params.ecosystem_names }}
+from IPython.display import Markdown, display
+
+ecosystem_name = '{{ params.ecosystem_name | default("ECOSYSTEM_NAME_PLACEHOLDER")}}'
+country_name = '{{ params.country_name | default("COUNTRY_NAME_PLACEHOLDER")}}'
+# ecosystem_names_local = {% if params.ecosystem_names_local is defined -%}
+#   {{ params.ecosystem_names_local }}
+# {% else -%}
+#   [{'name': 'PLACEHOLDER', 'reference': '@placeholder_reference'}]
+# {% endif %}
+ecosystem_names_local = {{ params.ecosystem_names_local | default([{'name': 'PLACEHOLDER', 'reference': '@placeholder_reference'}])}}
+biome = '{{ params.biome | default("BIOME_PLACEHOLDER")}}'
+functional_group = '{{ params.functional_group | default("FUNCTIONAL_GROUP_PLACEHOLDER")}}'
+global_classification = '{{ params.global_classification | default("GLOBAL_CLASSIFICATION_PLACEHOLDER")}}'
+iucn_status = '{{ params.iucn_status | default("IUCN_STATUS_PLACEHOLDER")}}'
+authors = {{ params.authors | default(["PLACEHOLDER"])}}
 ```
 
 ```{python}
 #| echo: false
-from IPython.display import Markdown, display
-
-if ecosystem_names:
-    ecosystem_name_str = ", ".join([f"{ecosystem_name['name']} [{ecosystem_name['reference']}]"
-                for ecosystem_name in ecosystem_names])
-else:
-    ecosystem_name_str = 'No ecosystem names available.'
+ecosystem_name_str = ", ".join([
+    f"{ecosystem_name['name']} [{ecosystem_name['reference']}]"
+    for ecosystem_name in ecosystem_names_local
+])
+print(f'{ecosystem_name_str=}')
 ```
 
-[Authors:]{.parameter .ecosystem-description-list} {{ ", ".join(params.authors) }}
+[Authors:]{.parameter .ecosystem-description-list}
+{%- if params.authors %}
+`{python} ", ".join(authors)`
+{%- else %}
+
+::: {.callout-note}
+The ecosystem assessment configuration file does not specify the authors.
+Please add this information to the YAML configuration file, using the following format:
+```yaml
+authors:
+  - "Jane Smith"
+  - "John Smith"
+```
+:::
+{% endif %}
 
 [`{python} country_name` ecosystem names:]{.parameter .ecosystem-description-list} `{python} ecosystem_name_str`
 
-[Biome:]{.parameter} {{ params.biome }}
+[Biome:]{.parameter} `{python} biome`
 
-[Functional Group:]{.parameter} {{ params.functional_group }}
+[Functional Group:]{.parameter} `{python} functional_group`
 
-[Global classification:]{.parameter} {{ params.global_classification }}
+[Global classification:]{.parameter} `{python} global_classification`
 
-[IUCN Status:]{.parameter} **{{ params.iucn_status }}**
+[IUCN Status:]{.parameter} **`{python} iucn_status`**
 
-![Map of {{ params.ecosystem_name }}](../images/{{ params.global_classification }}_map.png){height=400px}
-
+```{python}
+#| echo: false
+Markdown(f'![Map of {ecosystem_name}](../images/{global_classification}_map.png)')
+```
+<!-- {height=400px} -->
 
 ###### [Description]{.parameter}
 
+{% if params.description %}
 {{ params.description }}
+{% else %}
+::: {.callout-note}
+The ecosystem assessment configuration file does not provide an ecosystem description.
+Please add a `description` key:value pair to the YAML configuration file.
+:::
+{% endif %}
 
 ###### [Distribution]{.parameter}
 
+{% if params.distribution %}
 {{ params.distribution }}
+{% else %}
+distribution is not defined
+{% endif %}
 
 ###### [Characteristic Native Biota]{.parameter}
 
@@ -67,6 +105,7 @@ else:
 
 ###### [Assessment information]{.parameter}
 
+{% if params.criteria_status is defined %}
 <table class="criteria-table">
   <thead>
     <tr>
@@ -150,6 +189,9 @@ else:
     </tr>
   </tbody>
 </table>
+{% else %}
+    criteria_status is not defined
+{% endif %}
 
 ###### [Assessment Outcome]{.parameter}
 
