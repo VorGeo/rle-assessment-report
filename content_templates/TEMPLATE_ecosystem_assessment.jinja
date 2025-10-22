@@ -94,15 +94,54 @@ functional_group: T1.1
 :::
 {% endif %}
 
-[Global classification:]{.parameter} `{python} global_classification`
+<!-- Global classification -->
 
-[IUCN Status:]{.parameter} **`{python} iucn_status`**
+[Global classification:]{.parameter .ecosystem-description-list}
+{%- if params.global_classification %}
+{{ params.global_classification }}
+{%- else %}
 
+::: {.callout-note}
+The ecosystem assessment configuration file does not specify the **global classification**.
+Please add this information to the YAML configuration file, using the following format:
+```yaml
+global_classification: MMR-T1.1.3
+```
+:::
+{% endif %}
+
+<!-- IUCN Status -->
+
+[IUCN Status:]{.parameter .ecosystem-description-list}
+{%- if params.iucn_status %}
+{{ params.iucn_status }}
+{%- else %}
+
+::: {.callout-note}
+The ecosystem assessment configuration file does not specify the **IUCN status**.
+Please add this information to the YAML configuration file, using the following format:
+```yaml
+iucn_status: Endangered
+```
+:::
+{% endif %}
+
+<!-- Ecosystem Map -->
+
+{%- if params.global_classification %}
+{% if path_exists('../images/' + params.global_classification + '_map.png') %}
 ```{python}
 #| echo: false
 Markdown(f'![Map of {ecosystem_name}](../images/{global_classification}_map.png)')
 ```
 <!-- {height=400px} -->
+{% else %}
+```{python}
+#| echo: false
+Markdown(f'![Map of {ecosystem_name}](https://placehold.co/600x400?text=Hello\nWorld)')
+```
+{% endif %}
+{% endif %}
 
 ###### [Description]{.parameter}
 

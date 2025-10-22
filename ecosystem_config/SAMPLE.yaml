@@ -1,5 +1,5 @@
-ecosystem_name: "Tanintharyi limestone tropical evergreen forest"
-country_name: "Myanmar"
+ecosystem_name: "Tropical forest"
+country_name: "Wakanda"
 authors:
   - "J. Smith"
   - "J. Pérez"
@@ -10,6 +10,8 @@ ecosystem_names_local:
     reference: "@bibtexReference2"
 biome: Tropical and subtropical forests (T1)
 functional_group: T1.1
+global_classification: MMR-T1.1.X
+iucn_status: Endangered
 description: Placeholder description.
 criteria_status:
   A:

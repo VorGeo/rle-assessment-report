@@ -11,6 +11,10 @@ import yaml
 from pathlib import Path
 from jinja2 import Template
 
+import os
+
+def path_exists(path):
+  return os.path.exists(path)
 
 def load_yaml(yaml_path):
     """Load YAML configuration file."""
@@ -27,13 +31,13 @@ def load_template(template_path):
 def render_qmd(template_content, data):
     """Render template with data using Jinja2."""
     template = Template(template_content)
-    return template.render(params=data)
+    return template.render(params=data, path_exists=path_exists)
 
 
 def main():
     # Setup paths
     config_dir = Path('ecosystem_config')
-    template_path = Path('ecosystem_assessments/TEMPLATE_ecosystem_assessment.qmd')
+    template_path = Path('content_templates/TEMPLATE_ecosystem_assessment.jinja')
     output_dir = Path('ecosystem_assessments')
 
     # Load template
@@ -44,17 +48,13 @@ def main():
     print(f"Found {len(yaml_files)} YAML configuration files")
 
     for yaml_file in yaml_files:
-        # Skip template files if any
-        if 'TEMPLATE' in yaml_file.name:
-            continue
-
         print(f"Processing {yaml_file.name}...")
 
         # Load YAML data
         data = load_yaml(yaml_file)
 
-        # Use global_classification as the output filename
-        output_filename = f"{data.get('global_classification', yaml_file.stem)}.qmd"
+        # Use yaml filename base as output filename
+        output_filename = f"{yaml_file.stem}.qmd"
         output_path = output_dir / output_filename
 
         # Render template with data
