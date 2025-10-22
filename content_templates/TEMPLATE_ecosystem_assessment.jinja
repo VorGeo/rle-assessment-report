@@ -1,0 +1,248 @@
+## {{ params.ecosystem_name }} {.unnumbered}
+
+```{python}
+#| echo: false
+from IPython.display import Markdown, display
+
+country_name = '{{ params.country_name | default("COUNTRY_PLACEHOLDER")}}'
+ecosystem_name = '{{ params.ecosystem_name | default("PLACEHOLDER")}}'
+ecosystem_names_local = {{ params.ecosystem_names_local | default([{'name': 'PLACEHOLDER', 'reference': '@placeholder_reference'}])}}
+authors = {{ params.authors | default(["PLACEHOLDER"])}}
+biome = '{{ params.biome | default("BIOME_PLACEHOLDER")}}'
+functional_group = '{{ params.functional_group | default("FUNCTIONAL_GROUP_PLACEHOLDER")}}'
+global_classification = '{{ params.global_classification | default("GLOBAL_CLASSIFICATION_PLACEHOLDER")}}'
+iucn_status = '{{ params.iucn_status | default("IUCN_STATUS_PLACEHOLDER")}}'
+```
+
+<!-- Authors -->
+
+[Authors:]{.parameter .ecosystem-description-list}
+{%- if params.authors %}
+`{python} ", ".join(authors)`
+{%- else %}
+
+::: {.callout-note}
+The ecosystem assessment configuration file does not specify the authors.
+Please add this information to the YAML configuration file, using the following format:
+```yaml
+authors:
+  - "J. Smith"
+  - "J. Pérez"
+```
+:::
+{% endif %}
+
+<!-- Local ecosystem names -->
+
+```{python}
+#| echo: false
+ecosystem_name_str = ", ".join([
+    f"{ecosystem_name['name']} [{ecosystem_name['reference']}]"
+    for ecosystem_name in ecosystem_names_local
+])
+```
+
+[`{python} country_name` ecosystem names:]{.parameter .ecosystem-description-list}
+{%- if params.ecosystem_names_local %}
+`{python} ecosystem_name_str`
+{%- else %}
+
+::: {.callout-note}
+The ecosystem assessment configuration file does not specify the local ecosystem names.
+Please add this information to the YAML configuration file, using the following format:
+```yaml
+ecosystem_names_local:
+  - name: "Ecosystem Name 1"
+    reference: "@bibtexReference1"
+  - name: "Ecosystem Name 2"
+    reference: "@bibtexReference2"
+```
+:::
+{% endif %}
+
+[Biome:]{.parameter} `{python} biome`
+
+[Functional Group:]{.parameter} `{python} functional_group`
+
+[Global classification:]{.parameter} `{python} global_classification`
+
+[IUCN Status:]{.parameter} **`{python} iucn_status`**
+
+```{python}
+#| echo: false
+Markdown(f'![Map of {ecosystem_name}](../images/{global_classification}_map.png)')
+```
+<!-- {height=400px} -->
+
+###### [Description]{.parameter}
+
+{% if params.description %}
+{{ params.description }}
+{% else %}
+::: {.callout-note}
+The ecosystem assessment configuration file does not provide an ecosystem description.
+Please add a `description` key:value pair to the YAML configuration file.
+:::
+{% endif %}
+
+###### [Distribution]{.parameter}
+
+{% if params.distribution %}
+{{ params.distribution }}
+{% else %}
+distribution is not defined
+{% endif %}
+
+###### [Characteristic Native Biota]{.parameter}
+
+{{ params.characteristic_native_biota }}
+
+###### [Abiotic environment]{.parameter}
+
+{{ params.abiotic_environment }}
+
+###### [Key processes and interactions]{.parameter}
+
+{{ params.key_processes_and_interactions }}
+
+###### [Major threats]{.parameter}
+
+{{ params.major_threats }}
+
+###### [Ecosystem collapse definition]{.parameter}
+
+{{ params.ecosystem_collapse_definition }}
+
+###### [Assessment summary]{.parameter}
+
+{{ params.assessment_summary }}**{{ params.assessment_outcome }}.**
+
+###### [Assessment information]{.parameter}
+
+{% if params.criteria_status is defined %}
+<table class="criteria-table">
+  <thead>
+    <tr>
+      <th colspan="2">Criteria</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="4">Criterion A</td>
+      <td>A1</td>
+      <td>{{ params.criteria_status.A.A1 }}</td>
+    </tr>
+    <tr>
+      <td>A2a</td>
+      <td>{{ params.criteria_status.A.A2a }}</td>
+    </tr>
+    <tr>
+      <td>A2b</td>
+      <td>{{ params.criteria_status.A.A2b }}</td>
+    </tr>
+    <tr>
+      <td>A3</td>
+      <td>{{ params.criteria_status.A.A3 }}</td>
+    </tr>
+    <tr>
+      <td rowspan="4">Criterion B</td>
+      <td>B1</td>
+      <td>{{ params.criteria_status.B.B1 }}</td>
+    </tr>
+    <tr>
+      <td>B2</td>
+      <td>{{ params.criteria_status.B.B2 }}</td>
+    </tr>
+    <tr>
+      <td>subcriteria</td>
+      <td>{{ params.criteria_status.B.subcriteria }}</td>
+    </tr>
+    <tr>
+      <td>B3</td>
+      <td>{{ params.criteria_status.B.B3 }}</td>
+    </tr>
+    <tr>
+      <td rowspan="4">Criterion C</td>
+      <td>C1</td>
+      <td>{{ params.criteria_status.C.C1 }}</td>
+    </tr>
+    <tr>
+      <td>C2a</td>
+      <td>{{ params.criteria_status.C.C2a }}</td>
+    </tr>
+    <tr>
+      <td>C2b</td>
+      <td>{{ params.criteria_status.C.C2b }}</td>
+    </tr>
+    <tr>
+      <td>C3</td>
+      <td>{{ params.criteria_status.C.C3 }}</td>
+    </tr>
+    <tr>
+      <td rowspan="4">Criterion D</td>
+      <td>D1</td>
+      <td>{{ params.criteria_status.D.D1 }}</td>
+    </tr>
+    <tr>
+      <td>D2a</td>
+      <td>{{ params.criteria_status.D.D2a }}</td>
+    </tr>
+    <tr>
+      <td>D2b</td>
+      <td>{{ params.criteria_status.D.D2b }}</td>
+    </tr>
+    <tr>
+      <td>D3</td>
+      <td>{{ params.criteria_status.D.D3 }}</td>
+    </tr>
+    <tr>
+      <td>Criterion E</td>
+      <td>E</td>
+      <td>{{ params.criteria_status.E.E }}</td>
+    </tr>
+  </tbody>
+</table>
+{% else %}
+    criteria_status is not defined
+{% endif %}
+
+###### [Assessment Outcome]{.parameter}
+
+**{{ params.assessment_outcome }}.**
+
+###### [Year Published]{.parameter}
+
+{{ params.year_published }}
+
+###### [Date Assessed]{.parameter}
+
+{{ params.date_assessed }}
+
+###### [Assessment Credits]{.parameter}
+
+Assessed by: {{ params.assessed_by }}
+
+Reviewed by: {{ params.reviewed_by }}
+
+Contributions by: {{ params.contributions_by }}
+
+###### [Criterion A]{.parameter}
+
+{{ params.criterion_a_description }}
+
+###### [Criterion B]{.parameter}
+
+{{ params.criterion_b_description }}
+
+###### [Criterion C]{.parameter}
+
+{{ params.criterion_c_description }}
+
+###### [Criterion D]{.parameter}
+
+{{ params.criterion_d_description }}
+
+###### [Criterion E]{.parameter}
+
+{{ params.criterion_e_description }}

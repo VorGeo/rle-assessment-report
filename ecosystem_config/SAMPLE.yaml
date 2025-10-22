@@ -1,9 +1,13 @@
-name: "ECOSYSTEM_NAME_PLACEHOLDER"
-# authors:
-#   - "Author 1"
-#   - "Author 2"
-# country_name: "Myanmar"
-# ecosystem_name: "Tanintharyi limestone tropical evergreen forest"
+ecosystem_name: "Tanintharyi limestone tropical evergreen forest"
+country_name: "Myanmar"
+authors:
+  - "J. Smith"
+  - "J. Pérez"
+ecosystem_names_local:
+  - name: "Ecosystem Name 1"
+    reference: "@bibtexReference1"
+  - name: "Ecosystem Name 2"
+    reference: "@bibtexReference2"
 description: Placeholder description.
 criteria_status:
   A:
