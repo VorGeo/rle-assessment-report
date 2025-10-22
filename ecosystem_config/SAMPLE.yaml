@@ -8,6 +8,8 @@ ecosystem_names_local:
     reference: "@bibtexReference1"
   - name: "Ecosystem Name 2"
     reference: "@bibtexReference2"
+biome: Tropical and subtropical forests (T1)
+functional_group: T1.1
 description: Placeholder description.
 criteria_status:
   A:

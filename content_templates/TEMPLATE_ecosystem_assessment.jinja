@@ -1,5 +1,3 @@
-## {{ params.ecosystem_name }} {.unnumbered}
-
 ```{python}
 #| echo: false
 from IPython.display import Markdown, display
@@ -8,11 +6,15 @@ country_name = '{{ params.country_name | default("COUNTRY_PLACEHOLDER")}}'
 ecosystem_name = '{{ params.ecosystem_name | default("PLACEHOLDER")}}'
 ecosystem_names_local = {{ params.ecosystem_names_local | default([{'name': 'PLACEHOLDER', 'reference': '@placeholder_reference'}])}}
 authors = {{ params.authors | default(["PLACEHOLDER"])}}
-biome = '{{ params.biome | default("BIOME_PLACEHOLDER")}}'
-functional_group = '{{ params.functional_group | default("FUNCTIONAL_GROUP_PLACEHOLDER")}}'
+biome = '{{ params.biome | default("PLACEHOLDER")}}'
+functional_group = '{{ params.functional_group | default("PLACEHOLDER")}}'
 global_classification = '{{ params.global_classification | default("GLOBAL_CLASSIFICATION_PLACEHOLDER")}}'
 iucn_status = '{{ params.iucn_status | default("IUCN_STATUS_PLACEHOLDER")}}'
 ```
+
+<!-- Title -->
+
+## {{ params.ecosystem_name }} {.unnumbered}
 
 <!-- Authors -->
 
@@ -22,7 +24,7 @@ iucn_status = '{{ params.iucn_status | default("IUCN_STATUS_PLACEHOLDER")}}'
 {%- else %}
 
 ::: {.callout-note}
-The ecosystem assessment configuration file does not specify the authors.
+The ecosystem assessment configuration file does not specify the **authors**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
 authors:
@@ -48,7 +50,7 @@ ecosystem_name_str = ", ".join([
 {%- else %}
 
 ::: {.callout-note}
-The ecosystem assessment configuration file does not specify the local ecosystem names.
+The ecosystem assessment configuration file does not specify the **local ecosystem names**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
 ecosystem_names_local:
@@ -60,9 +62,37 @@ ecosystem_names_local:
 :::
 {% endif %}
 
-[Biome:]{.parameter} `{python} biome`
+<!-- Biome -->
 
-[Functional Group:]{.parameter} `{python} functional_group`
+[Biome:]{.parameter .ecosystem-description-list}
+{%- if params.biome %}
+{{ params.biome }}
+{%- else %}
+
+::: {.callout-note}
+The ecosystem assessment configuration file does not specify the **biome**.
+Please add this information to the YAML configuration file, using the following format:
+```yaml
+biome: Tropical and subtropical forests (T1)
+```
+:::
+{% endif %}
+
+<!-- Functional Group -->
+
+[Functional Group:]{.parameter .ecosystem-description-list}
+{%- if params.functional_group %}
+{{ params.functional_group }}
+{%- else %}
+
+::: {.callout-note}
+The ecosystem assessment configuration file does not specify the **functional group**.
+Please add this information to the YAML configuration file, using the following format:
+```yaml
+functional_group: T1.1
+```
+:::
+{% endif %}
 
 [Global classification:]{.parameter} `{python} global_classification`
 
