@@ -23,7 +23,7 @@ jobs:
       - name: Install Jupyter dependencies
         run: |
           python3 -m pip install --upgrade pip
-          pip install jupyter nbformat nbclient ipykernel
+          pip install pyyaml jupyter nbformat nbclient ipykernel
       - name: Render and Publish
         uses: quarto-dev/quarto-actions/publish@v2
         with:
