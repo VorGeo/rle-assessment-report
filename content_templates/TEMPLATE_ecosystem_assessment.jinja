@@ -138,19 +138,47 @@ iucn_status: Endangered
 
 <!-- Ecosystem Map -->
 
+{%- if params.show_ecosystem_map is defined %}
+{%- if params.show_ecosystem_map is true %}
 {%- if params.global_classification %}
 {% if path_exists('../images/' + params.global_classification + '_map.png') %}
 ```{python}
 #| echo: false
 Markdown(f'![Map of {ecosystem_name}](../images/{global_classification}_map.png)')
 ```
-<!-- {height=400px} -->
 {% else %}
+::: {.callout-important title="Unable to find map image"}
 ```{python}
 #| echo: false
-Markdown(f'![Map of {ecosystem_name}](https://placehold.co/600x400?text=Hello\nWorld)')
+Markdown(f'Unable to find map image named: **images/{global_classification}_map.png**')
+```
+
+To suppress this warning, set the `show_ecosystem_map` parameter to `false` in the YAML configuration file:
+```yaml
+show_ecosystem_map: false
+```
+:::
+
+```{python}
+#| echo: false
+Markdown(
+  f'![Map of {ecosystem_name}](https://placehold.co/600x400?text=Hello\nWorld)'
+)
 ```
 {% endif %}
+{% endif %}
+{% endif %}
+{% else %}
+
+::: {.callout-important}
+The ecosystem assessment configuration file does not specify whether an ecosystem should be displayed.
+Please add this information to the YAML configuration file, using the following format:
+```yaml
+show_ecosystem_map: true
+or
+show_ecosystem_map: false
+```
+:::
 {% endif %}
 
 <!-- Description -->
@@ -276,7 +304,7 @@ ecosystem_collapse_definition: >
 
 [Assessment summary]{.parameter .ecosystem-description-list}
 {%- if params.assessment_summary %}
-{{ params.assessment_summary }}**{{ params.assessment_outcome }}.**
+**{{ params.assessment_summary }}**
 {%- else %}
 
 ::: {.callout-note}
@@ -422,8 +450,8 @@ where `STATUS` is one of the following:
 <!-- Assessment outcome -->
 
 [Assessment outcome]{.parameter .ecosystem-description-list}
-{%- if params.assessment_summary %}
-{{ params.assessment_outcome }}**{{ params.assessment_outcome }}.**
+{%- if params.assessment_outcome %}
+**{{ params.assessment_outcome }}**
 {%- else %}
 
 ::: {.callout-note}

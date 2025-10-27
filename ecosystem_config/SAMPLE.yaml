@@ -10,29 +10,63 @@ ecosystem_names_local:
     reference: "@bibtexReference2"
 biome: Tropical and subtropical forests (T1)
 functional_group: T1.1
-global_classification: MMR-T1.1.X
+global_classification: MMR-T1.1.3
 iucn_status: Endangered
-description: Placeholder description.
+show_ecosystem_map: true
+description: >
+  The ecosystem description goes here.
+distribution: >
+  The ecosystem distribution text goes here.
+characteristic_native_biota: >
+  The ecosystem's characteristic native biota text goes here.
+abiotic_environment: >
+  The ecosystem's abiotic environment text goes here.
+key_processes_and_interactions: >
+  The ecosystem's key processes and interactions text goes here.
+major_threats: >
+  The ecosystem's major threats text goes here.
+ecosystem_collapse_definition: >
+  The ecosystem's ecosystem collapse definition text goes here.
+assessment_summary: >
+  The ecosystem's assessment summary text goes here.
 criteria_status:
   A:
-    A1: DD
-    A2a: DD
-    A2b: DD
-    A3: DD
+    A1: NE
+    A2a: NE
+    A2b: NE
+    A3: NE
   B:
-    B1: EN
-    B2: LC
-    subcriteria: "B1a(i), B1a(iii)"
-    B3: LC
+    B1: NE
+    B2: NE
+    subcriteria: [subcriteria1, subcriteria2, ...]
+    B3: NE
   C:
-    C1: DD
-    C2a: LC
-    C2b: DD
-    C3: DD
+    C1: NE
+    C2a: NE
+    C2b: NE
+    C3: NE
   D:
-    D1: DD
-    D2a: DD
-    D2b: LC
-    D3: LC
+    D1: NE
+    D2a: NE
+    D2b: NE
+    D3: NE
   E:
     E: NE
+assessment_outcome: >
+  The ecosystem's assessment outcome text goes here.
+year_published: 1999
+date_assessed: 24th January 2000
+assessment_credits:
+  assessed_by: Jane Smith
+  reviewed_by: Jose Pérez
+  contributions_by: Kevin Bacon
+criterion_a_description: >
+  The ecosystem's criterion A description text goes here.
+criterion_b_description: >
+  The ecosystem's criterion B description text goes here.
+criterion_c_description: >
+  The ecosystem's criterion C description text goes here.
+criterion_d_description: >
+  The ecosystem's criterion D description text goes here.
+criterion_e_description: >
+  The ecosystem's criterion E description text goes here.
