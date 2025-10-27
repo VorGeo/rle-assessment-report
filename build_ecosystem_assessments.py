@@ -13,8 +13,10 @@ from jinja2 import Template
 
 import os
 
+
 def path_exists(path):
-  return os.path.exists(path)
+    base_dir=os.getcwd()
+    return os.path.exists(base_dir + '/' + path)
 
 def load_yaml(yaml_path):
     """Load YAML configuration file."""
@@ -28,10 +30,14 @@ def load_template(template_path):
         return f.read()
 
 
-def render_qmd(template_content, data):
+def render_qmd(template_content, data, config_dir):
     """Render template with data using Jinja2."""
     template = Template(template_content)
-    return template.render(params=data, path_exists=path_exists)
+    return template.render(
+        params=data,
+        path_exists=path_exists,
+        base_dir=os.getcwd()
+    )
 
 
 def main():
@@ -58,7 +64,11 @@ def main():
         output_path = output_dir / output_filename
 
         # Render template with data
-        rendered_content = render_qmd(template_content, data)
+        rendered_content = render_qmd(
+            template_content,
+            data,
+            config_dir
+        )
 
         # Write output file
         with open(output_path, 'w') as f:
