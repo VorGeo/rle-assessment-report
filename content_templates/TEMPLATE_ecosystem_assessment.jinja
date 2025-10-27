@@ -10,6 +10,7 @@ biome = '{{ params.biome | default("PLACEHOLDER")}}'
 functional_group = '{{ params.functional_group | default("PLACEHOLDER")}}'
 global_classification = '{{ params.global_classification | default("GLOBAL_CLASSIFICATION_PLACEHOLDER")}}'
 ecosystem_photo = '{{ params.ecosystem_photo | default("ECOSYSTEM_PHOTO_PLACEHOLDER")}}'
+ecosystem_map = '{{ params.ecosystem_map | default("ECOSYSTEM_MAP_PLACEHOLDER")}}'
 iucn_status = '{{ params.iucn_status | default("IUCN_STATUS_PLACEHOLDER")}}'
 ```
 
@@ -146,7 +147,7 @@ iucn_status: Endangered
 {% if path_exists(params.ecosystem_photo) %}
 ```{python}
 #| echo: false
-Markdown(f'![Photo of the ecosystem {ecosystem_name}](../{ecosystem_photo})')
+Markdown(f'<img src="../{ecosystem_photo}" alt="Photo of the ecosystem {ecosystem_name}" height="400"/>')
 ```
 {% else %}  {# if path_exists(params.ecosystem_photo) #}
 ::: {.callout-important title="Unable to find ecosystem photo image"}
@@ -175,51 +176,43 @@ ecosystem_photo: null
 {% endif %}  {# if params.ecosystem_photo is defined #}
 {% endif %}  {# if params.ecosystem_photo is defined #}
 
-
 <!-- Ecosystem Map -->
 
-{%- if params.show_ecosystem_map is defined %}
-{%- if params.show_ecosystem_map is true %}
-{%- if params.global_classification %}
-{% if path_exists('../images/' + params.global_classification + '_map.png') %}
+{%- if params.ecosystem_map != None %}
+[Ecosystem Map:]{.parameter .ecosystem-description-list}
+{%- if params.ecosystem_map is defined %}
+
+{% if path_exists(params.ecosystem_map) %}
 ```{python}
 #| echo: false
-Markdown(f'![Map of {ecosystem_name}](../images/{global_classification}_map.png)')
+Markdown(f'<img src="../{ecosystem_map}" alt="Map of the ecosystem {ecosystem_name}" height="400"/>')
 ```
-{% else %}
-::: {.callout-important title="Unable to find map image"}
+{% else %}  {# if path_exists(params.ecosystem_photo) #}
+::: {.callout-important title="Unable to find ecosystem map image"}
 ```{python}
 #| echo: false
-Markdown(f'Unable to find map image named: **images/{global_classification}_map.png**')
+Markdown(f'Unable to find ecosystem map image named: **{ecosystem_map}**')
+```
+:::
+{% endif %} {# if path_exists(params.ecosystem_map) #}
+
+{% else %}  {# if params.ecosystem_map is defined #}
+
+::: {.callout-warning}
+The ecosystem assessment configuration file does not specify the **ecosystem map**.
+Please add this information to the YAML configuration file, using the following format:
+```yaml
+ecosystem_map: images/MMR-X#.#.#_map.png
 ```
 
 To suppress this warning, set the `show_ecosystem_map` parameter to `false` in the YAML configuration file:
 ```yaml
-show_ecosystem_map: false
+ecosystem_map: null
 ```
 :::
 
-```{python}
-#| echo: false
-Markdown(
-  f'![Map of {ecosystem_name}](https://placehold.co/600x400?text=Hello\nWorld)'
-)
-```
-{% endif %}
-{% endif %}
-{% endif %}
-{% else %}
-
-::: {.callout-important}
-The ecosystem assessment configuration file does not specify whether an ecosystem should be displayed.
-Please add this information to the YAML configuration file, using the following format:
-```yaml
-show_ecosystem_map: true
-or
-show_ecosystem_map: false
-```
-:::
-{% endif %}
+{% endif %}  {# if params.ecosystem_map is defined #}
+{% endif %}  {# if params.ecosystem_map is defined #}
 
 <!-- Description -->
 
