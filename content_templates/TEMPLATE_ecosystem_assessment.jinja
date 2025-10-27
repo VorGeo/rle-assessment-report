@@ -139,8 +139,10 @@ iucn_status: Endangered
 
 <!-- Ecosystem Photo -->
 
-{%- if params.ecosystem_photo is defined %}
 {%- if params.ecosystem_photo != None %}
+[Ecosystem Photo:]{.parameter .ecosystem-description-list}
+{%- if params.ecosystem_photo is defined %}
+
 {% if path_exists(params.ecosystem_photo) %}
 ```{python}
 #| echo: false
@@ -154,10 +156,8 @@ Markdown(f'Unable to find ecosystem photo image named: **{ecosystem_photo}**')
 ```
 :::
 {% endif %} {# if path_exists(params.ecosystem_photo) #}
-{% else %}  {# if params.ecosystem_photo != None #}
-{# Don't show anything, because the ecosystem photo is none #}
-{% endif %}  {# if params.ecosystem_photo != None #}
-{% else %} {# if params.ecosystem_photo is defined #}
+
+{% else %}  {# if params.ecosystem_photo is defined #}
 
 ::: {.callout-warning}
 The ecosystem assessment configuration file does not specify the **ecosystem photo**.
@@ -172,7 +172,9 @@ ecosystem_photo: null
 ```
 :::
 
-{% endif %} {# if params.ecosystem_photo is defined #}
+{% endif %}  {# if params.ecosystem_photo is defined #}
+{% endif %}  {# if params.ecosystem_photo is defined #}
+
 
 <!-- Ecosystem Map -->
 
