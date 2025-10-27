@@ -9,6 +9,7 @@ authors = {{ params.authors | default(["PLACEHOLDER"])}}
 biome = '{{ params.biome | default("PLACEHOLDER")}}'
 functional_group = '{{ params.functional_group | default("PLACEHOLDER")}}'
 global_classification = '{{ params.global_classification | default("GLOBAL_CLASSIFICATION_PLACEHOLDER")}}'
+ecosystem_photo = '{{ params.ecosystem_photo | default("ECOSYSTEM_PHOTO_PLACEHOLDER")}}'
 iucn_status = '{{ params.iucn_status | default("IUCN_STATUS_PLACEHOLDER")}}'
 ```
 
@@ -135,6 +136,43 @@ iucn_status: Endangered
 ```
 :::
 {% endif %}
+
+<!-- Ecosystem Photo -->
+
+{%- if params.ecosystem_photo is defined %}
+{%- if params.ecosystem_photo != None %}
+{% if path_exists(params.ecosystem_photo) %}
+```{python}
+#| echo: false
+Markdown(f'![Photo of the ecosystem {ecosystem_name}](../{ecosystem_photo})')
+```
+{% else %}  {# if path_exists(params.ecosystem_photo) #}
+::: {.callout-important title="Unable to find ecosystem photo image"}
+```{python}
+#| echo: false
+Markdown(f'Unable to find ecosystem photo image named: **{ecosystem_photo}**')
+```
+:::
+{% endif %} {# if path_exists(params.ecosystem_photo) #}
+{% else %}  {# if params.ecosystem_photo != None #}
+{# Don't show anything, because the ecosystem photo is none #}
+{% endif %}  {# if params.ecosystem_photo != None #}
+{% else %} {# if params.ecosystem_photo is defined #}
+
+::: {.callout-warning}
+The ecosystem assessment configuration file does not specify the **ecosystem photo**.
+Please add this information to the YAML configuration file, using the following format:
+```yaml
+ecosystem_photo: images/MMR-X#.#.#_photo.png
+```
+
+To suppress this warning, set the `show_ecosystem_map` parameter to `false` in the YAML configuration file:
+```yaml
+ecosystem_photo: null
+```
+:::
+
+{% endif %} {# if params.ecosystem_photo is defined #}
 
 <!-- Ecosystem Map -->
 
