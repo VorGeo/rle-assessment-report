@@ -24,9 +24,14 @@ jobs:
 
       - name: Install TinyTeX
         run: quarto install tinytex
-      - name: Render and Publish
+
+      - name: Render Quarto Project
+        run: pixi run quarto render
+
+      - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
         with:
           target: gh-pages
+          render: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
