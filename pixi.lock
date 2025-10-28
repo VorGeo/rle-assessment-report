@@ -1773,7 +1773,7 @@ packages:
 - pypi: .
   name: rle-assessment-report
   version: 0.1.0
-  sha256: 18c69fea9c98cf4e7112384f48999be108a1204ebdf3ae6357d8a0a1b4c264e1
+  sha256: b667bfe63dd7e3d2c225fdd6997cb4098db0932c3699cd7847a18d79436566e9
   requires_dist:
   - quarto>=0.1.0,<0.2
   requires_python: '>=3.11'
