@@ -2789,7 +2789,7 @@ packages:
 - pypi: .
   name: rle-assessment-report
   version: 0.1.0
-  sha256: a3c59ef1abbe17e666fa2101779a15e284a789c181a3b978fcabbf9c8066fea4
+  sha256: 260bfc2f46a5bfd7a2176a4ba0e7e3df89ad4f0d7866517cfab0cd96416fa05c
   requires_dist:
   - quarto>=0.1.0,<0.2
   requires_python: '>=3.11'
