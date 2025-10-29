@@ -21,7 +21,7 @@ To promote ecosystem conservation in Myanmar and support national-scale conserva
 and environmental reporting, all data and analysis code have been made open access (see data
 availability, see Appendices).
 
-![A map of Myanmar showing the area of assessment in grey](images/country_map.png){height=500 #fig-country-map}
+![A map of Myanmar showing the area of assessment in grey](images/country_map.png){#fig-country-map}
 
 ## The ecosystems of Myanmar: an overview
 
@@ -71,9 +71,9 @@ The interface between the terrestrial and marine realms are occupied by several 
 Finally, subterranean ecosystems are largely beyond the scope of this assessment, but we recognise important karst systems that include extensive dry caves and subterranean waters likely to harbour a diverse and endemic biota, and should be a focus of future assessments
 
 
-![Major climatic gradients across Myanmar](images/map_climatic_gradients.png){height=100% #fig-climatic-gradients}
+![Major climatic gradients across Myanmar](images/map_climatic_gradients.png){#fig-climatic-gradients}
 
-![Elevation map of Myanmar](images/map_elevation_myanmnar.png){height=80% #fig-map-elevation}
+![Elevation map of Myanmar](images/map_elevation_myanmnar.png){#fig-map-elevation}
 
 {{< include content_templates/Intro_to_IUCN_RLE.qmd >}}
 
