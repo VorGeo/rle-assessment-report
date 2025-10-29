@@ -12,7 +12,10 @@ biome: Tropical and subtropical forests (T1)
 functional_group: T1.1
 global_classification: MMR-T1.1.3
 iucn_status: Endangered
-show_ecosystem_map: true
+ecosystem_photo: images/MMR-T1.1.3_photo.png
+# ecosystem_photo: null
+ecosystem_map: images/MMR-T1.1.3_map.png
+# ecosystem_map: null
 description: >
   The ecosystem description goes here.
 distribution: >
