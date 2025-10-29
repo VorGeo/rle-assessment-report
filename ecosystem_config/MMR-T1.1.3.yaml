@@ -1,11 +1,10 @@
-name: "Tanintharyi limestone tropical evergreen forest"
+ecosystem_name: "Tanintharyi limestone tropical evergreen forest"
 authors:
   - "N.J. Murray"
   - "R. Tizard"
   - "D.A. Keith"
 country_name: "Myanmar"
-ecosystem_name: "Tanintharyi limestone tropical evergreen forest"
-ecosystem_names:
+ecosystem_names_local:
   - name: "Tropical rainforest"
     reference: "@kress2003checklist"
   - name: "Lowland evergreen rainforest"
@@ -19,9 +18,10 @@ iucn_status: Endangered
 assessment_outcome: Endangered
 year_published: 2020
 date_assessed: 24th January 2020
-assessed_by: Nicholas Murray
-reviewed_by: David Keith
-contributions_by: Lee Grismer
+assessment_credits:
+  assessed_by: Nicholas Murray
+  reviewed_by: David Keith
+  contributions_by: Lee Grismer
 
 description: >
   Tanintharyi has extensive patches of limestone karst scattered across the
