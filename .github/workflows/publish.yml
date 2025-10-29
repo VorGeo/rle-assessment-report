@@ -26,7 +26,15 @@ jobs:
         run: quarto install tinytex
 
       - name: Render Quarto Project
-        run: pixi run quarto render
+        run: |
+          pixi run quarto render || {
+            echo "Render failed, checking log..."
+            if [ -f index.log ]; then
+              echo "=== Last 100 lines of index.log ==="
+              tail -100 index.log
+            fi
+            exit 1
+          }
 
       - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
