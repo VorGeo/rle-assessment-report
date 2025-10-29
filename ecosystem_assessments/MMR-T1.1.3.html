@@ -20,6 +20,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 /* CSS for citations */
 div.csl-bib-body { }
 div.csl-entry {
@@ -51,7 +86,7 @@ div.csl-indent {
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
 <link href="../assessment_outcomes.html" rel="next">
-<link href="../assessments/overview.html" rel="prev">
+<link href="../ecosystem_assessments/MMR-T1.1.1.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -62,7 +97,7 @@ div.csl-indent {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-0dd2bd5de344125cf763a379ddc3eb04.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-841b73d05e5bc75123d26cb7b2f11c52.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,7 +139,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ecosystem_assessments/MMR-T1.1.3.html">Ecosystem Assessments</a></li><li class="breadcrumb-item"><a href="../ecosystem_assessments/MMR-T1.1.3.html">Tanintharyi limestone tropical evergreen forest</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ecosystem_assessments/MMR-T1.1.1.html">Ecosystem Assessments</a></li><li class="breadcrumb-item"><a href="../ecosystem_assessments/MMR-T1.1.3.html">Tanintharyi limestone tropical evergreen forest</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -182,7 +217,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../assessments/overview.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Assessments Overview</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Ecosystem description and assessment</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -194,6 +229,12 @@ div.csl-indent {
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../ecosystem_assessments/MMR-T1.1.1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tanintharyi island rainforest</span></a>
+  </div>
+</li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../ecosystem_assessments/MMR-T1.1.3.html" class="sidebar-item-text sidebar-link active">
@@ -248,7 +289,7 @@ div.csl-indent {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ecosystem_assessments/MMR-T1.1.3.html">Ecosystem Assessments</a></li><li class="breadcrumb-item"><a href="../ecosystem_assessments/MMR-T1.1.3.html">Tanintharyi limestone tropical evergreen forest</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../ecosystem_assessments/MMR-T1.1.1.html">Ecosystem Assessments</a></li><li class="breadcrumb-item"><a href="../ecosystem_assessments/MMR-T1.1.3.html">Tanintharyi limestone tropical evergreen forest</a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">Tanintharyi limestone tropical evergreen forest</h1>
 </div>
@@ -267,52 +308,73 @@ div.csl-indent {
 </header>
 
 
+<!-- Title -->
+<!-- Authors -->
 <p><span class="parameter ecosystem-description-list">Authors:</span> N.J. Murray, R. Tizard, D.A. Keith</p>
+<!-- Local ecosystem names -->
 <p><span class="parameter ecosystem-description-list">Myanmar ecosystem names:</span> Tropical rainforest [<span class="citation" data-cites="kress2003checklist">Kress et al. (<a href="../references.html#ref-kress2003checklist" role="doc-biblioref">2003</a>)</span>], Lowland evergreen rainforest [<span class="citation" data-cites="connette2016mapping">G. Connette et al. (<a href="../references.html#ref-connette2016mapping" role="doc-biblioref">2016</a>)</span>], Forest on Limestone [Whitten et al., 1997]</p>
-<p><span class="parameter">Biome:</span> Tropical and subtropical forests (T1)</p>
-<p><span class="parameter">Functional Group:</span> T1.1</p>
-<p><span class="parameter">Global classification:</span> MMR-T1.1.3</p>
-<p><span class="parameter">IUCN Status:</span> <strong>Endangered</strong></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="../images/MMR-T1.1.3_map.png" height="400" class="figure-img"></p>
-<figcaption>Map of Tanintharyi limestone tropical evergreen forest</figcaption>
-</figure>
+<!-- Biome -->
+<p><span class="parameter ecosystem-description-list">Biome:</span> Tropical and subtropical forests (T1)</p>
+<!-- Functional Group -->
+<p><span class="parameter ecosystem-description-list">Functional Group:</span> T1.1</p>
+<!-- Global classification -->
+<p><span class="parameter ecosystem-description-list">Global classification:</span> MMR-T1.1.3</p>
+<!-- IUCN Status -->
+<p><span class="parameter ecosystem-description-list">IUCN Status:</span> Endangered</p>
+<!-- Ecosystem Photo -->
+<p><span class="parameter ecosystem-description-list">Ecosystem Photo</span></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<section id="description" class="level6">
-<h6 class="anchored" data-anchor-id="description"><span class="parameter">Description</span></h6>
-<p>Tanintharyi has extensive patches of limestone karst scattered across the region. In these karst landscapes Tanintharyi limestone tropical evergreen forest occurs. Primary tree species are Dipterocarps that form a closed canopy, although they occur at lower density and lower tree height than surrounding lowland and upland evergreen forest ecosystems. Soils are characteristically extremely shallow and acidic, and may be humusrich. These forests can be found across the Tanintharyi lowlands on limestone hills and slopes, and in some cases may occur on very steep slopes and cliffs. As a result of the discontinuous distribution of limestone in Myanmar, which can frequently become very dry, endemism is very high. For example, 12 new karst-adapted species of gecko were recently discovered in karst environments, some of which are restricted to isolated caves and limestone towers (Grismer et al.&nbsp;2018). Reliable year round rainfall, averaging in excess of 100 mm per month and between around 1,900 mm and 3,000 mm per year.</p>
-</section>
-<section id="distribution" class="level6">
-<h6 class="anchored" data-anchor-id="distribution"><span class="parameter">Distribution</span></h6>
-<p>Occurs in karst landscapes in southern Tanintharyi. We used a global karst layer to refine our maps of this ecosystem type, and further work to map karst landscapes in southern Myanmar is recommended.</p>
-</section>
-<section id="characteristic-native-biota" class="level6">
-<h6 class="anchored" data-anchor-id="characteristic-native-biota"><span class="parameter">Characteristic Native Biota</span></h6>
-<p>Characteristic species of this ecosystem remain relatively unknown. <span class="citation" data-cites="stamp1925vegetation">Stamp (<a href="../references.html#ref-stamp1925vegetation" role="doc-biblioref">1925</a>)</span> lists the tree species occurring in this ecosystem as including Dipterocarpus alatus, D. grandiflorus, and D. turbinatus, Shorea spp, Anisoptera sp., Hopea odorata, and Parashorea stellata. This ecosystem occurs in isolated fragments and has high physical complexity, a suite of microhabitats, and relatively stable climate, this ecosystem provides habitat for a large number of endemic species, including gekkos and molluscs (Whitten et al., 1997; Grismer et al., 2018). This ecosystem supports some of the remaining populations of sundaic avifauna in Myanmar. This includes Great Argus Argusianus argus (NT), Storm’s Stork Ciconia stormi (EN), White-crowned Hornbill Berenicornis comatus (EN), Helmeted Hornbill Rhinoplax vigil (CR), Red-throated Barbet Psilopogon mystacophanos (NT), Blue-rumped Parrot Psittinus cyanurus (NT), Banded Broadbill Eurylaimus harterti, Black-and-yellow Broadbill Eurylaimus ochromalus (NT), Green Broadbill Calyptomena viridis (NT), Crested Jay Platylophus galericulatus (NT), as well as a range of Bulbuls (Pycnonotidae) and Ground Babblers (Pellorneidae). The mammalian fauna is equally impressive with populations of Banded Langur Presbytis femoralis robinsoni (NT), Dusky Langur Trachypithecus obscurus (NT), Lar Gibbon Hylobates lar (EN), Banded Civet Hemigalus derbyanus (NT), Tiger Panthera tigris (EN), Mainland Clouded Leopard Neofelis nebulosa (VU), Asian Elephant Elephas maximus (EN) and Malayan Tapir Tapirus indicus (EN; <span class="citation" data-cites="eames2005priority">Eames et al. (<a href="../references.html#ref-eames2005priority" role="doc-biblioref">2005</a>)</span>).</p>
-</section>
-<section id="abiotic-environment" class="level6">
-<h6 class="anchored" data-anchor-id="abiotic-environment"><span class="parameter">Abiotic environment</span></h6>
-<p>Shallow soils that can be fairly acidic, topographically complex and reliable year-round rainfall of &gt;100 mm per month and warm temperature that rarely fall below 10° C.</p>
-</section>
-<section id="key-processes-and-interactions" class="level6">
-<h6 class="anchored" data-anchor-id="key-processes-and-interactions"><span class="parameter">Key processes and interactions</span></h6>
-<p>Distribution is largely defined by the occurrence of Karst landscapes coinciding with a mean monthly rainfall of around 100 mm per month. This ecosystem may periodically become very dry, but a dense evergreen canopy can support humid microclimates throughout these periods (Whitten et al., 1997).</p>
-</section>
-<section id="major-threats" class="level6">
-<h6 class="anchored" data-anchor-id="major-threats"><span class="parameter">Major threats</span></h6>
-<p>Unregulated quarrying is considered a primary threat to this ecosystem (Grismer et al., 2018). In addition, deforestation is widespread in this region, primarily for the development of oil palm plantations, rubber plantations and other agroforestry, with deforestation rates reaching 7.85% in some areas of Tanintharyi, the highest rate of forest loss so far recorded in Myanmar <span class="citation" data-cites="connette2017rapid">(<a href="../references.html#ref-connette2017rapid" role="doc-biblioref">G. M. Connette et al. 2017</a>)</span>.</p>
-</section>
-<section id="ecosystem-collapse-definition" class="level6">
-<h6 class="anchored" data-anchor-id="ecosystem-collapse-definition"><span class="parameter">Ecosystem collapse definition</span></h6>
-<p>This ecosystem is regarded as collapsed when its area has declined to zero, or when the proportion of the ecosystem considered primary forest declines to 0.</p>
-</section>
-<section id="assessment-summary" class="level6">
-<h6 class="anchored" data-anchor-id="assessment-summary"><span class="parameter">Assessment summary</span></h6>
-<p>This ecosystem is highly restricted to limestone substrates and ongoing threats, particularly from quarrying, suggest that this ecosystem is undergoing a continuing decline. <strong>Endangered.</strong></p>
-</section>
-<section id="assessment-information" class="level6">
-<h6 class="anchored" data-anchor-id="assessment-information"><span class="parameter">Assessment information</span></h6>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The ecosystem assessment configuration file does not specify the <strong>ecosystem photo</strong>. Please add this information to the YAML configuration file, using the following format:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ecosystem_photo</span><span class="kw">:</span><span class="at"> images/MMR-X</span><span class="co">#.#.#_photo.png</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To suppress this warning, set the <code>show_ecosystem_map</code> parameter to <code>false</code> in the YAML configuration file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ecosystem_photo</span><span class="kw">:</span><span class="at"> </span><span class="ch">null</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<!-- Ecosystem Map -->
+<p><span class="parameter ecosystem-description-list">Ecosystem Map</span></p>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The ecosystem assessment configuration file does not specify the <strong>ecosystem map</strong>. Please add this information to the YAML configuration file, using the following format:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ecosystem_map</span><span class="kw">:</span><span class="at"> images/MMR-X</span><span class="co">#.#.#_map.png</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>To suppress this warning, set the <code>show_ecosystem_map</code> parameter to <code>false</code> in the YAML configuration file:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ecosystem_map</span><span class="kw">:</span><span class="at"> </span><span class="ch">null</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+<!-- Description -->
+<p><span class="parameter ecosystem-description-list">Description</span> Tanintharyi has extensive patches of limestone karst scattered across the region. In these karst landscapes Tanintharyi limestone tropical evergreen forest occurs. Primary tree species are Dipterocarps that form a closed canopy, although they occur at lower density and lower tree height than surrounding lowland and upland evergreen forest ecosystems. Soils are characteristically extremely shallow and acidic, and may be humusrich. These forests can be found across the Tanintharyi lowlands on limestone hills and slopes, and in some cases may occur on very steep slopes and cliffs. As a result of the discontinuous distribution of limestone in Myanmar, which can frequently become very dry, endemism is very high. For example, 12 new karst-adapted species of gecko were recently discovered in karst environments, some of which are restricted to isolated caves and limestone towers (Grismer et al.&nbsp;2018). Reliable year round rainfall, averaging in excess of 100 mm per month and between around 1,900 mm and 3,000 mm per year.</p>
+<!-- Distribution -->
+<p><span class="parameter ecosystem-description-list">Distribution</span> Occurs in karst landscapes in southern Tanintharyi. We used a global karst layer to refine our maps of this ecosystem type, and further work to map karst landscapes in southern Myanmar is recommended.</p>
+<!-- Characteristic Native Biota -->
+<p><span class="parameter ecosystem-description-list">Characteristic Native Biota</span> Characteristic species of this ecosystem remain relatively unknown. <span class="citation" data-cites="stamp1925vegetation">Stamp (<a href="../references.html#ref-stamp1925vegetation" role="doc-biblioref">1925</a>)</span> lists the tree species occurring in this ecosystem as including Dipterocarpus alatus, D. grandiflorus, and D. turbinatus, Shorea spp, Anisoptera sp., Hopea odorata, and Parashorea stellata. This ecosystem occurs in isolated fragments and has high physical complexity, a suite of microhabitats, and relatively stable climate, this ecosystem provides habitat for a large number of endemic species, including gekkos and molluscs (Whitten et al., 1997; Grismer et al., 2018). This ecosystem supports some of the remaining populations of sundaic avifauna in Myanmar. This includes Great Argus Argusianus argus (NT), Storm’s Stork Ciconia stormi (EN), White-crowned Hornbill Berenicornis comatus (EN), Helmeted Hornbill Rhinoplax vigil (CR), Red-throated Barbet Psilopogon mystacophanos (NT), Blue-rumped Parrot Psittinus cyanurus (NT), Banded Broadbill Eurylaimus harterti, Black-and-yellow Broadbill Eurylaimus ochromalus (NT), Green Broadbill Calyptomena viridis (NT), Crested Jay Platylophus galericulatus (NT), as well as a range of Bulbuls (Pycnonotidae) and Ground Babblers (Pellorneidae). The mammalian fauna is equally impressive with populations of Banded Langur Presbytis femoralis robinsoni (NT), Dusky Langur Trachypithecus obscurus (NT), Lar Gibbon Hylobates lar (EN), Banded Civet Hemigalus derbyanus (NT), Tiger Panthera tigris (EN), Mainland Clouded Leopard Neofelis nebulosa (VU), Asian Elephant Elephas maximus (EN) and Malayan Tapir Tapirus indicus (EN; <span class="citation" data-cites="eames2005priority">Eames et al. (<a href="../references.html#ref-eames2005priority" role="doc-biblioref">2005</a>)</span>).</p>
+<!-- Abiotic environment -->
+<p><span class="parameter ecosystem-description-list">Abiotic environment</span> Shallow soils that can be fairly acidic, topographically complex and reliable year-round rainfall of &gt;100 mm per month and warm temperature that rarely fall below 10° C.</p>
+<!-- Key processes and interactions -->
+<p><span class="parameter ecosystem-description-list">Key processes and interactions</span> Distribution is largely defined by the occurrence of Karst landscapes coinciding with a mean monthly rainfall of around 100 mm per month. This ecosystem may periodically become very dry, but a dense evergreen canopy can support humid microclimates throughout these periods (Whitten et al., 1997).</p>
+<!-- Major threats -->
+<p><span class="parameter ecosystem-description-list">Major threats</span> Unregulated quarrying is considered a primary threat to this ecosystem (Grismer et al., 2018). In addition, deforestation is widespread in this region, primarily for the development of oil palm plantations, rubber plantations and other agroforestry, with deforestation rates reaching 7.85% in some areas of Tanintharyi, the highest rate of forest loss so far recorded in Myanmar <span class="citation" data-cites="connette2017rapid">(<a href="../references.html#ref-connette2017rapid" role="doc-biblioref">G. M. Connette et al. 2017</a>)</span>.</p>
+<!-- Ecosystem collapse definition -->
+<p><span class="parameter ecosystem-description-list">Ecosystem collapse definition</span> This ecosystem is regarded as collapsed when its area has declined to zero, or when the proportion of the ecosystem considered primary forest declines to 0.</p>
+<!-- Assessment summary -->
+<p><span class="parameter ecosystem-description-list">Assessment summary</span> <strong>This ecosystem is highly restricted to limestone substrates and ongoing threats, particularly from quarrying, suggest that this ecosystem is undergoing a continuing decline. </strong></p>
+<!-- Assessment information -->
+<span class="parameter ecosystem-description-list">Assessment information</span>
 <table class="criteria-table">
 <thead>
 <tr>
@@ -478,44 +540,27 @@ NE
 </tr>
 </tbody>
 </table>
-</section>
-<section id="assessment-outcome" class="level6">
-<h6 class="anchored" data-anchor-id="assessment-outcome"><span class="parameter">Assessment Outcome</span></h6>
-<p><strong>Endangered.</strong></p>
-</section>
-<section id="year-published" class="level6">
-<h6 class="anchored" data-anchor-id="year-published"><span class="parameter">Year Published</span></h6>
-<p>2020</p>
-</section>
-<section id="date-assessed" class="level6">
-<h6 class="anchored" data-anchor-id="date-assessed"><span class="parameter">Date Assessed</span></h6>
-<p>24th January 2020</p>
-</section>
-<section id="assessment-credits" class="level6">
-<h6 class="anchored" data-anchor-id="assessment-credits"><span class="parameter">Assessment Credits</span></h6>
+<!-- Assessment outcome -->
+<p><span class="parameter ecosystem-description-list">Assessment outcome</span> <strong>Endangered</strong></p>
+<!-- Year published -->
+<p><span class="parameter ecosystem-description-list">Year published</span> 2020</p>
+<!-- Date assessed -->
+<p><span class="parameter ecosystem-description-list">Date assessed</span> 24th January 2020</p>
+<!-- Assessment credits -->
+<p><span class="parameter ecosystem-description-list">Assessment credits</span></p>
 <p>Assessed by: Nicholas Murray</p>
 <p>Reviewed by: David Keith</p>
 <p>Contributions by: Lee Grismer</p>
-</section>
-<section id="criterion-a" class="level6">
-<h6 class="anchored" data-anchor-id="criterion-a"><span class="parameter">Criterion A</span></h6>
-<p>No time-series map data was available for assessing reduction in distribution of this ecosystem over any of the assessment time frames. <strong>Data Deficient</strong>.</p>
-</section>
-<section id="criterion-b" class="level6">
-<h6 class="anchored" data-anchor-id="criterion-b"><span class="parameter">Criterion B</span></h6>
-<p>This ecosystem is highly restricted in limestone landscapes and has an AOO of 56 10 x 10 km grid cells and an EOO of 3,796 km2 There is evidence that limestone quarrying and other threats are leading to continuing decline, meeting subcriteria a(i) and a(iii). The ecosystem is assessed as <strong>Endangered</strong>.</p>
-</section>
-<section id="criterion-c" class="level6">
-<h6 class="anchored" data-anchor-id="criterion-c"><span class="parameter">Criterion C</span></h6>
-<p>Climate simulation models suggest that environmental conditions within the limestone landscapes of southern Myanmar are unlikely to reduce suitable areas sufficiently to result in this ecosystem becoming threatened by 2050. It should be noted that the occurrence of Karst landscapes is a key distributional driver of this ecosystem, and the scale at which the suitability models were run may not adequately depict the fine-scale changes expected over the next three decades. We recommend further work to refine maps of Karst landscape to better limit the distribution of our model. <strong>Least Concern</strong>.</p>
-</section>
-<section id="criterion-d" class="level6">
-<h6 class="anchored" data-anchor-id="criterion-d"><span class="parameter">Criterion D</span></h6>
-<p>Remote sensing analyses suggest that 72.4% of the remaining extent of this ecosystem meets criteria to be classified as primary forest (Potapov et al., 2019). If 100% of the ecosystem is assumed to be primary forest in 1750, there has been an 27.6% loss in primary forest extent since 1750. We assume that loss of primary forest has a relative severity of &gt;90%, and use the extent of primary forest loss as a biotic variable for assessing Criterion D. With an 27.6% loss of primary forest extent, the ecosystem is assessed as Least Concern under Criterion D3. Analyses of the time-series of primary forest data (n = 18 time points) indicate that there has been 8.4% reduction in primary forest cover over the period 2000-2017. A linear model fit to this dataset, assuming that collapse occurs at 100% loss of primary forest cover, suggests that primary forest loss in this ecosystem will not occur to an extent to meet any category thresholds over a 50 year period (1984- 2034). The ecosystem is assessed as Least Concern under Criterion D2b. <strong>Least Concern</strong>.</p>
-</section>
-<section id="criterion-e" class="level6">
-<h6 class="anchored" data-anchor-id="criterion-e"><span class="parameter">Criterion E</span></h6>
-<p>No models were used to assess Criterion E. <strong>Not Evaluated</strong>.</p>
+<!-- Criterion A -->
+<p><span class="parameter ecosystem-description-list">Criterion A</span> No time-series map data was available for assessing reduction in distribution of this ecosystem over any of the assessment time frames. <strong>Data Deficient</strong>.</p>
+<!-- Criterion B -->
+<p><span class="parameter ecosystem-description-list">Criterion B</span> This ecosystem is highly restricted in limestone landscapes and has an AOO of 56 10 x 10 km grid cells and an EOO of 3,796 km2 There is evidence that limestone quarrying and other threats are leading to continuing decline, meeting subcriteria a(i) and a(iii). The ecosystem is assessed as <strong>Endangered</strong>.</p>
+<!-- Criterion C -->
+<p><span class="parameter ecosystem-description-list">Criterion C</span> Climate simulation models suggest that environmental conditions within the limestone landscapes of southern Myanmar are unlikely to reduce suitable areas sufficiently to result in this ecosystem becoming threatened by 2050. It should be noted that the occurrence of Karst landscapes is a key distributional driver of this ecosystem, and the scale at which the suitability models were run may not adequately depict the fine-scale changes expected over the next three decades. We recommend further work to refine maps of Karst landscape to better limit the distribution of our model. <strong>Least Concern</strong>.</p>
+<!-- Criterion D -->
+<p><span class="parameter ecosystem-description-list">Criterion D</span> Remote sensing analyses suggest that 72.4% of the remaining extent of this ecosystem meets criteria to be classified as primary forest (Potapov et al., 2019). If 100% of the ecosystem is assumed to be primary forest in 1750, there has been an 27.6% loss in primary forest extent since 1750. We assume that loss of primary forest has a relative severity of &gt;90%, and use the extent of primary forest loss as a biotic variable for assessing Criterion D. With an 27.6% loss of primary forest extent, the ecosystem is assessed as Least Concern under Criterion D3. Analyses of the time-series of primary forest data (n = 18 time points) indicate that there has been 8.4% reduction in primary forest cover over the period 2000-2017. A linear model fit to this dataset, assuming that collapse occurs at 100% loss of primary forest cover, suggests that primary forest loss in this ecosystem will not occur to an extent to meet any category thresholds over a 50 year period (1984- 2034). The ecosystem is assessed as Least Concern under Criterion D2b. <strong>Least Concern</strong>.</p>
+<!-- Criterion E -->
+<p><span class="parameter ecosystem-description-list">Criterion E</span> No models were used to assess Criterion E. <strong>Not Evaluated</strong>.</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -535,7 +580,6 @@ Kress, W John, Robert A DeFilipps, Ellen Farr, and Daw Yin Yin Kyi. 2003. <span>
 Stamp, Laurence Dudley. 1925. <em>The Vegetation of Burma: From an Ecological Standpoint</em>. 1. University of Rangoon.
 </div>
 </div>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -940,8 +984,8 @@ Stamp, Laurence Dudley. 1925. <em>The Vegetation of Burma: From an Ecological St
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../assessments/overview.html" class="pagination-link" aria-label="Assessments Overview">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Assessments Overview</span></span>
+      <a href="../ecosystem_assessments/MMR-T1.1.1.html" class="pagination-link" aria-label="Tanintharyi island rainforest">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Tanintharyi island rainforest</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
