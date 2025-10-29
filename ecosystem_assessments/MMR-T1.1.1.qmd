@@ -1,0 +1,288 @@
+```{python}
+#| echo: false
+from IPython.display import Markdown, display
+
+country_name = 'Myanmar'
+ecosystem_name = 'Tanintharyi island rainforest'
+ecosystem_names_local = [{'name': 'PLACEHOLDER', 'reference': '@placeholder_reference'}]
+authors = ['N.J. Murray', 'R. Tizard', 'D.A. Keith']
+biome = 'Tropical and subtropical forests (T1)'
+functional_group = 'T1.1'
+global_classification = 'MMR-T1.1.1'
+ecosystem_photo = 'images/MMR-T1.1.1_photo.png'
+ecosystem_map = 'images/MMR-T1.1.1_map.png'
+iucn_status = 'Vulnerable (Least Concern – Vulnerable)'
+```
+
+<!-- Title -->
+
+## Tanintharyi island rainforest {.unnumbered}
+
+<!-- Authors -->
+
+[Authors:]{.parameter .ecosystem-description-list}
+`{python} ", ".join(authors)`
+
+<!-- Local ecosystem names -->
+
+```{python}
+#| echo: false
+ecosystem_name_str = ", ".join([
+    f"{ecosystem_name['name']} [{ecosystem_name['reference']}]"
+    for ecosystem_name in ecosystem_names_local
+])
+```
+
+[`{python} country_name` ecosystem names:]{.parameter .ecosystem-description-list}
+
+::: {.callout-note}
+The ecosystem assessment configuration file does not specify the **local ecosystem names**.
+Please add this information to the YAML configuration file, using the following format:
+```yaml
+ecosystem_names_local:
+  - name: "Ecosystem Name 1"
+    reference: "@bibtexReference1"
+  - name: "Ecosystem Name 2"
+    reference: "@bibtexReference2"
+```
+:::
+
+
+<!-- Biome -->
+
+[Biome:]{.parameter .ecosystem-description-list}
+Tropical and subtropical forests (T1)
+
+<!-- Functional Group -->
+
+[Functional Group:]{.parameter .ecosystem-description-list}
+T1.1
+
+<!-- Global classification -->
+
+[Global classification:]{.parameter .ecosystem-description-list}
+MMR-T1.1.1
+
+<!-- IUCN Status -->
+
+[IUCN Status:]{.parameter .ecosystem-description-list}
+Vulnerable (Least Concern – Vulnerable)
+
+<!-- Ecosystem Photo -->
+[Ecosystem Photo]{.parameter .ecosystem-description-list}
+
+
+```{python}
+#| echo: false
+Markdown(f'<img src="../{ecosystem_photo}" alt="Photo of the ecosystem {ecosystem_name}" height="400"/>')
+```
+ 
+
+  
+  
+
+<!-- Ecosystem Map -->
+[Ecosystem Map]{.parameter .ecosystem-description-list}
+
+
+```{python}
+#| echo: false
+Markdown(f'<img src="../{ecosystem_map}" alt="Map of the ecosystem {ecosystem_name}" height="400"/>')
+```
+ 
+
+  
+  
+
+<!-- Description -->
+
+[Description]{.parameter .ecosystem-description-list}
+Tanintharyi island rainforest occurs on offshore islands across Tanintharyi, including the Myeik archipelago. It is a lowland, primarily evergreen, forest ecosystem that has some maritime influence. It shows a tolerance of salty ocean seaspray and historically received much of its nutrient input from nesting seabird populations that have subsequently collapsed. It occurs across a wide range of island types including limestone, rubble and sand islands. The canopy is primarily evergreen Dipterocarpaceae (Tagane et al., 2019). Stamp (1924b) reported forests of “tall varied trees who dense canopy, cutting off nearly all light from the ground, is made more intense by the wealth of woody climbers which have struggled upwards to reach the light”.
+
+
+<!-- Distribution -->
+
+[Distribution]{.parameter .ecosystem-description-list}
+Occurs on offshore islands in Tanintharyi state.
+
+
+<!-- Characteristic Native Biota -->
+
+[Characteristic Native Biota]{.parameter .ecosystem-description-list}
+Largely unknown but probably moderately diverse. A recent survey of the Myiek archipelago reported a total of 305 species belonging to 241 genera and 91 families (Tagane et al. 2019). Surveys of Lampi Island marine park indicated 20 species of Dipterocarpaceae. The islands support several localized species along the coastal edges including Great-billed Heron Ardea sumatrana, Beach Thick-knee Esacus magnirostris (NT) and Black-naped Tern Sterna sumatrana, and Collared Kingfisher Todiramphus chloris. The islands also support a range of nomadic frugivores including Nicobar Pigeon Caloenas nicobarica (NT), Large Green-pigeon Treron capellei (VU), Pied Imperialpigeon Ducula bicolor, and Plain-pouched Hornbill Rhyticeros subruficollis (VU).
+The islands also support a population of tool using Long-tailed Macaque Macaca fascicularis (VU).
+
+
+<!-- Abiotic environment -->
+
+[Abiotic environment]{.parameter .ecosystem-description-list}
+This ecosystem occurs on offshore islands exposed to the influence of maritime salt. Largely monsoonal, with a minimum temperature of 21 degrees in December to a maximum of 28.8 in August. Precipitation is highly seasonal, with a dry season occurring from November to March followed by a strong wet season from May to October (Oo et al., 2019).
+
+
+<!-- Key processes and interactions -->
+
+[Key processes and interactions]{.parameter .ecosystem-description-list}
+This ecosystem received much of its nutrients from nesting seabird populations that are mostly no longer present. Dispersal is similarly mediated by mobile fauna, and endemism due to isolation is likely to be high.
+
+
+<!-- Major threats -->
+
+[Major threats]{.parameter .ecosystem-description-list}
+Unregulated tourism development is the principal threat to this ecosystem (UNESCO, 2014).
+
+
+<!-- Ecosystem collapse definition -->
+
+[Ecosystem collapse definition]{.parameter .ecosystem-description-list}
+This ecosystem is regarded as collapsed when its area has declined to zero, when the proportion of the ecosystem considered primary forest declines to 0.
+
+
+<!-- Assessment summary -->
+
+[Assessment summary]{.parameter .ecosystem-description-list}
+**This ecosystem is broadly distributed across many isolated islands in southern Myanmar, but there is an expected reduction in climate suitability over the next three decades. Threats from humans and biotic degradation are expected to be low, as confirmed by an analysis of the Forest Landscape Integrity Index. The ecosystem qualified for listing as Vulnerable under Criterion C, with a plausible range of Least Concern – Vulnerable. Vulnerable (Least Concern – Vulnerable).
+**
+
+<!-- Assessment information -->
+
+[Assessment information]{.parameter .ecosystem-description-list}
+<table class="criteria-table">
+  <thead>
+    <tr>
+      <th colspan="2">Criteria</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="4">Criterion A</td>
+      <td>A1</td>
+      <td>DD</td>
+    </tr>
+    <tr>
+      <td>A2a</td>
+      <td>DD</td>
+    </tr>
+    <tr>
+      <td>A2b</td>
+      <td>DD</td>
+    </tr>
+    <tr>
+      <td>A3</td>
+      <td>DD</td>
+    </tr>
+    <tr>
+      <td rowspan="4">Criterion B</td>
+      <td>B1</td>
+      <td>LC</td>
+    </tr>
+    <tr>
+      <td>B2</td>
+      <td>LC</td>
+    </tr>
+    <tr>
+      <td>subcriteria</td>
+      <td>NA</td>
+    </tr>
+    <tr>
+      <td>B3</td>
+      <td>LC</td>
+    </tr>
+    <tr>
+      <td rowspan="4">Criterion C</td>
+      <td>C1</td>
+      <td>DD</td>
+    </tr>
+    <tr>
+      <td>C2a</td>
+      <td>VU(LC-VU)</td>
+    </tr>
+    <tr>
+      <td>C2b</td>
+      <td>DD</td>
+    </tr>
+    <tr>
+      <td>C3</td>
+      <td>DD</td>
+    </tr>
+    <tr>
+      <td rowspan="4">Criterion D</td>
+      <td>D1</td>
+      <td>DD</td>
+    </tr>
+    <tr>
+        <td>D2a</td>
+        <td>DD</td>
+      </tr>
+      <tr>
+        <td>D2b</td>
+        <td>LC</td>
+      </tr>
+      <tr>
+        <td>D3</td>
+        <td>LC</td>
+      </tr>
+      <tr>
+        <td>Criterion E</td>
+        <td>E</td>
+        <td>NE</td>
+      </tr>
+    </tbody>
+  </table>
+
+<!-- Assessment outcome -->
+
+[Assessment outcome]{.parameter .ecosystem-description-list}
+**Vulnerable (Least Concern – Vulnerable)
+**
+
+<!-- Year published -->
+
+[Year published]{.parameter .ecosystem-description-list}
+2020
+
+
+<!-- Date assessed -->
+
+[Date assessed]{.parameter .ecosystem-description-list}
+20th January 2020
+
+<!-- Assessment credits -->
+
+[Assessment credits]{.parameter .ecosystem-description-list}
+
+Assessed by: Nicholas Murray
+
+Reviewed by: David Keith
+
+Contributions by: Lee Grismer
+
+<!-- Criterion A -->
+
+[Criterion A]{.parameter .ecosystem-description-list}
+No time-series map data was available for assessing reduction in distribution of this ecosystem over any of the assessment time frames. **Data Deficient.**
+
+
+<!-- Criterion B -->
+
+[Criterion B]{.parameter .ecosystem-description-list}
+AOO and EOO were measured as 206 10 x 10 km grid cells and 50,337 km2, respectively. There is no evidence that suggests this ecosystem should meet the criteria to be listed as Near Threatened. The ecosystem is assessed as Least Concern under Criterion B1 and B2. **Least Concern.**
+
+
+<!-- Criterion C -->
+
+[Criterion C]{.parameter .ecosystem-description-list}
+An environmental suitability model (Ferrer-Paris et al. 2019; see methods) suggests that reductions in climate suitability will occur with an extent and severity to meet the category thresholds for Vulnerable under Criterion C2a. Variation in the outcomes of the modelled scenarios suggested that the ecosystem could potentially meet thresholds for Least Concern to Vulnerable, and therefore the ecosystem is assessed as Vulnerable (the most commonly returned result from all scenarios), with plausible bounds of Least Concern – Vulnerable. **Vulnerable (Least Concern – Vulnerable).**
+
+
+<!-- Criterion D -->
+
+[Criterion D]{.parameter .ecosystem-description-list}
+Analyses of a dataset that depicts the distribution of primary forests in South-East Asia [@potapov2019annual] suggest that 74.9% of the remaining extent of this ecosystem is primary forest. If 100% of the ecosystem is assumed to be primary forest in 1750, we estimate a 25.1% loss in primary forest extent since 1750. Here we assume that loss of primary forest extent has a relative severity of >90%, and the ecosystem is assessed as Least Concern under Criterion D3. Analyses of the full time-series of primary forest data (n = 18) suggests an 8.1% reduction of primary forest in this ecosystem over the period 2000-2017. A linear model fit to this dataset suggests that primary forest cover in this ecosystem will not decline sufficiently to meet any category thresholds over a 50 year period (1984-2034). The ecosystem is assessed as Least Concern under Criterion D2b. **Least Concern.** 
+<img src="../images/MMR-T1.1.1_crit_D_chart.png" alt="Chart of Criterion D" height="400"/>
+
+
+<!-- Criterion E -->
+
+[Criterion E]{.parameter .ecosystem-description-list}
+No models were used to assess Criterion E. **Not Evaluated.**
