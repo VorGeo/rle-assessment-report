@@ -1,20 +1,24 @@
-ecosystem_name: "Tanintharyi limestone tropical evergreen forest"
+ecosystem_name: Tanintharyi limestone tropical evergreen forest
 authors:
-  - "N.J. Murray"
-  - "R. Tizard"
-  - "D.A. Keith"
-country_name: "Myanmar"
+  - N.J. Murray
+  - R. Tizard
+  - D.A. Keith
 ecosystem_names_local:
-  - name: "Tropical rainforest"
+  - name: Tropical rainforest
     reference: "@kress2003checklist"
-  - name: "Lowland evergreen rainforest"
+  - name: Lowland evergreen rainforest
     reference: "@connette2016mapping"
-  - name: "Forest on Limestone"
-    reference: "Whitten et al., 1997"
-biome: "Tropical and subtropical forests (T1)"
-functional_group: "T1.1"
-global_classification: "MMR-T1.1.3"
+  - name: Forest on Limestone
+    reference: Whitten et al., 1997
+biome: Tropical and subtropical forests (T1)
+functional_group: T1.1
+global_classification: MMR-T1.1.3
 iucn_status: Endangered
+# ecosystem_photo: images/MMR-T1.1.3_photo.png
+ecosystem_map: images/MMR-T1.1.3_map.png
+ecosystem_image:
+  asset_id: projects/goog-rle-assessments/assets/mm_ecosys_v7b
+  pixel_value: 53
 assessment_outcome: Endangered
 year_published: 2020
 date_assessed: 24th January 2020

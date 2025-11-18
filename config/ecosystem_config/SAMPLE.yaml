@@ -16,6 +16,9 @@ ecosystem_photo: images/MMR-T1.1.3_photo.png
 # ecosystem_photo: null
 ecosystem_map: images/MMR-T1.1.3_map.png
 # ecosystem_map: null
+ecosystem_image:
+  asset_id: projects/goog-rle-assessments/assets/mm_ecosys_v7b
+  pixel_value: 53
 description: >
   The ecosystem description goes here.
 distribution: >
@@ -65,8 +68,8 @@ assessment_credits:
   contributions_by: Kevin Bacon
 criterion_a_description: >
   The ecosystem's criterion A description text goes here.
-criterion_b_description: >
-  The ecosystem's criterion B description text goes here.
+criterion_b_description:
+  text: The ecosystem's criterion B description text goes here.
 criterion_c_description: >
   The ecosystem's criterion C description text goes here.
 criterion_d_description: >

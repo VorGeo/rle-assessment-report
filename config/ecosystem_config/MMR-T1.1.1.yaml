@@ -15,6 +15,9 @@ global_classification: MMR-T1.1.1
 iucn_status: Vulnerable (Least Concern – Vulnerable)
 ecosystem_photo: images/MMR-T1.1.1_photo.png
 ecosystem_map: images/MMR-T1.1.1_map.png
+ecosystem_image:
+  asset_id: projects/goog-rle-assessments/assets/mm_ecosys_v7b
+  pixel_value: 52
 description: >
   Tanintharyi island rainforest occurs on offshore islands across Tanintharyi,
   including the Myeik archipelago. It is a lowland, primarily evergreen, forest
