@@ -28,15 +28,15 @@ def create_country_map():
 
         print(f"Creating country map: {map_path}")
 
-        # TODO: Update with actual country code and parameters
-        country_name = "Myanmar"
+        # TODO: Determine country code from country_name
+        country_code = "MM"
 
         # Create the map
         # Note: Adjust parameters based on gee-redlist-python API
         map_image = create_country_map(
-            country_name=country_name,
+            country_code=country_code,
             output_path=map_path,
-            # Add additional parameters as needed
+            show_stock_img=False,
         )
         print(f'{map_image=}')
 
