@@ -313,7 +313,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/fa/09/f92f3d87c967d80fb73fa45a7b8ce6048fcf6bc9ba04ef0fb04443e209d3/eerepr-0.1.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b5/a8/5f764f333204db0390362a4356d03a43626997f26818a0e9396f1b3bd8c9/folium-0.20.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl
-      - pypi: git+https://github.com/VorGeo/gee-redlist-python.git#e9fb4d9c1a33172d56bfddec03bd0b98f7ca0c74
+      - pypi: git+https://github.com/VorGeo/gee-redlist-python.git#02d15d20f95789ea97821e8a3b662d135e5670ac
       - pypi: https://files.pythonhosted.org/packages/0f/4f/16e34c39f1840203216a79084d92aed6722ba00d34815807bc3e04d58c9f/geemap-0.36.6-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4f/6b/13166c909ad2f2d76b929a4227c952630ebaf0d729f6317eb09cbceccbab/geocoder-1.38.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ed/d4/90197b416cb61cefd316964fd9e7bd8324bcbafabf40eef14a9f20b81974/google_api_core-2.28.1-py3-none-any.whl
@@ -601,7 +601,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/fa/09/f92f3d87c967d80fb73fa45a7b8ce6048fcf6bc9ba04ef0fb04443e209d3/eerepr-0.1.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/b5/a8/5f764f333204db0390362a4356d03a43626997f26818a0e9396f1b3bd8c9/folium-0.20.0-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl
-      - pypi: git+https://github.com/VorGeo/gee-redlist-python.git#e9fb4d9c1a33172d56bfddec03bd0b98f7ca0c74
+      - pypi: git+https://github.com/VorGeo/gee-redlist-python.git#02d15d20f95789ea97821e8a3b662d135e5670ac
       - pypi: https://files.pythonhosted.org/packages/0f/4f/16e34c39f1840203216a79084d92aed6722ba00d34815807bc3e04d58c9f/geemap-0.36.6-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/4f/6b/13166c909ad2f2d76b929a4227c952630ebaf0d729f6317eb09cbceccbab/geocoder-1.38.1-py2.py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/ed/d4/90197b416cb61cefd316964fd9e7bd8324bcbafabf40eef14a9f20b81974/google_api_core-2.28.1-py3-none-any.whl
@@ -1852,7 +1852,7 @@ packages:
   - pkg:pypi/gdal?source=hash-mapping
   size: 1840589
   timestamp: 1762609317002
-- pypi: git+https://github.com/VorGeo/gee-redlist-python.git#e9fb4d9c1a33172d56bfddec03bd0b98f7ca0c74
+- pypi: git+https://github.com/VorGeo/gee-redlist-python.git#02d15d20f95789ea97821e8a3b662d135e5670ac
   name: gee-redlist-python
   version: 0.1.0
   requires_dist:
