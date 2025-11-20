@@ -22,10 +22,11 @@ iucn_status = '{{ params.iucn_status | default("IUCN_STATUS_PLACEHOLDER")}}'
 
 {%- if not params.country_name %}
 ::: {.callout-note}
-The ecosystem assessment configuration file does not specify the **country name**.
+The country-level configuration file (`config/country_config.yaml`) does not
+specify the **country name**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
-country_name: Wakanda
+country_name: Wakanda Forever
 ```
 :::
 {% endif %}

@@ -20,8 +20,6 @@ from gee_redlist import create_country_map
 print(f'{gee_redlist.__version__=}')
 
 def path_exists(path):
-    if path is None:
-        return False
     base_dir = os.getcwd()
     return os.path.exists(os.path.join(base_dir, path))
 
@@ -37,11 +35,15 @@ def load_template(template_path):
         return f.read()
 
 
-def render_qmd(template_content, data):
+def render_qmd(
+    template_content,
+    ecosystem_data,
+    country_data,
+):
     """Render template with data using Jinja2."""
     template = Template(template_content)
     return template.render(
-        params=data,
+        params=ecosystem_data | country_data,
         path_exists=path_exists,
         base_dir=os.getcwd()
     )
@@ -106,13 +108,16 @@ def main():
         else:
             print(f"Ecosystem map already exists: {map_path}")
 
+        print("Rendering template...")
         # Render template with data for the current ecosystem
         rendered_content = render_qmd(
             template_content=template_content,
-            data=ecosystem_data,
+            ecosystem_data=ecosystem_data,
+            country_data=country_data,
         )
 
         # Write output file
+        print("Writing output file...")
         output_path = output_dir / f"{yaml_file.stem}.qmd"
         with open(output_path, 'w') as f:
             f.write(rendered_content)
