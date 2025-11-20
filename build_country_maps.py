@@ -45,8 +45,6 @@ def main():
     """Main function to check and create country map if needed."""
     
     country_config = Path('config/country_config.yaml')
-    ecosystem_config_dir = Path('config/ecosystem_config')
-    
     country_data = load_yaml(country_config)
 
     if check_map_exists():

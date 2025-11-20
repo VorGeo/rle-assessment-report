@@ -11,6 +11,10 @@ functional_group = '{{ params.functional_group | default("PLACEHOLDER")}}'
 global_classification = '{{ params.global_classification | default("GLOBAL_CLASSIFICATION_PLACEHOLDER")}}'
 ecosystem_photo = '{{ params.ecosystem_photo | default("ECOSYSTEM_PHOTO_PLACEHOLDER")}}'
 ecosystem_map = '{{ params.ecosystem_map | default("ECOSYSTEM_MAP_PLACEHOLDER")}}'
+ecosystem_image = {
+    'asset_id': '{{ params.ecosystem_image.asset_id | default(None)}}',
+    'pixel_value': '{{ params.ecosystem_image.pixel_value | default(None)}}'
+}
 iucn_status = '{{ params.iucn_status | default("IUCN_STATUS_PLACEHOLDER")}}'
 ```
 
@@ -142,23 +146,24 @@ iucn_status: Endangered
 
 {%- if params.ecosystem_photo != None %}
 [Ecosystem Photo]{.parameter .ecosystem-description-list}
-{%- if params.ecosystem_photo is defined %}
 
-{% if path_exists(params.ecosystem_photo) %}
+  {%- if params.ecosystem_photo is defined %}
+
+    {% if path_exists(params.ecosystem_photo) %}
 ```{python}
 #| echo: false
 Markdown(f'<img src="../{ecosystem_photo}" alt="Photo of the ecosystem {ecosystem_name}" height="400"/>')
 ```
-{% else %}  {# if path_exists(params.ecosystem_photo) #}
+    {% else %}  {# if path_exists(params.ecosystem_photo) #}
 ::: {.callout-important title="Unable to find ecosystem photo image"}
 ```{python}
 #| echo: false
 Markdown(f'Unable to find ecosystem photo image named: **{ecosystem_photo}**')
 ```
 :::
-{% endif %} {# if path_exists(params.ecosystem_photo) #}
+    {% endif %} {# if path_exists(params.ecosystem_photo) #}
 
-{% else %}  {# if params.ecosystem_photo is defined #}
+  {% else %}  {# if params.ecosystem_photo is defined #}
 
 ::: {.callout-warning}
 The ecosystem assessment configuration file does not specify the **ecosystem photo**.
@@ -173,8 +178,11 @@ ecosystem_photo: null
 ```
 :::
 
-{% endif %}  {# if params.ecosystem_photo is defined #}
-{% endif %}  {# if params.ecosystem_photo is defined #}
+  {% endif %}  {# if params.ecosystem_photo is defined #}
+
+{% else %}  {# if params.ecosystem_photo != None #}
+
+{% endif %}  {# if params.ecosystem_photo != None #}
 
 <!-- Ecosystem Map -->
 
@@ -212,7 +220,16 @@ ecosystem_map: null
 :::
 
 {% endif %}  {# if params.ecosystem_map is defined #}
-{% endif %}  {# if params.ecosystem_map is defined #}
+{% endif %}  {# if params.ecosystem_map != None #}
+
+[TEST]{.parameter .ecosystem-description-list}
+
+```{python}
+#| echo: true
+import ee
+
+print(ecosystem_image)
+```
 
 <!-- Description -->
 

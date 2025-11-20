@@ -10,13 +10,20 @@ and populating Jinja2 variables with YAML data.
 import yaml
 from pathlib import Path
 from jinja2 import Template
-
+import matplotlib as mpl
 import os
+import ee
 
+import gee_redlist
+from gee_redlist import create_country_map
+
+print(f'{gee_redlist.__version__=}')
 
 def path_exists(path):
-    base_dir=os.getcwd()
-    return os.path.exists(base_dir + '/' + path)
+    if path is None:
+        return False
+    base_dir = os.getcwd()
+    return os.path.exists(os.path.join(base_dir, path))
 
 def load_yaml(yaml_path):
     """Load YAML configuration file."""
@@ -30,7 +37,7 @@ def load_template(template_path):
         return f.read()
 
 
-def render_qmd(template_content, data, config_dir):
+def render_qmd(template_content, data):
     """Render template with data using Jinja2."""
     template = Template(template_content)
     return template.render(
@@ -39,38 +46,74 @@ def render_qmd(template_content, data, config_dir):
         base_dir=os.getcwd()
     )
 
+def create_ecosystem_map(country_code, ecosystem_data, output_path):
+    """Create an ecosystem map using the ecosystem image asset ID and pixel value."""
+    # print(f"DEBUG: {data=}")
+
+    ee.Initialize(project='goog-rle-assessments')
+
+    ee_image = (
+        ee.Image(ecosystem_data['ecosystem_image']['asset_id'])
+          .eq(ecosystem_data['ecosystem_image']['pixel_value'])
+          .selfMask()
+    )
+
+    create_country_map(
+        country_code=country_code,
+        output_path=output_path,
+        ee_image=ee_image,
+        clip_ee_image=True,
+        show_border=True,
+        geometry_kwargs={
+            'linewidth': 0.5,
+            'edgecolor': 'grey',
+        },
+        image_cmap=mpl.colors.ListedColormap(['red']),
+    )
 
 def main():
     # Setup paths
-    config_dir = Path('ecosystem_config')
+    ecosystem_config_dir = Path('config/ecosystem_config')
     template_path = Path('content_templates/TEMPLATE_ecosystem_assessment.jinja')
     output_dir = Path('ecosystem_assessments')
+    output_images_dir = Path('images')
 
-    # Load template
+    # Load country-level data
+    country_config_path = Path('config/country_config.yaml')
+    country_data = load_yaml(country_config_path)
+
+    # Load ecosystem assessment template
     template_content = load_template(template_path)
 
     # Process each YAML file
-    yaml_files = list(config_dir.glob('*.yaml'))
+    yaml_files = list(ecosystem_config_dir.glob('*.yaml'))
     print(f"Found {len(yaml_files)} YAML configuration files")
 
     for yaml_file in yaml_files:
         print(f"Processing {yaml_file.name}...")
 
-        # Load YAML data
-        data = load_yaml(yaml_file)
+        # Load YAML data for the current ecosystem
+        ecosystem_data = load_yaml(yaml_file)
 
-        # Use yaml filename base as output filename
-        output_filename = f"{yaml_file.stem}.qmd"
-        output_path = output_dir / output_filename
+        map_path = output_images_dir / f"{yaml_file.stem}_map.png"
+        if not map_path.exists():
+            print(f"Creating ecosystem map: {map_path}")
+            create_ecosystem_map(
+                country_code=country_data['country_code'],
+                ecosystem_data=ecosystem_data,
+                output_path=map_path
+            )
+        else:
+            print(f"Ecosystem map already exists: {map_path}")
 
-        # Render template with data
+        # Render template with data for the current ecosystem
         rendered_content = render_qmd(
-            template_content,
-            data,
-            config_dir
+            template_content=template_content,
+            data=ecosystem_data,
         )
 
         # Write output file
+        output_path = output_dir / f"{yaml_file.stem}.qmd"
         with open(output_path, 'w') as f:
             f.write(rendered_content)
 
