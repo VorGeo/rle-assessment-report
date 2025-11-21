@@ -29,9 +29,6 @@ book:
     - assessments/overview.qmd
     - part: "Ecosystem Assessments"
       chapters:
-        # - assessments/tanintharyi_island_rainforest.qmd
-        # - assessments/tanintharyi_sundaic_lowland_evergreen_forest.qmd
-        # - ecosystem_assessments/SAMPLE.qmd
         - ecosystem_assessments/MMR-T1.1.1/MMR-T1.1.1.qmd
         - ecosystem_assessments/MMR-T1.1.3/MMR-T1.1.3.qmd
     - assessment_outcomes.qmd
