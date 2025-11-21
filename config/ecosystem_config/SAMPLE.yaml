@@ -10,11 +10,11 @@ ecosystem_names_local:
     reference: "@bibtexReference2"
 biome: Tropical and subtropical forests (T1)
 functional_group: T1.1
-global_classification: MMR-T1.1.3
+global_classification: MMR-TSAMPLE
 iucn_status: Endangered
-ecosystem_photo: images/MMR-T1.1.3_photo.png
+ecosystem_photo: images/MMR-TSAMPLE_photo.png
 # ecosystem_photo: null
-ecosystem_map: images/MMR-T1.1.3_map.png
+ecosystem_map: images/MMR-TSAMPLE_map.png
 # ecosystem_map: null
 ecosystem_image:
   asset_id: projects/goog-rle-assessments/assets/mm_ecosys_v7b
