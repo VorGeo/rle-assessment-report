@@ -19,9 +19,9 @@ from gee_redlist import create_country_map
 
 print(f'{gee_redlist.__version__=}')
 
-def path_exists(path):
+def path_exists(*paths):
     base_dir = os.getcwd()
-    return os.path.exists(os.path.join(base_dir, path))
+    return os.path.exists(os.path.join(base_dir, *paths))
 
 def load_yaml(yaml_path):
     """Load YAML configuration file."""
@@ -97,7 +97,11 @@ def main():
         # Load YAML data for the current ecosystem
         ecosystem_data = load_yaml(yaml_file)
 
-        map_path = output_images_dir / f"{yaml_file.stem}_map.png"
+        output_folder = Path(output_dir, ecosystem_data['global_classification'])
+        # Create parent directory if it doesn't exist
+        output_folder.mkdir(parents=True, exist_ok=True)
+
+        map_path = output_folder / f"{yaml_file.stem}_map.png"
         if not map_path.exists():
             print(f"Creating ecosystem map: {map_path}")
             create_ecosystem_map(
@@ -109,7 +113,6 @@ def main():
             print(f"Ecosystem map already exists: {map_path}")
 
         print("Rendering template...")
-        # Render template with data for the current ecosystem
         rendered_content = render_qmd(
             template_content=template_content,
             ecosystem_data=ecosystem_data,
@@ -118,11 +121,14 @@ def main():
 
         # Write output file
         print("Writing output file...")
-        output_path = output_dir / f"{yaml_file.stem}.qmd"
-        with open(output_path, 'w') as f:
+        file_path = Path(
+            output_folder,
+            f"{yaml_file.stem}.qmd"
+        )
+        with open(file_path, 'w') as f:
             f.write(rendered_content)
 
-        print(f"  Created {output_path}")
+        print(f"  Created {file_path}")
 
     print("\nDone!")
 

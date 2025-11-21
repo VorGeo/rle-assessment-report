@@ -4,17 +4,17 @@ authors:
   - "N.J. Murray"
   - "R. Tizard"
   - "D.A. Keith"
-# ecosystem_names_local:
-#   - name: "Ecosystem Name 1"
-#     reference: "@bibtexReference1"
-#   - name: "Ecosystem Name 2"
-#     reference: "@bibtexReference2"
+ecosystem_names_local:
+  - name: "Ecosystem Name 1"
+    reference: "@bibtexReference1"
+  - name: "Ecosystem Name 2"
+    reference: "@bibtexReference2"
 biome: Tropical and subtropical forests (T1)
 functional_group: T1.1
 global_classification: MMR-T1.1.1
 iucn_status: Vulnerable (Least Concern – Vulnerable)
-ecosystem_photo: images/MMR-T1.1.1_photo.png
-ecosystem_map: images/MMR-T1.1.1_map.png
+ecosystem_photo: MMR-T1.1.1_photo.png
+ecosystem_map: MMR-T1.1.1_map.png
 ecosystem_image:
   asset_id: projects/goog-rle-assessments/assets/mm_ecosys_v7b
   pixel_value: 52
@@ -130,7 +130,7 @@ criterion_d_description: >
   primary forest cover in this ecosystem will not decline sufficiently to meet
   any category thresholds over a 50 year period (1984-2034). The ecosystem is
   assessed as Least Concern under Criterion D2b. **Least Concern.** <img
-  src="../images/MMR-T1.1.1_crit_D_chart.png" alt="Chart of Criterion D"
-  height="400"/>
+  src="MMR-T1.1.1_crit_D_chart.png" alt="Chart of Criterion D" height="400"/>
+
 criterion_e_description: >
   No models were used to assess Criterion E. **Not Evaluated.**

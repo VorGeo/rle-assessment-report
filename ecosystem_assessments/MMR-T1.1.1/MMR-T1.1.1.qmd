@@ -4,13 +4,17 @@ from IPython.display import Markdown, display
 
 country_name = 'Myanmar'
 ecosystem_name = 'Tanintharyi island rainforest'
-ecosystem_names_local = [{'name': 'PLACEHOLDER', 'reference': '@placeholder_reference'}]
+ecosystem_names_local = [{'name': 'Ecosystem Name 1', 'reference': '@bibtexReference1'}, {'name': 'Ecosystem Name 2', 'reference': '@bibtexReference2'}]
 authors = ['N.J. Murray', 'R. Tizard', 'D.A. Keith']
 biome = 'Tropical and subtropical forests (T1)'
 functional_group = 'T1.1'
 global_classification = 'MMR-T1.1.1'
-ecosystem_photo = 'images/MMR-T1.1.1_photo.png'
-ecosystem_map = 'images/MMR-T1.1.1_map.png'
+ecosystem_photo = 'MMR-T1.1.1_photo.png'
+ecosystem_map = 'MMR-T1.1.1_map.png'
+ecosystem_image = {
+    'asset_id': 'projects/goog-rle-assessments/assets/mm_ecosys_v7b',
+    'pixel_value': '52'
+}
 iucn_status = 'Vulnerable (Least Concern – Vulnerable)'
 ```
 
@@ -34,19 +38,9 @@ ecosystem_name_str = ", ".join([
 ```
 
 [`{python} country_name` ecosystem names:]{.parameter .ecosystem-description-list}
-
-::: {.callout-note}
-The ecosystem assessment configuration file does not specify the **local ecosystem names**.
-Please add this information to the YAML configuration file, using the following format:
-```yaml
-ecosystem_names_local:
-  - name: "Ecosystem Name 1"
-    reference: "@bibtexReference1"
-  - name: "Ecosystem Name 2"
-    reference: "@bibtexReference2"
-```
-:::
-
+`{python} ecosystem_name_str`
+     
+ 
 
 <!-- Biome -->
 
@@ -71,14 +65,15 @@ Vulnerable (Least Concern – Vulnerable)
 <!-- Ecosystem Photo -->
 [Ecosystem Photo]{.parameter .ecosystem-description-list}
 
-
+    
 ```{python}
 #| echo: false
-Markdown(f'<img src="../{ecosystem_photo}" alt="Photo of the ecosystem {ecosystem_name}" height="400"/>')
+Markdown(f'<img src="{ecosystem_photo}" alt="Photo of the ecosystem {ecosystem_name}" height="400"/>')
 ```
- 
+     
 
-  
+    
+
   
 
 <!-- Ecosystem Map -->
@@ -87,7 +82,7 @@ Markdown(f'<img src="../{ecosystem_photo}" alt="Photo of the ecosystem {ecosyste
 
 ```{python}
 #| echo: false
-Markdown(f'<img src="../{ecosystem_map}" alt="Map of the ecosystem {ecosystem_name}" height="400"/>')
+Markdown(f'<img src="../{global_classification}/{ecosystem_map}" alt="Map of the ecosystem {ecosystem_name}" height="400"/>')
 ```
  
 
@@ -269,6 +264,31 @@ No time-series map data was available for assessing reduction in distribution of
 AOO and EOO were measured as 206 10 x 10 km grid cells and 50,337 km2, respectively. There is no evidence that suggests this ecosystem should meet the criteria to be listed as Near Threatened. The ecosystem is assessed as Least Concern under Criterion B1 and B2. **Least Concern.**
 
 
+[TEST]{.parameter .ecosystem-description-list}
+
+```{python}
+#| echo: true
+import ee
+from gee_redlist.ee_rle import make_eoo, area_km2
+
+ee.Initialize(project='goog-rle-assessments')
+
+print(f'ecosystem_image: {ecosystem_image}')
+
+asset_id = ecosystem_image['asset_id']
+pixel_value = int(ecosystem_image['pixel_value'])
+
+ee_image = (
+    ee.Image(ecosystem_image['asset_id'])
+      .eq(pixel_value)
+      .selfMask()
+)
+print(f'ee_image: {ee_image.getInfo()}')
+
+eoo_polygon = make_eoo(ee_image)
+print(f'EOO area: {area_km2(eoo_polygon).getInfo()} km²')
+```
+
 <!-- Criterion C -->
 
 [Criterion C]{.parameter .ecosystem-description-list}
@@ -278,8 +298,7 @@ An environmental suitability model (Ferrer-Paris et al. 2019; see methods) sugge
 <!-- Criterion D -->
 
 [Criterion D]{.parameter .ecosystem-description-list}
-Analyses of a dataset that depicts the distribution of primary forests in South-East Asia [@potapov2019annual] suggest that 74.9% of the remaining extent of this ecosystem is primary forest. If 100% of the ecosystem is assumed to be primary forest in 1750, we estimate a 25.1% loss in primary forest extent since 1750. Here we assume that loss of primary forest extent has a relative severity of >90%, and the ecosystem is assessed as Least Concern under Criterion D3. Analyses of the full time-series of primary forest data (n = 18) suggests an 8.1% reduction of primary forest in this ecosystem over the period 2000-2017. A linear model fit to this dataset suggests that primary forest cover in this ecosystem will not decline sufficiently to meet any category thresholds over a 50 year period (1984-2034). The ecosystem is assessed as Least Concern under Criterion D2b. **Least Concern.** 
-<img src="../images/MMR-T1.1.1_crit_D_chart.png" alt="Chart of Criterion D" height="400"/>
+Analyses of a dataset that depicts the distribution of primary forests in South-East Asia (Potapov et al. 2019) suggest that 74.9% of the remaining extent of this ecosystem is primary forest. If 100% of the ecosystem is assumed to be primary forest in 1750, we estimate a 25.1% loss in primary forest extent since 1750. Here we assume that loss of primary forest extent has a relative severity of >90%, and the ecosystem is assessed as Least Concern under Criterion D3. Analyses of the full time-series of primary forest data (n = 18) suggests an 8.1% reduction of primary forest in this ecosystem over the period 2000-2017. A linear model fit to this dataset suggests that primary forest cover in this ecosystem will not decline sufficiently to meet any category thresholds over a 50 year period (1984-2034). The ecosystem is assessed as Least Concern under Criterion D2b. **Least Concern.** <img src="MMR-T1.1.1_crit_D_chart.png" alt="Chart of Criterion D" height="400"/>
 
 
 <!-- Criterion E -->

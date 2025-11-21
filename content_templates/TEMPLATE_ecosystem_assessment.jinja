@@ -53,6 +53,9 @@ authors:
 
 <!-- Local ecosystem names -->
 
+{%- if ecosystem_names_local != None %}
+    {%- if params.ecosystem_names_local is defined %}
+
 ```{python}
 #| echo: false
 ecosystem_name_str = ", ".join([
@@ -62,10 +65,8 @@ ecosystem_name_str = ", ".join([
 ```
 
 [`{python} country_name` ecosystem names:]{.parameter .ecosystem-description-list}
-{%- if params.ecosystem_names_local %}
 `{python} ecosystem_name_str`
-{%- else %}
-
+    {% else %}
 ::: {.callout-note}
 The ecosystem assessment configuration file does not specify the **local ecosystem names**.
 Please add this information to the YAML configuration file, using the following format:
@@ -77,7 +78,8 @@ ecosystem_names_local:
     reference: "@bibtexReference2"
 ```
 :::
-{% endif %}
+    {% endif %} {# if params.ecosystem_names_local is defined #}
+{% endif %} {# if ecosystem_names_local != None #}
 
 <!-- Biome -->
 
@@ -150,19 +152,19 @@ iucn_status: Endangered
 
   {%- if params.ecosystem_photo is defined %}
 
-    {% if path_exists(params.ecosystem_photo) %}
+    {% if path_exists('ecosystem_assessments', params.global_classification, params.ecosystem_photo) %}
 ```{python}
 #| echo: false
-Markdown(f'<img src="../{ecosystem_photo}" alt="Photo of the ecosystem {ecosystem_name}" height="400"/>')
+Markdown(f'<img src="{ecosystem_photo}" alt="Photo of the ecosystem {ecosystem_name}" height="400"/>')
 ```
-    {% else %}  {# if path_exists(params.ecosystem_photo) #}
+    {% else %}  {# if path_exists() #}
 ::: {.callout-important title="Unable to find ecosystem photo image"}
 ```{python}
 #| echo: false
-Markdown(f'Unable to find ecosystem photo image named: **{ecosystem_photo}**')
+Markdown(f'Unable to find ecosystem photo image named: **ecosystem_assessments/{global_classification}/{ecosystem_photo}**')
 ```
 :::
-    {% endif %} {# if path_exists(params.ecosystem_photo) #}
+    {% endif %} {# if path_exists() #}
 
   {% else %}  {# if params.ecosystem_photo is defined #}
 
@@ -170,12 +172,7 @@ Markdown(f'Unable to find ecosystem photo image named: **{ecosystem_photo}**')
 The ecosystem assessment configuration file does not specify the **ecosystem photo**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
-ecosystem_photo: images/MMR-X#.#.#_photo.png
-```
-
-To suppress this warning, set the `show_ecosystem_map` parameter to `false` in the YAML configuration file:
-```yaml
-ecosystem_photo: null
+ecosystem_photo: {params.global_classification}/{params.ecosystem_photo}
 ```
 :::
 
@@ -191,19 +188,19 @@ ecosystem_photo: null
 [Ecosystem Map]{.parameter .ecosystem-description-list}
 {%- if params.ecosystem_map is defined %}
 
-{% if path_exists(params.ecosystem_map) %}
+{% if path_exists('ecosystem_assessments', params.global_classification, params.ecosystem_map) %}
 ```{python}
 #| echo: false
-Markdown(f'<img src="../{ecosystem_map}" alt="Map of the ecosystem {ecosystem_name}" height="400"/>')
+Markdown(f'<img src="../{global_classification}/{ecosystem_map}" alt="Map of the ecosystem {ecosystem_name}" height="400"/>')
 ```
-{% else %}  {# if path_exists(params.ecosystem_photo) #}
+{% else %}  {# if path_exists() #}
 ::: {.callout-important title="Unable to find ecosystem map image"}
 ```{python}
 #| echo: false
-Markdown(f'Unable to find ecosystem map image named: **{ecosystem_map}**')
+Markdown(f'Unable to find ecosystem map image named: **ecosystem_assessments/{global_classification}/{ecosystem_map}**')
 ```
 :::
-{% endif %} {# if path_exists(params.ecosystem_map) #}
+{% endif %} {# if path_exists() #}
 
 {% else %}  {# if params.ecosystem_map is defined #}
 
@@ -211,7 +208,7 @@ Markdown(f'Unable to find ecosystem map image named: **{ecosystem_map}**')
 The ecosystem assessment configuration file does not specify the **ecosystem map**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
-ecosystem_map: images/MMR-X#.#.#_map.png
+ecosystem_map: {params.global_classification}/{params.ecosystem_map}
 ```
 
 To suppress this warning, set the `show_ecosystem_map` parameter to `false` in the YAML configuration file:
@@ -222,15 +219,6 @@ ecosystem_map: null
 
 {% endif %}  {# if params.ecosystem_map is defined #}
 {% endif %}  {# if params.ecosystem_map != None #}
-
-[TEST]{.parameter .ecosystem-description-list}
-
-```{python}
-#| echo: true
-import ee
-
-print(ecosystem_image)
-```
 
 <!-- Description -->
 
@@ -608,6 +596,31 @@ criterion_b_description: >
 ```
 :::
 {% endif %}
+
+[TEST]{.parameter .ecosystem-description-list}
+
+```{python}
+#| echo: true
+import ee
+from gee_redlist.ee_rle import make_eoo, area_km2
+
+ee.Initialize(project='goog-rle-assessments')
+
+print(f'ecosystem_image: {ecosystem_image}')
+
+asset_id = ecosystem_image['asset_id']
+pixel_value = int(ecosystem_image['pixel_value'])
+
+ee_image = (
+    ee.Image(ecosystem_image['asset_id'])
+      .eq(pixel_value)
+      .selfMask()
+)
+print(f'ee_image: {ee_image.getInfo()}')
+
+eoo_polygon = make_eoo(ee_image)
+print(f'EOO area: {area_km2(eoo_polygon).getInfo()} km²')
+```
 
 <!-- Criterion C -->
 

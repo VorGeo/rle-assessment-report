@@ -9,8 +9,12 @@ authors = ['N.J. Murray', 'R. Tizard', 'D.A. Keith']
 biome = 'Tropical and subtropical forests (T1)'
 functional_group = 'T1.1'
 global_classification = 'MMR-T1.1.3'
-ecosystem_photo = 'ECOSYSTEM_PHOTO_PLACEHOLDER'
-ecosystem_map = 'ECOSYSTEM_MAP_PLACEHOLDER'
+ecosystem_photo = 'None'
+ecosystem_map = 'MMR-T1.1.3_map.png'
+ecosystem_image = {
+    'asset_id': 'projects/goog-rle-assessments/assets/mm_ecosys_v7b',
+    'pixel_value': '53'
+}
 iucn_status = 'Endangered'
 ```
 
@@ -35,6 +39,8 @@ ecosystem_name_str = ", ".join([
 
 [`{python} country_name` ecosystem names:]{.parameter .ecosystem-description-list}
 `{python} ecosystem_name_str`
+     
+ 
 
 <!-- Biome -->
 
@@ -56,40 +62,19 @@ MMR-T1.1.3
 [IUCN Status:]{.parameter .ecosystem-description-list}
 Endangered
 
-<!-- Ecosystem Photo -->
-[Ecosystem Photo]{.parameter .ecosystem-description-list}  
+<!-- Ecosystem Photo -->  
 
-::: {.callout-warning}
-The ecosystem assessment configuration file does not specify the **ecosystem photo**.
-Please add this information to the YAML configuration file, using the following format:
-```yaml
-ecosystem_photo: images/MMR-X#.#.#_photo.png
-```
-
-To suppress this warning, set the `show_ecosystem_map` parameter to `false` in the YAML configuration file:
-```yaml
-ecosystem_photo: null
-```
-:::
-
-  
   
 
 <!-- Ecosystem Map -->
-[Ecosystem Map]{.parameter .ecosystem-description-list}  
+[Ecosystem Map]{.parameter .ecosystem-description-list}
 
-::: {.callout-warning}
-The ecosystem assessment configuration file does not specify the **ecosystem map**.
-Please add this information to the YAML configuration file, using the following format:
-```yaml
-ecosystem_map: images/MMR-X#.#.#_map.png
-```
 
-To suppress this warning, set the `show_ecosystem_map` parameter to `false` in the YAML configuration file:
-```yaml
-ecosystem_map: null
+```{python}
+#| echo: false
+Markdown(f'<img src="../{global_classification}/{ecosystem_map}" alt="Map of the ecosystem {ecosystem_name}" height="400"/>')
 ```
-:::
+ 
 
   
   
@@ -269,6 +254,31 @@ No time-series map data was available for assessing reduction in distribution of
 [Criterion B]{.parameter .ecosystem-description-list}
 This ecosystem is highly restricted in limestone landscapes and has an AOO of 56 10 x 10 km grid cells and an EOO of 3,796 km2 There is evidence that limestone quarrying and other threats are leading to continuing decline, meeting subcriteria a(i) and a(iii). The ecosystem is assessed as **Endangered**.
 
+
+[TEST]{.parameter .ecosystem-description-list}
+
+```{python}
+#| echo: true
+import ee
+from gee_redlist.ee_rle import make_eoo, area_km2
+
+ee.Initialize(project='goog-rle-assessments')
+
+print(f'ecosystem_image: {ecosystem_image}')
+
+asset_id = ecosystem_image['asset_id']
+pixel_value = int(ecosystem_image['pixel_value'])
+
+ee_image = (
+    ee.Image(ecosystem_image['asset_id'])
+      .eq(pixel_value)
+      .selfMask()
+)
+print(f'ee_image: {ee_image.getInfo()}')
+
+eoo_polygon = make_eoo(ee_image)
+print(f'EOO area: {area_km2(eoo_polygon).getInfo()} km²')
+```
 
 <!-- Criterion C -->
 
