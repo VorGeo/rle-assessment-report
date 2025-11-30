@@ -79,11 +79,13 @@ Markdown(f'<img src="{ecosystem_photo}" alt="Photo of the ecosystem {ecosystem_n
 <!-- Ecosystem Map -->
 [Ecosystem Map]{.parameter .ecosystem-description-list}
 
-
+  
+::: {.callout-important title="Unable to find ecosystem map image"}
 ```{python}
 #| echo: false
-Markdown(f'<img src="../{global_classification}/{ecosystem_map}" alt="Map of the ecosystem {ecosystem_name}" height="400"/>')
+Markdown(f'Unable to find ecosystem map image named: **ecosystem_assessments/{global_classification}/{ecosystem_map}**')
 ```
+:::
  
 
   
@@ -270,8 +272,15 @@ AOO and EOO were measured as 206 10 x 10 km grid cells and 50,337 km2, respectiv
 #| echo: true
 import ee
 from gee_redlist.ee_rle import make_eoo, area_km2
+from google.auth import default
 
-ee.Initialize(project='goog-rle-assessments')
+# Use Application Default Credentials (ADC) from GOOGLE_APPLICATION_CREDENTIALS
+# This works both locally (after gcloud auth) and in CI/CD (with Workload Identity)
+credentials, _ = default(scopes=[
+    'https://www.googleapis.com/auth/earthengine',
+    'https://www.googleapis.com/auth/cloud-platform'
+])
+ee.Initialize(credentials=credentials, project='goog-rle-assessments')
 
 print(f'ecosystem_image: {ecosystem_image}')
 
