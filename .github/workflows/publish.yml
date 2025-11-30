@@ -32,9 +32,6 @@ jobs:
           workload_identity_provider: ${{ secrets.WIF_PROVIDER }}
           service_account: ${{ secrets.WIF_SERVICE_ACCOUNT }}
 
-      - name: Authenticate Earth Engine
-        run: pixi run earthengine authenticate --auth_mode=gcloud
-
       - name: Render Quarto Project
         run: |
           pixi run quarto render || {
