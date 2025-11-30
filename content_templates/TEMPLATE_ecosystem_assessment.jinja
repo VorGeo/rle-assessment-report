@@ -603,8 +603,15 @@ criterion_b_description: >
 #| echo: true
 import ee
 from gee_redlist.ee_rle import make_eoo, area_km2
+from google.auth import default
 
-ee.Initialize(project='goog-rle-assessments')
+# Use Application Default Credentials (ADC) from GOOGLE_APPLICATION_CREDENTIALS
+# This works both locally (after gcloud auth) and in CI/CD (with Workload Identity)
+credentials, _ = default(scopes=[
+    'https://www.googleapis.com/auth/earthengine',
+    'https://www.googleapis.com/auth/cloud-platform'
+])
+ee.Initialize(credentials=credentials, project='goog-rle-assessments')
 
 print(f'ecosystem_image: {ecosystem_image}')
 

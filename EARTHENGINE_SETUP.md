@@ -117,10 +117,31 @@ Once configured, the authentication flow is automatic:
 
 1. The `google-github-actions/auth@v2` action authenticates with GCP using Workload Identity Federation
 2. It sets the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to point to temporary service account credentials
-3. When your Python code calls `ee.Initialize(project='goog-rle-assessments')`, the Earth Engine library automatically detects and uses these Application Default Credentials (ADC)
-4. **No separate `earthengine authenticate` command is needed** - the credentials are already available
+3. When your Python code calls `google.auth.default()`, it loads these Application Default Credentials (ADC)
+4. The credentials are then passed to `ee.Initialize(credentials=credentials, project='goog-rle-assessments')`
+5. **No separate `earthengine authenticate` command is needed** - the credentials are already available
 
-This is why the workflow does NOT include an explicit "Authenticate Earth Engine" step. The Earth Engine Python library automatically uses the credentials set up by the GCP auth action.
+This is why the workflow does NOT include an explicit "Authenticate Earth Engine" step. The Earth Engine Python library uses the credentials set up by the GCP auth action through `google.auth.default()`.
+
+### Python Code Pattern
+
+The code uses this pattern to initialize Earth Engine with ADC:
+
+```python
+import ee
+from google.auth import default
+
+# Load Application Default Credentials
+credentials, _ = default(scopes=[
+    'https://www.googleapis.com/auth/earthengine',
+    'https://www.googleapis.com/auth/cloud-platform'
+])
+
+# Initialize Earth Engine with the credentials
+ee.Initialize(credentials=credentials, project='goog-rle-assessments')
+```
+
+This works both locally (after running `gcloud auth application-default login`) and in CI/CD (with Workload Identity Federation).
 
 ## Verification
 
