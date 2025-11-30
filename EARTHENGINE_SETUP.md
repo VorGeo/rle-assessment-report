@@ -111,15 +111,25 @@ Add the following secrets to your GitHub repository (Settings → Secrets and va
    - Value: The service account email
    - Example: `github-actions-ee@goog-rle-assessments.iam.gserviceaccount.com`
 
+## How It Works
+
+Once configured, the authentication flow is automatic:
+
+1. The `google-github-actions/auth@v2` action authenticates with GCP using Workload Identity Federation
+2. It sets the `GOOGLE_APPLICATION_CREDENTIALS` environment variable to point to temporary service account credentials
+3. When your Python code calls `ee.Initialize(project='goog-rle-assessments')`, the Earth Engine library automatically detects and uses these Application Default Credentials (ADC)
+4. **No separate `earthengine authenticate` command is needed** - the credentials are already available
+
+This is why the workflow does NOT include an explicit "Authenticate Earth Engine" step. The Earth Engine Python library automatically uses the credentials set up by the GCP auth action.
+
 ## Verification
 
 To verify the setup works:
 
 1. Push a commit to the `main` branch or trigger the workflow manually
 2. Check the GitHub Actions run log
-3. The "Authenticate to Google Cloud" step should succeed
-4. The "Authenticate Earth Engine" step should succeed
-5. The "Render Quarto Project" step should be able to access Earth Engine
+3. The "Authenticate to Google Cloud" step should succeed and show credential file creation
+4. The "Render Quarto Project" step should be able to access Earth Engine without additional authentication
 
 ## Troubleshooting
 
@@ -135,11 +145,13 @@ To verify the setup works:
 - Check that the IAM policy binding was created correctly
 - Ensure the service account is enabled
 
-### "Authentication failed" for Earth Engine
+### "Authentication failed" or permission errors when accessing Earth Engine
 
-- Verify that `earthengine` CLI is available in the Pixi environment
-- Check that the Google Cloud authentication completed successfully
-- Ensure the service account has access to the Earth Engine project
+- Check that the Google Cloud authentication step completed successfully
+- Verify the service account has the necessary Earth Engine roles (e.g., `roles/earthengine.viewer`)
+- Ensure the service account has been registered with Earth Engine (may require admin approval)
+- Check that `GOOGLE_APPLICATION_CREDENTIALS` environment variable is set in the workflow logs
+- Verify the `ee.Initialize(project='goog-rle-assessments')` call uses the correct project ID
 
 ## Security Considerations
 
