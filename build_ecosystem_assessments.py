@@ -13,6 +13,7 @@ from jinja2 import Template
 import matplotlib as mpl
 import os
 import ee
+from google.auth import default
 
 import gee_redlist
 from gee_redlist import create_country_map
@@ -52,7 +53,13 @@ def create_ecosystem_map(country_code, ecosystem_data, output_path):
     """Create an ecosystem map using the ecosystem image asset ID and pixel value."""
     # print(f"DEBUG: {data=}")
 
-    ee.Initialize(project='goog-rle-assessments')
+    # Use Application Default Credentials (ADC) from GOOGLE_APPLICATION_CREDENTIALS
+    # This works both locally (after gcloud auth) and in CI/CD (with Workload Identity)
+    credentials, _ = default(scopes=[
+        'https://www.googleapis.com/auth/earthengine',
+        'https://www.googleapis.com/auth/cloud-platform'
+    ])
+    ee.Initialize(credentials=credentials, project='goog-rle-assessments')
 
     ee_image = (
         ee.Image(ecosystem_data['ecosystem_image']['asset_id'])
