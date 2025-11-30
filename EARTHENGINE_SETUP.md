@@ -37,6 +37,11 @@ gcloud iam service-accounts create github-actions-ee \
 # Get the service account email
 export SA_EMAIL="github-actions-ee@${PROJECT_ID}.iam.gserviceaccount.com"
 
+# Grant Service Usage Consumer role (required to use the project's services)
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:${SA_EMAIL}" \
+  --role="roles/serviceusage.serviceUsageConsumer"
+
 # Grant Earth Engine API access
 # Note: You may need to grant specific Earth Engine roles or permissions
 # depending on your organization's setup
@@ -163,8 +168,10 @@ To verify the setup works:
 ### "Permission denied" errors
 
 - Verify the service account has the necessary Earth Engine roles
+- **Check for `roles/serviceusage.serviceUsageConsumer`** - this role is required to use the project's services
 - Check that the IAM policy binding was created correctly
 - Ensure the service account is enabled
+- Wait a few minutes for IAM permission propagation
 
 ### "Authentication failed" or permission errors when accessing Earth Engine
 
