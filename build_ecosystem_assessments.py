@@ -111,11 +111,15 @@ def main():
         map_path = output_folder / f"{yaml_file.stem}_map.png"
         if not map_path.exists():
             print(f"Creating ecosystem map: {map_path}")
-            create_ecosystem_map(
-                country_code=country_data['country_code'],
-                ecosystem_data=ecosystem_data,
-                output_path=map_path
-            )
+            try:
+                create_ecosystem_map(
+                    country_code=country_data['country_code'],
+                    ecosystem_data=ecosystem_data,
+                    output_path=map_path
+                )
+            except Exception as e:
+                print(f"Warning: Failed to create ecosystem map: {e}")
+                print("Continuing with template rendering...")
         else:
             print(f"Ecosystem map already exists: {map_path}")
 
