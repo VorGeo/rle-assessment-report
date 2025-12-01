@@ -4,7 +4,7 @@ from IPython.display import Markdown, display
 
 country_name = 'Myanmar'
 ecosystem_name = 'Tanintharyi island rainforest'
-ecosystem_names_local = [{'name': 'Ecosystem Name 1', 'reference': '@bibtexReference1'}, {'name': 'Ecosystem Name 2', 'reference': '@bibtexReference2'}]
+ecosystem_names_local = [{'name': 'Tropical rainforest', 'reference': '@kress2003checklist'}, {'name': 'Lowland evergreen rainforest', 'reference': '@connette2016mapping'}]
 authors = ['N.J. Murray', 'R. Tizard', 'D.A. Keith']
 biome = 'Tropical and subtropical forests (T1)'
 functional_group = 'T1.1'
@@ -79,13 +79,11 @@ Markdown(f'<img src="{ecosystem_photo}" alt="Photo of the ecosystem {ecosystem_n
 <!-- Ecosystem Map -->
 [Ecosystem Map]{.parameter .ecosystem-description-list}
 
-  
-::: {.callout-important title="Unable to find ecosystem map image"}
+
 ```{python}
 #| echo: false
-Markdown(f'Unable to find ecosystem map image named: **ecosystem_assessments/{global_classification}/{ecosystem_map}**')
+Markdown(f'<img src="../{global_classification}/{ecosystem_map}" alt="Map of the ecosystem {ecosystem_name}" height="400"/>')
 ```
-:::
  
 
   

@@ -69,13 +69,11 @@ Endangered
 <!-- Ecosystem Map -->
 [Ecosystem Map]{.parameter .ecosystem-description-list}
 
-  
-::: {.callout-important title="Unable to find ecosystem map image"}
+
 ```{python}
 #| echo: false
-Markdown(f'Unable to find ecosystem map image named: **ecosystem_assessments/{global_classification}/{ecosystem_map}**')
+Markdown(f'<img src="../{global_classification}/{ecosystem_map}" alt="Map of the ecosystem {ecosystem_name}" height="400"/>')
 ```
-:::
  
 
   
