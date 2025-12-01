@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -292,7 +312,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- Authors -->
 <p><span class="parameter ecosystem-description-list">Authors:</span> N.J. Murray, R. Tizard, D.A. Keith</p>
 <!-- Local ecosystem names -->
-<p><span class="parameter ecosystem-description-list">Myanmar ecosystem names:</span> Ecosystem Name 1 [<span class="citation" data-cites="bibtexReference1">(<a href="../../references.html#ref-bibtexReference1" role="doc-biblioref"><strong>bibtexReference1?</strong></a>)</span>], Ecosystem Name 2 [<span class="citation" data-cites="bibtexReference2">(<a href="../../references.html#ref-bibtexReference2" role="doc-biblioref"><strong>bibtexReference2?</strong></a>)</span>]</p>
+<p><span class="parameter ecosystem-description-list">Myanmar ecosystem names:</span> Tropical rainforest [<span class="citation" data-cites="kress2003checklist">Kress et al. (<a href="../../references.html#ref-kress2003checklist" role="doc-biblioref">2003</a>)</span>], Lowland evergreen rainforest [<span class="citation" data-cites="connette2016mapping">Connette et al. (<a href="../../references.html#ref-connette2016mapping" role="doc-biblioref">2016</a>)</span>]</p>
 <!-- Biome -->
 <p><span class="parameter ecosystem-description-list">Biome:</span> Tropical and subtropical forests (T1)</p>
 <!-- Functional Group -->
@@ -303,28 +323,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><span class="parameter ecosystem-description-list">IUCN Status:</span> Vulnerable (Least Concern – Vulnerable)</p>
 <!-- Ecosystem Photo -->
 <p><span class="parameter ecosystem-description-list">Ecosystem Photo</span></p>
-<div id="3de3a218" class="cell" data-execution_count="3">
+<div id="7fee7fcc" class="cell" data-execution_count="3">
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="3">
 <p><img src="MMR-T1.1.1_photo.png" alt="Photo of the ecosystem Tanintharyi island rainforest" height="400"></p>
 </div>
 </div>
 <!-- Ecosystem Map -->
 <p><span class="parameter ecosystem-description-list">Ecosystem Map</span></p>
-<div class="callout callout-style-default callout-important callout-titled" title="Unable to find ecosystem map image">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Important</span>Unable to find ecosystem map image
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<div id="964afb8b" class="cell" data-execution_count="4">
+<div id="f943aea7" class="cell" data-execution_count="4">
 <div class="cell-output cell-output-display cell-output-markdown" data-execution_count="4">
-<p>Unable to find ecosystem map image named: <strong>ecosystem_assessments/MMR-T1.1.1/MMR-T1.1.1_map.png</strong></p>
-</div>
-</div>
+<p><img src="../MMR-T1.1.1/MMR-T1.1.1_map.png" alt="Map of the ecosystem Tanintharyi island rainforest" height="400"></p>
 </div>
 </div>
 <!-- Description -->
@@ -526,7 +534,7 @@ NE
 <!-- Criterion B -->
 <p><span class="parameter ecosystem-description-list">Criterion B</span> AOO and EOO were measured as 206 10 x 10 km grid cells and 50,337 km2, respectively. There is no evidence that suggests this ecosystem should meet the criteria to be listed as Near Threatened. The ecosystem is assessed as Least Concern under Criterion B1 and B2. <strong>Least Concern.</strong></p>
 <p><span class="parameter ecosystem-description-list">TEST</span></p>
-<div id="f5f73cb7" class="cell" data-execution_count="5">
+<div id="dd43f4ea" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> ee</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> gee_redlist.ee_rle <span class="im">import</span> make_eoo, area_km2</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> google.auth <span class="im">import</span> default</span>
@@ -567,6 +575,14 @@ EOO area: 19278.179506419267 km²</code></pre>
 <p><span class="parameter ecosystem-description-list">Criterion E</span> No models were used to assess Criterion E. <strong>Not Evaluated.</strong></p>
 
 
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-connette2016mapping" class="csl-entry" role="listitem">
+Connette, Grant, Patrick Oswald, Melissa Songer, and Peter Leimgruber. 2016. <span>“Mapping Distinct Forest Types Improves Overall Forest Identification Based on Multi-Spectral Landsat Imagery for Myanmar’s Tanintharyi Region.”</span> <em>Remote Sensing</em> 8 (11): 882.
+</div>
+<div id="ref-kress2003checklist" class="csl-entry" role="listitem">
+Kress, W John, Robert A DeFilipps, Ellen Farr, and Daw Yin Yin Kyi. 2003. <span>“A Checklist of the Trees, Shrubs, Herbs, and Climbers of Myanmar.”</span> <em>Contributions from the United States National Herbarium</em> 45 (1): 590.
+</div>
+</div>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
