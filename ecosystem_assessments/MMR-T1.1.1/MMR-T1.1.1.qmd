@@ -264,38 +264,6 @@ No time-series map data was available for assessing reduction in distribution of
 AOO and EOO were measured as 206 10 x 10 km grid cells and 50,337 km2, respectively. There is no evidence that suggests this ecosystem should meet the criteria to be listed as Near Threatened. The ecosystem is assessed as Least Concern under Criterion B1 and B2. **Least Concern.**
 
 
-[TEST]{.parameter .ecosystem-description-list}
-
-```{python}
-#| echo: true
-import ee
-from gee_redlist.ee_rle import make_eoo, area_km2
-from google.auth import default
-
-# Use Application Default Credentials (ADC) from GOOGLE_APPLICATION_CREDENTIALS
-# This works both locally (after gcloud auth) and in CI/CD (with Workload Identity)
-credentials, _ = default(scopes=[
-    'https://www.googleapis.com/auth/earthengine',
-    'https://www.googleapis.com/auth/cloud-platform'
-])
-ee.Initialize(credentials=credentials, project='goog-rle-assessments')
-
-print(f'ecosystem_image: {ecosystem_image}')
-
-asset_id = ecosystem_image['asset_id']
-pixel_value = int(ecosystem_image['pixel_value'])
-
-ee_image = (
-    ee.Image(ecosystem_image['asset_id'])
-      .eq(pixel_value)
-      .selfMask()
-)
-print(f'ee_image: {ee_image.getInfo()}')
-
-eoo_polygon = make_eoo(ee_image)
-print(f'EOO area: {area_km2(eoo_polygon).getInfo()} km²')
-```
-
 <!-- Criterion C -->
 
 [Criterion C]{.parameter .ecosystem-description-list}
