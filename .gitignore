@@ -217,3 +217,6 @@ _book/*
 
 **/*.quarto_ipynb
 .DS_Store
+
+# Ignore the sample ecosystem
+ecosystem_assessments/MMR-TSAMPLE/SAMPLE_map.png
