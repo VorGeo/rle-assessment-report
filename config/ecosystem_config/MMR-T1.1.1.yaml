@@ -5,10 +5,10 @@ authors:
   - "R. Tizard"
   - "D.A. Keith"
 ecosystem_names_local:
-  - name: "Ecosystem Name 1"
-    reference: "@bibtexReference1"
-  - name: "Ecosystem Name 2"
-    reference: "@bibtexReference2"
+  - name: Tropical rainforest
+    reference: "@kress2003checklist"
+  - name: Lowland evergreen rainforest
+    reference: "@connette2016mapping"
 biome: Tropical and subtropical forests (T1)
 functional_group: T1.1
 global_classification: MMR-T1.1.1
