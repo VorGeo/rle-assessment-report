@@ -31,10 +31,10 @@ iucn_status = 'Vulnerable (Least Concern – Vulnerable)'
 
 ```{python}
 #| echo: false
-ecosystem_name_str = ", ".join([
+ecosystem_name_str = Markdown(", ".join([
     f"{ecosystem_name['name']} [{ecosystem_name['reference']}]"
     for ecosystem_name in ecosystem_names_local
-])
+]))
 ```
 
 [`{python} country_name` ecosystem names:]{.parameter .ecosystem-description-list}

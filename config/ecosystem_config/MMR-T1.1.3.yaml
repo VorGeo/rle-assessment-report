@@ -9,7 +9,7 @@ ecosystem_names_local:
   - name: Lowland evergreen rainforest
     reference: "@connette2016mapping"
   - name: Forest on Limestone
-    reference: Whitten et al., 1997
+    reference: Whitten et al., 1997 # Not in reference list, so added manually.
 biome: Tropical and subtropical forests (T1)
 functional_group: T1.1
 global_classification: MMR-T1.1.3

@@ -58,10 +58,10 @@ authors:
 
 ```{python}
 #| echo: false
-ecosystem_name_str = ", ".join([
+ecosystem_name_str = Markdown(", ".join([
     f"{ecosystem_name['name']} [{ecosystem_name['reference']}]"
     for ecosystem_name in ecosystem_names_local
-])
+]))
 ```
 
 [`{python} country_name` ecosystem names:]{.parameter .ecosystem-description-list}
@@ -72,9 +72,9 @@ The ecosystem assessment configuration file does not specify the **local ecosyst
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
 ecosystem_names_local:
-  - name: "Ecosystem Name 1"
+  - name: Ecosystem Name 1
     reference: "@bibtexReference1"
-  - name: "Ecosystem Name 2"
+  - name: Ecosystem Name 2
     reference: "@bibtexReference2"
 ```
 :::
