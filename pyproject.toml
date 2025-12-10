@@ -20,6 +20,8 @@ preview = ["pixi-build"]
 [tool.pixi.pypi-dependencies]
 rle_assessment_report = { path = ".", editable = true }
 gee-redlist-python = { git = "https://github.com/VorGeo/gee-redlist-python.git" }
+geoarrow-pyarrow = "*"
+lonboard = "==0.13.0"
 
 [tool.pixi.tasks]
 
@@ -39,3 +41,6 @@ proj = ">=9.7.0,<10"
 gdal = ">=3.12.0,<4"
 numpy = ">=2.3.5,<3"
 matplotlib = ">=3.10.8,<4"
+# lonboard moved to pypi-dependencies for version 0.13.0
+geopandas = ">=1.1.1,<2"
+pyarrow = ">=22.0.0,<23"
