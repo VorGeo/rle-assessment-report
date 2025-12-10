@@ -374,7 +374,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/29/b6/fb711227132ecaf3bb80a8f36693dbeb987bf2690edf1e8bd99e1da1a65a/earthengine_api-1.6.15-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fa/09/f92f3d87c967d80fb73fa45a7b8ce6048fcf6bc9ba04ef0fb04443e209d3/eerepr-0.1.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl
-      - pypi: git+https://github.com/VorGeo/gee-redlist-python.git#6b3f1ca874b20487e32215bf139c25be19d2fdb5
+      - pypi: git+https://github.com/VorGeo/gee-redlist-python.git#02572bbc53d3bd4721fbfb3405768947b4808617
       - pypi: https://files.pythonhosted.org/packages/0f/4f/16e34c39f1840203216a79084d92aed6722ba00d34815807bc3e04d58c9f/geemap-0.36.6-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/a4/b7/6b6a007f1b59aace626c244040dc76a6ea996bc06baf7ecb00717f6381b5/geoarrow_c-0.3.1-cp311-cp311-manylinux_2_24_x86_64.manylinux_2_28_x86_64.whl
       - pypi: https://files.pythonhosted.org/packages/ed/d2/f47453e6aefb69acdde7af8b0efb3fe28c82e7c37650b0ce1ad61ab847e5/geoarrow_pyarrow-0.2.0-py3-none-any.whl
@@ -723,7 +723,7 @@ environments:
       - pypi: https://files.pythonhosted.org/packages/29/b6/fb711227132ecaf3bb80a8f36693dbeb987bf2690edf1e8bd99e1da1a65a/earthengine_api-1.6.15-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/fa/09/f92f3d87c967d80fb73fa45a7b8ce6048fcf6bc9ba04ef0fb04443e209d3/eerepr-0.1.2-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/da/71/ae30dadffc90b9006d77af76b393cb9dfbfc9629f339fc1574a1c52e6806/future-1.0.0-py3-none-any.whl
-      - pypi: git+https://github.com/VorGeo/gee-redlist-python.git#6b3f1ca874b20487e32215bf139c25be19d2fdb5
+      - pypi: git+https://github.com/VorGeo/gee-redlist-python.git#02572bbc53d3bd4721fbfb3405768947b4808617
       - pypi: https://files.pythonhosted.org/packages/0f/4f/16e34c39f1840203216a79084d92aed6722ba00d34815807bc3e04d58c9f/geemap-0.36.6-py3-none-any.whl
       - pypi: https://files.pythonhosted.org/packages/07/7a/53dfdb581d28755c206f7245fb259ca68758a75169b3b1cbcf671dad4915/geoarrow_c-0.3.1-cp311-cp311-macosx_11_0_arm64.whl
       - pypi: https://files.pythonhosted.org/packages/ed/d2/f47453e6aefb69acdde7af8b0efb3fe28c82e7c37650b0ce1ad61ab847e5/geoarrow_pyarrow-0.2.0-py3-none-any.whl
@@ -2531,9 +2531,9 @@ packages:
   - pkg:pypi/gdal?source=hash-mapping
   size: 1840589
   timestamp: 1762609317002
-- pypi: git+https://github.com/VorGeo/gee-redlist-python.git#6b3f1ca874b20487e32215bf139c25be19d2fdb5
+- pypi: git+https://github.com/VorGeo/gee-redlist-python.git#02572bbc53d3bd4721fbfb3405768947b4808617
   name: gee-redlist-python
-  version: 0.1.8
+  version: 0.1.9
   requires_dist:
   - cartopy>=0.24.0
   - earthengine-api>=1.6.14
