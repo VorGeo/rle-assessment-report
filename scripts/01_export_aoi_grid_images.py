@@ -2,27 +2,22 @@
 Generate Earth Engine asset images for ecosystem assessments.
 """
 
+import sys
+from pathlib import Path
+
+# Add the project root to Python path so we can import from src
+project_root = Path(__file__).parent.parent
+sys.path.insert(0, str(project_root))
+
 from gee_redlist.ee_rle import export_fractional_coverage_on_aoo_grid
 from gee_redlist.ee_rle import create_asset_folder
-from google.auth import default
-import yaml
+from src.rle_assessment_report.helpers import load_yaml, initialize_ee
 import ee
 
 
 COUNTRY_CONFIG_PATH = 'config/country_config.yaml'
 
-def load_yaml(yaml_path):
-    """Load YAML configuration file."""
-    with open(yaml_path, 'r') as f:
-        return yaml.safe_load(f)
 
-def initialize_ee():
-    """Initialize Earth Engine."""
-    credentials, _ = default(scopes=[
-        'https://www.googleapis.com/auth/earthengine',
-        'https://www.googleapis.com/auth/cloud-platform'
-    ])
-    ee.Initialize(credentials=credentials, project='goog-rle-assessments')
 
 def process_classified_image(
     gee_project_path,
