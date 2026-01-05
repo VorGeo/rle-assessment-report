@@ -613,8 +613,6 @@ credentials, _ = default(scopes=[
 ])
 ee.Initialize(credentials=credentials, project='goog-rle-assessments')
 
-print(f'ecosystem_image: {ecosystem_image}')
-
 asset_id = ecosystem_image['asset_id']
 pixel_value = int(ecosystem_image['pixel_value'])
 
