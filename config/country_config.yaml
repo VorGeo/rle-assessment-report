@@ -2,7 +2,7 @@ country_name: Myanmar
 # ISO 3166-1 alpha-2 code for the country
 # See https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2
 country_code: MM
-gee_project_path: "projects/goog-rle-assessments/assets/"
+gee_project_path: "projects/goog-rle-assessments/assets"
 classified_image:
   asset_id: mm_ecosys_v7b
   classes:
