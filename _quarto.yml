@@ -26,7 +26,7 @@ book:
     - 0.5_summary.qmd
     - 1_intro.qmd
     - ecosystem_overview.qmd
-    - assessments/overview.qmd
+    - ecosystem_assessments/overview.qmd
     - part: "Ecosystem Assessments"
       chapters:
         - ecosystem_assessments/MMR-T1.1.1/MMR-T1.1.1.qmd
