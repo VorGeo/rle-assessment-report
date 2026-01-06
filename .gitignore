@@ -220,3 +220,6 @@ _book/*
 
 # Ignore the sample ecosystem
 ecosystem_assessments/MMR-TSAMPLE/SAMPLE_map.png
+
+# MyST build outputs
+_build

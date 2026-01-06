@@ -1,9 +1,18 @@
+---
+title: Introduction
+numbering:
+  title: true
+  headings: true
+  figure:
+    enumerator: 1.%s
+---
+
 # Introduction
 
 ## Background
 
 The Myanmar National Ecosystem Assessment contributes to the GEF funded Strengthening Sustainability of Protected Area Management in Myanmar project.
-To support the Myanmar National Ecosystem Assessment, Myanmar’s terrestrial ecosystems were assessed under the International Union for the Conservation of Nature (IUCN) Red List of Ecosystems Categories and Criteria.
+To support the Myanmar National Ecosystem Assessment, Myanmar's terrestrial ecosystems were assessed under the International Union for the Conservation of Nature (IUCN) Red List of Ecosystems Categories and Criteria.
 
 This report describes the development of the IUCN Red List of Ecosystems for Myanmar, which included:
 
@@ -11,8 +20,8 @@ This report describes the development of the IUCN Red List of Ecosystems for Mya
 ecosystems in Myanmar;
 - The development of an ecosystem typology for Myanmar suitable for conducting a national scale IUCN Red List of Ecosystems assessment;
 - Production of a guide to the terrestrial ecosystems of Myanmar to describe the units assessed under the red listing criteria (see ecosystem descriptions);
-- More than 4000 km of reconnaissance transects traversed across Myanmar to collect georeferenced field data relevant to the mapping and assessment of Myanmar’s ecosystems;
-- A country-wide satellite remote sensing analysis to develop high resolution maps of Myanmar’s terrestrial ecosystems from earth observation data;
+- More than 4000 km of reconnaissance transects traversed across Myanmar to collect georeferenced field data relevant to the mapping and assessment of Myanmar's ecosystems;
+- A country-wide satellite remote sensing analysis to develop high resolution maps of Myanmar's terrestrial ecosystems from earth observation data;
 - The analysis of spatial, biotic and abiotic changes to ecosystems to identify those ecosystems at the greatest risk of ecosystem collapse;
 - Application of the IUCN Red List of Ecosystems categories and criteria to each ecosystem in the national typology to develop a list of threatened terrestrial ecosystems of Myanmar; and
 - An expert review process for the ecosystem typology, descriptions and assessments.
@@ -21,15 +30,31 @@ To promote ecosystem conservation in Myanmar and support national-scale conserva
 and environmental reporting, all data and analysis code have been made open access (see data
 availability, see Appendices).
 
-![A map of Myanmar showing the area of assessment in grey](images/country_map.png){#fig-country-map}
+```{figure} images/country_map.png
+:label: fig-country-map
+:alt: Map of Myanmar
+:align: center
+:height: 500px
+
+A map of Myanmar showing the area of assessment in grey
+```
 
 ## The ecosystems of Myanmar: an overview
 
-Myanmar (@fig-country-map) has a monsoonal climate throughout its full latitudinal range (9-28°N). 
+Myanmar ({numref}`fig-country-map`) has a monsoonal climate throughout its full latitudinal range (9-28°N).
 The rain-bearing winds come from the south-west across the Bay of Bengal, with the wettest parts of the
 country being the Tanintharyi coast in the south and the Rakhine Bengal coast in the north receiving
-in excess of 5,000 mm of rainfall annually (@fig-climatic-gradients).
-The peak rainy season lasts from June to September, with rainfall persisting into October and November. December, January and February constitute the dry ‘cool’ season. Precipitation averages close to zero for the months December-March and, although temperatures are marginally cooler than in the rainy season, much of the country experiences significant rates of evapotranspiration and water deficits, especially in warmer months April and May at the end of the dry season prior to arrival of the monsoon.
+in excess of 5,000 mm of rainfall annually ({numref}`fig-climatic-gradients`).
+The peak rainy season lasts from June to September, with rainfall persisting into October and November. December, January and February constitute the dry 'cool' season. Precipitation averages close to zero for the months December-March and, although temperatures are marginally cooler than in the rainy season, much of the country experiences significant rates of evapotranspiration and water deficits, especially in warmer months April and May at the end of the dry season prior to arrival of the monsoon.
+
+```{figure} images/map_climatic_gradients.png
+:label: fig-climatic-gradients
+:alt: Map of major climatic gradients across Myanmar
+:align: center
+:height: 1000px
+
+Major climatic gradients across Myanmar
+```
 
 The strong seasonal drought, alternating with reliable and abundant rain underpins ideal conditions for development of tropical dry forests, which dominate the majority of the country throughout most of the lowlands, foothills and plateaus.
 The dry forests are dominated by dipterocarps and teak, and usually have a mixed evergreen-deciduous phenology, with a variable proportion of tree canopies devoid of living leaves in the latter part of the dry season when water deficit is at its maximum.
@@ -39,7 +64,7 @@ The effect of the monsoon on water balance within ecosystems is profoundly modif
 An important example of these forests is found in the Tanintharyi lowlands, where the rainforests are diverse and include Sundaic elements shared with equatorial forests of Malaysia and Indonesia. Other evergreen rainforests are found in the sheltered lowland valleys of the Chindwin and upper Ayeyarwady and on the western rim of the Shan plateau.
 
 A few of the highest tropical mountains and escarpments receiving substantial orographic condensation may support tropical montane fo rests, including mist forests with low, even tree canopies and abundant arboreal bryophytes, lichens, orchids and other epiphytes.
-These ecosystems are poorly documented in Myanmar, but similar forests have been recorded in other tropical parts of southeast Asia [@ashton2014forests].
+These ecosystems are poorly documented in Myanmar, but similar forests have been recorded in other tropical parts of southeast Asia {cite}`ashton2014forests`.
 
 In other parts of the country, topography reduces moisture inputs and exacerbates loss.
 The monsoon winds are intercepted by the Arakan Yoma which runs parallel to the west coast and separates the central region of Myanmar from the sea. This creates a marked rain shadow in the centre of Myanmar - the "Dry Zone" were rainfall is as low as 550 mm per annum and exposed flat topography results in major evapotranspirative moisture loss in the dry season.
@@ -60,7 +85,17 @@ families with strong northern temperate affinities including oaks, chestnuts, la
 At higher elevations still, where winter snow persists for weeks or months, these temperate broad-leaf deciduous forests are replaced by temperate montane conifer forests, which become lower in stature and more open with increasing exposure to cold winds.
 Both types of temperate forests are
 largely confined to the eastern Himalayan foothills in Kachin state, but limited occurrences extend south to the highest parts of the Chin Hills.
-At higher elevations, with increasingly cold temperatures, shorter growing seasons and prolonged snow cover, trees give way to alpine shrublands and herbfields, and ultimately to permanent snowfields, glaciers and icy cliffs and screes at more than 5,000 m above sea level (@fig-map-elevation).
+At higher elevations, with increasingly cold temperatures, shorter growing seasons and prolonged snow cover, trees give way to alpine shrublands and herbfields, and ultimately to permanent snowfields, glaciers and icy cliffs and screes at more than 5,000 m above sea level ({numref}`fig-map-elevation`).
+
+```{figure} images/map_elevation_myanmnar.png
+:label: fig-map-elevation
+:alt: Myanmar elevation map
+:align: center
+:height: 500px
+
+Elevation map of Myanmar
+```
+
 Freshwater ecosystems are partly beyond the scope of this study, but notable examples include glacial lakes restricted to the southern ridges of the Himalayas, seasonal lakes on the Ayeyarwady floodplain and rare geothermal wetlands on the Rakhine coast.
 Palustrine wetlands on the interface between terrestrial and freshwater realms are extensive on the Aye yarwady floodplain and riparian corridors that extend along the major rivers.
 These wetlands are densely vegetated with grasses, sedges and other non-woody hydrophytes, and have strongly seasonal filling and drying regimes synchronised with the monsoon.
@@ -70,12 +105,8 @@ wetlands with tree recruitment triggered by seasonal flood recession. The lowest
 The interface between the terrestrial and marine realms are occupied by several coastal ecosystems, including several different compositional and structural expressions of mangrove forests, grassy saltmarshes, tidal mudflats and coastal dune vegetation.
 Finally, subterranean ecosystems are largely beyond the scope of this assessment, but we recognise important karst systems that include extensive dry caves and subterranean waters likely to harbour a diverse and endemic biota, and should be a focus of future assessments
 
-
-![Major climatic gradients across Myanmar](images/map_climatic_gradients.png){#fig-climatic-gradients}
-
-![Elevation map of Myanmar](images/map_elevation_myanmnar.png){#fig-map-elevation}
-
-{{< include content_templates/Intro_to_IUCN_RLE.qmd >}}
+```{include} Intro_to_IUCN_RLE.md
+```
 
 ### Definitions
 There are several key concepts that must be clearly defined to allow for repeatable ecosystem risk
@@ -88,13 +119,20 @@ Risk is defined as the probability of an adverse outcome over a specified time-f
 #### Ecosystem collapse
 
 Understanding the concept of ecosystem collapse is critical for interpreting IUCN RLE assessments.
-For the purposes of the RLE, “an ecosystem is Collapsed when it is virtually certain that its defining biotic or abiotic features are lost from all occurrences, and the characteristic native biota are no longer sustained.
+For the purposes of the RLE, "an ecosystem is Collapsed when it is virtually certain that its defining biotic or abiotic features are lost from all occurrences, and the characteristic native biota are no longer sustained.
 Collapse may occur when most of the diagnostic components of the characteristic
-native biota are lost from the system, or when functional components (biota that perform key roles in ecosystem organisation) are greatly reduced in abundance and lose the ability to recruit.”
-According to the IUCN guidelines [@bland2017guidelines], risks to ecosystems can be caused by a variety of threatening processes that are expressed through different symptoms of ecosystem collapse.
-The RLE risk model groups these symptoms into four major types, which ultimately form the RLE criteria (Figure 1.5).
+native biota are lost from the system, or when functional components (biota that perform key roles in ecosystem organisation) are greatly reduced in abundance and lose the ability to recruit."
+According to the IUCN guidelines {cite}`bland2017guidelines`, risks to ecosystems can be caused by a variety of threatening processes that are expressed through different symptoms of ecosystem collapse.
+The RLE risk model groups these symptoms into four major types, which ultimately form the RLE criteria ({numref}`fig-iucn-rle-risk-assessment-model`).
 
-![The IUCN Red List of Ecosystems risk assessment model. Source: [@bland2017guidelines].](images/iucn_rle_assessment_model.png){#fig-map-elevation}
+```{figure} images/map_elevation_myanmnar.png
+:label: fig-iucn-rle-risk-assessment-model
+:alt: IUCN Red List of Ecosystems risk assessment model
+:align: center
+:height: 500px
+
+The IUCN Red List of Ecosystems risk assessment model. Source: {cite}`bland2017guidelines`.
+```
 
 For more information on the concept of collapse and how to identify when an ecosystem is collapsed, we recommend referring to the IUCN Red List of Ecosystems guidelines, which describes this in detail (Bland et al., 2017a; Bland et al., 2018).
 In this report and as recommended by the guidelines, we explicitly define collapse for each ecosystem type in Myanmar in their ecosystem descriptions (See section 3).
@@ -114,7 +152,7 @@ There are four specified time frames used in the RLE:
 #### IUCN Red List of Ecosystems Criteria
 
 To assess the risk of ecosystem collapse, each ecosystem is assessed under five rule-based criteria that form the IUCN Red List of Ecosystems Criteria.
-These criteria were developed following nearly a decade of scientific work focused on understanding pathways of ecosystem decline, degradation, loss and collapse [@nicholson2009assessing; @rodriguez2011establishing;  @keith2013scientific; @keith2015iucn; @rodriguez2015practical; @bland2017using; @murray2017use; @keith2018scaling; @murray2018role].
+These criteria were developed following nearly a decade of scientific work focused on understanding pathways of ecosystem decline, degradation, loss and collapse {cite}`nicholson2009assessing,rodriguez2011establishing,keith2013scientific,keith2015iucn,rodriguez2015practical,bland2017using,murray2017use,keith2018scaling,murray2018role`.
 Importantly, they relate the symptoms of ecosystem decline with the risk that an ecosystem will lose its defining features.
 The five criteria were designed to target different symptoms of ecosystem collapse (Figure 1.5).
 These symptoms are both distributional and functional:
@@ -126,29 +164,30 @@ These symptoms are both distributional and functional:
 - **Criterion E**: allows for the integration of the above four symptoms into a simulation model of ecosystem dynamics to allow quantitative estimates of the risk of ecosystem collapse.
 
 For further information on the criteria refer to the Guidelines for the application of IUCN Red List of
-Ecosystems Categories and Criteria [@bland2017guidelines].
+Ecosystems Categories and Criteria {cite}`bland2017guidelines`.
 
 #### Categories
 
-Applying thresholds (decision rules) for each of the IUCN RLE criteria enables each ecosystem to be assigned to a category of risk (‘status’).
-An ecosystem assessed under the RLE criteria can be placed into eight categories: Collapsed (CO), Critically Endangered (CR), Endangered (EN), Vulnerable (VU), Near Threatened (NT), Least Concern (LC), Data Deficient (DD), and Not Evaluated (NE, [@fig-iucn-rle-categories]).
+Applying thresholds (decision rules) for each of the IUCN RLE criteria enables each ecosystem to be assigned to a category of risk ('status').
+An ecosystem assessed under the RLE criteria can be placed into eight categories: Collapsed (CO), Critically Endangered (CR), Endangered (EN), Vulnerable (VU), Near Threatened (NT), Least Concern (LC), Data Deficient (DD), and Not Evaluated (NE, {numref}`fig-iucn-rle-categories`).
+
 The first six categories (CO, CR, EN, VU, NT and LC) are ordered in decreasing risk of collapse. The categories Data Deficient and Not Evaluated do not indicate a level of risk.
-For further details of the categories refer to the Guidelines for the application of IUCN Red List of Ecosystems Categories and Criteria [@bland2017guidelines].
+For further details of the categories refer to the Guidelines for the application of IUCN Red List of Ecosystems Categories and Criteria {cite}`bland2017guidelines`.
 We applied version 2.2 of the IUCN Red List of Ecosystems Criteria (Table 1.1).
 
 
-::: {.callout-warning}
+```{warning}
 ## TODO: Add Table 1.1
 
-The IUCN Red List of Ecosystems Criteria, Version 2.2. Source: [@bland2017guidelines].
-:::
+The IUCN Red List of Ecosystems Criteria, Version 2.2. Source: {cite}`bland2017guidelines`.
+```
 
 ### Assessment process
 
 Application of the IUCN Red List of Ecosystems Categories and Criteria follows a generic sequential process that includes:
 
-- Adapting the newly developed global ecosystem typology [@keith2020indicative, @keith2022earth] to the area of assessment (Myanmar’s terrestrial environment, @fig-country-map). This process is guided by experts and the result is a list of ecosystem types for the area of assessment that will be assessed under the RLE protocol;
-- Describing each of the ecosystem types in ecosystem typology following the standard approach detailed in the Guidelines for the application of IUCN Red List of Ecosystems Categories and Criteria [@bland2017guidelines];
+- Adapting the newly developed global ecosystem typology {cite}`keith2020indicative,keith2022earth` to the area of assessment (Myanmar's terrestrial environment, {numref}`fig-country-map`). This process is guided by experts and the result is a list of ecosystem types for the area of assessment that will be assessed under the RLE protocol;
+- Describing each of the ecosystem types in ecosystem typology following the standard approach detailed in the Guidelines for the application of IUCN Red List of Ecosystems Categories and Criteria {cite}`bland2017guidelines`;
 - If no map data is available to support the assessment, an ecosystem mapping project is required to support the ecosystem descriptions and assessment of several of the RLE criteria;
 - Applying the assessment criteria to each ecosystem type, which requires extensive data searches and analyses. The outcome of each ecosystem assessment consists of a status of the ecosystem under 5 criteria and 18 subcriteria of the IUCN Red List of Ecosystems categories and criteria;
 - Compiling the results into a comprehensive IUCN Red List of Ecosystems for the area of assessment (this report), which describes each ecosystem and identifies ecosystems according to their risk of collapse.
