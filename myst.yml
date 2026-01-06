@@ -48,3 +48,4 @@ site:
     favicon: images/iucn_rle.png
     logo: images/IUCN_Red_List.svg
     folders: true
+    style: styles.css
