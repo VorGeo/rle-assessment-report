@@ -154,7 +154,7 @@ There are four specified time frames used in the RLE:
 To assess the risk of ecosystem collapse, each ecosystem is assessed under five rule-based criteria that form the IUCN Red List of Ecosystems Criteria.
 These criteria were developed following nearly a decade of scientific work focused on understanding pathways of ecosystem decline, degradation, loss and collapse {cite}`nicholson2009assessing,rodriguez2011establishing,keith2013scientific,keith2015iucn,rodriguez2015practical,bland2017using,murray2017use,keith2018scaling,murray2018role`.
 Importantly, they relate the symptoms of ecosystem decline with the risk that an ecosystem will lose its defining features.
-The five criteria were designed to target different symptoms of ecosystem collapse (Figure 1.5).
+The five criteria were designed to target different symptoms of ecosystem collapse ({numref}`fig-iucn-rle-risk-assessment-model`).
 These symptoms are both distributional and functional:
 
 - **Criterion A**: declines in distribution, which reduce carrying capacity for dependent biota;
