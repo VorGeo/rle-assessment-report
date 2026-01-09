@@ -6,11 +6,6 @@ kernelspec:
 ---
 
 ```{code-cell} python
-import gee_redlist
-print(f'{gee_redlist.__version__ = }')
-```
-
-```{code-cell} python
 from IPython.display import Markdown, display
 
 country_name = 'Myanmar'
