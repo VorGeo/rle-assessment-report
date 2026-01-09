@@ -1,5 +1,16 @@
-```{python}
-#| echo: false
+---
+kernelspec:
+  name: python3
+  display_name: Python 3
+  language: python
+---
+
+```{code-cell} python
+import gee_redlist
+print(f'{gee_redlist.__version__ = }')
+```
+
+```{code-cell} python
 from IPython.display import Markdown, display
 
 country_name = 'Myanmar'
@@ -19,81 +30,53 @@ iucn_status = 'Endangered'
 ```
 
 <!-- Title -->
-
-## Tanintharyi limestone tropical evergreen forest {.unnumbered}
+## Tanintharyi limestone tropical evergreen forest
 
 <!-- Authors -->
-
-[Authors:]{.parameter .ecosystem-description-list}
-`{python} ", ".join(authors)`
+{span .parameter}`Authors:`&nbsp;
+N.J. Murray, R. Tizard, D.A. Keith
 
 <!-- Local ecosystem names -->
-
-```{python}
-#| echo: false
-ecosystem_name_str = Markdown(", ".join([
-    f"{ecosystem_name['name']} [{ecosystem_name['reference']}]"
-    for ecosystem_name in ecosystem_names_local
-]))
-```
-
-[`{python} country_name` ecosystem names:]{.parameter .ecosystem-description-list}
-`{python} ecosystem_name_str`
-     
- 
+{span .parameter}``{eco}`MMR-T1.1.3:country_name` ecosystem names:``&nbsp;Tropical rainforest [@kress2003checklist], Lowland evergreen rainforest [@connette2016mapping], Forest on Limestone [Whitten et al., 1997]
 
 <!-- Biome -->
-
-[Biome:]{.parameter .ecosystem-description-list}
+{span .parameter}`Biome:`&nbsp;
 Tropical and subtropical forests (T1)
 
 <!-- Functional Group -->
-
-[Functional Group:]{.parameter .ecosystem-description-list}
+{span .parameter}`Functional Group:`&nbsp;
 T1.1
 
 <!-- Global classification -->
-
-[Global classification:]{.parameter .ecosystem-description-list}
+{span .parameter}`Global classification:`&nbsp;
 MMR-T1.1.3
 
 <!-- IUCN Status -->
-
-[IUCN Status:]{.parameter .ecosystem-description-list}
+{span .parameter}`IUCN Status:`&nbsp;
 Endangered
 
 <!-- Ecosystem Photo -->  
 
-  
-
 <!-- Ecosystem Map -->
-[Ecosystem Map]{.parameter .ecosystem-description-list}
-
-
-```{python}
-#| echo: false
-Markdown(f'<img src="../{global_classification}/{ecosystem_map}" alt="Map of the ecosystem {ecosystem_name}" height="400"/>')
-```
- 
-
-  
-  
+{span .parameter}`Ecosystem Map:`&nbsp;
+```{image} MMR-T1.1.3_map.png
+:alt: Map of the ecosystem Tanintharyi limestone tropical evergreen forest
+:width: 400px
+:align: center
+```     
 
 <!-- Description -->
-
-[Description]{.parameter .ecosystem-description-list}
+{span .parameter}`Description:`&nbsp;
 Tanintharyi has extensive patches of limestone karst scattered across the region. In these karst landscapes Tanintharyi limestone tropical evergreen forest occurs. Primary tree species are Dipterocarps that form a closed canopy, although they occur at lower density and lower tree height than surrounding lowland and upland evergreen forest ecosystems. Soils are characteristically extremely shallow and acidic, and may be humusrich. These forests can be found across the Tanintharyi lowlands on limestone hills and slopes, and in some cases may occur on very steep slopes and cliffs. As a result of the discontinuous distribution of limestone in Myanmar, which can frequently become very dry, endemism is very high. For example, 12 new karst-adapted species of gecko were recently discovered in karst environments, some of which are restricted to isolated caves and limestone towers (Grismer et al. 2018). Reliable year round rainfall, averaging in excess of 100 mm per month and between around 1,900 mm and 3,000 mm per year.
 
 
 <!-- Distribution -->
-
-[Distribution]{.parameter .ecosystem-description-list}
+{span .parameter}`Distribution:`&nbsp;
 Occurs in karst landscapes in southern Tanintharyi. We used a global karst layer to refine our maps of this ecosystem type, and further work to map karst landscapes in southern Myanmar is recommended.
 
 
 <!-- Characteristic Native Biota -->
-
-[Characteristic Native Biota]{.parameter .ecosystem-description-list}
+{span .parameter}`Characteristic Native Biota:`&nbsp;
 Characteristic species of this ecosystem remain relatively unknown. @stamp1925vegetation lists the tree species occurring in this ecosystem as including Dipterocarpus alatus, D. grandiflorus, and D. turbinatus, Shorea spp, Anisoptera sp., Hopea odorata, and Parashorea stellata.
 This ecosystem occurs in isolated fragments and has high physical complexity, a suite of microhabitats, and relatively stable climate, this ecosystem provides habitat for a large number of endemic species, including gekkos and molluscs (Whitten et al., 1997; Grismer et al., 2018).
 This ecosystem supports some of the remaining populations of sundaic avifauna in Myanmar. This includes Great Argus Argusianus argus (NT), Storm's Stork Ciconia stormi (EN), White-crowned Hornbill Berenicornis comatus (EN), Helmeted Hornbill Rhinoplax vigil (CR), Red-throated Barbet Psilopogon mystacophanos (NT), Blue-rumped Parrot Psittinus cyanurus (NT), Banded Broadbill Eurylaimus harterti, Black-and-yellow Broadbill Eurylaimus ochromalus (NT), Green Broadbill Calyptomena viridis (NT), Crested Jay Platylophus galericulatus (NT), as well as a range of Bulbuls (Pycnonotidae) and Ground Babblers (Pellorneidae).
@@ -101,38 +84,32 @@ The mammalian fauna is equally impressive with populations of Banded Langur Pres
 
 
 <!-- Abiotic environment -->
-
-[Abiotic environment]{.parameter .ecosystem-description-list}
+{span .parameter}`Abiotic environment:`&nbsp;
 Shallow soils that can be fairly acidic, topographically complex and reliable year-round rainfall of >100 mm per month and warm temperature that rarely fall below 10° C.
 
 
 <!-- Key processes and interactions -->
-
-[Key processes and interactions]{.parameter .ecosystem-description-list}
+{span .parameter}`Key processes and interactions:`&nbsp;
 Distribution is largely defined by the occurrence of Karst landscapes coinciding with a mean monthly rainfall of around 100 mm per month. This ecosystem may periodically become very dry, but a dense evergreen canopy can support humid microclimates throughout these periods (Whitten et al., 1997).
 
 
 <!-- Major threats -->
-
-[Major threats]{.parameter .ecosystem-description-list}
+{span .parameter}`Major threats:`&nbsp;
 Unregulated quarrying is considered a primary threat to this ecosystem (Grismer et al., 2018). In addition, deforestation is widespread in this region, primarily for the development of oil palm plantations, rubber plantations and other agroforestry, with deforestation rates reaching 7.85% in some areas of Tanintharyi, the highest rate of forest loss so far recorded in Myanmar [@connette2017rapid].
 
 
 <!-- Ecosystem collapse definition -->
-
-[Ecosystem collapse definition]{.parameter .ecosystem-description-list}
+{span .parameter}`Ecosystem collapse definition:`&nbsp;
 This ecosystem is regarded as collapsed when its area has declined to zero, or when the proportion of the ecosystem considered primary forest declines to 0.
 
 
 <!-- Assessment summary -->
-
-[Assessment summary]{.parameter .ecosystem-description-list}
+{span .parameter}`Assessment summary:`&nbsp;
 **This ecosystem is highly restricted to limestone substrates and ongoing threats, particularly from quarrying, suggest that this ecosystem is undergoing a continuing decline.
 **
 
 <!-- Assessment information -->
-
-[Assessment information]{.parameter .ecosystem-description-list}
+{span .parameter}`Assessment information:`&nbsp;
 <table class="criteria-table">
   <thead>
     <tr>
@@ -218,24 +195,20 @@ This ecosystem is regarded as collapsed when its area has declined to zero, or w
   </table>
 
 <!-- Assessment outcome -->
-
-[Assessment outcome]{.parameter .ecosystem-description-list}
+{span .parameter}`Assessment outcome:`&nbsp;
 **Endangered**
 
 <!-- Year published -->
-
-[Year published]{.parameter .ecosystem-description-list}
+{span .parameter}`Year published:`&nbsp;
 2020
 
 
 <!-- Date assessed -->
-
-[Date assessed]{.parameter .ecosystem-description-list}
+{span .parameter}`Date assessed:`&nbsp;
 24th January 2020
 
 <!-- Assessment credits -->
-
-[Assessment credits]{.parameter .ecosystem-description-list}
+{span .parameter}`Assessment credits:`&nbsp;
 
 Assessed by: Nicholas Murray
 
@@ -244,30 +217,53 @@ Reviewed by: David Keith
 Contributions by: Lee Grismer
 
 <!-- Criterion A -->
-
-[Criterion A]{.parameter .ecosystem-description-list}
+{span .parameter}`Criterion A:`&nbsp;
 No time-series map data was available for assessing reduction in distribution of this ecosystem over any of the assessment time frames. **Data Deficient**.
 
 
 <!-- Criterion B -->
-
-[Criterion B]{.parameter .ecosystem-description-list}
+{span .parameter}`Criterion B:`&nbsp;
 This ecosystem is highly restricted in limestone landscapes and has an AOO of 56 10 x 10 km grid cells and an EOO of 3,796 km2 There is evidence that limestone quarrying and other threats are leading to continuing decline, meeting subcriteria a(i) and a(iii). The ecosystem is assessed as **Endangered**.
 
 
-<!-- Criterion C -->
+{span .parameter}`TEST:`&nbsp;
+```{code-cell} python
+import ee
+from gee_redlist.ee_rle import make_eoo, area_km2
+from google.auth import default
 
-[Criterion C]{.parameter .ecosystem-description-list}
+# Use Application Default Credentials (ADC) from GOOGLE_APPLICATION_CREDENTIALS
+# This works both locally (after gcloud auth) and in CI/CD (with Workload Identity)
+credentials, _ = default(scopes=[
+    'https://www.googleapis.com/auth/earthengine',
+    'https://www.googleapis.com/auth/cloud-platform'
+])
+ee.Initialize(credentials=credentials, project='goog-rle-assessments')
+
+asset_id = ecosystem_image['asset_id']
+pixel_value = int(ecosystem_image['pixel_value'])
+
+ee_image = (
+    ee.Image(ecosystem_image['asset_id'])
+      .eq(pixel_value)
+      .selfMask()
+)
+print(f'ee_image: {ee_image.getInfo()}')
+
+eoo_polygon = make_eoo(ee_image)
+print(f'EOO area: {area_km2(eoo_polygon).getInfo()} km²')
+```
+
+<!-- Criterion C -->
+{span .parameter}`Criterion C:`&nbsp;
 Climate simulation models suggest that environmental conditions within the limestone landscapes of southern Myanmar are unlikely to reduce suitable areas sufficiently to result in this ecosystem becoming threatened by 2050. It should be noted that the occurrence of Karst landscapes is a key distributional driver of this ecosystem, and the scale at which the suitability models were run may not adequately depict the fine-scale changes expected over the next three decades. We recommend further work to refine maps of Karst landscape to better limit the distribution of our model. **Least Concern**.
 
 
 <!-- Criterion D -->
-
-[Criterion D]{.parameter .ecosystem-description-list}
+{span .parameter}`Criterion D:`&nbsp;
 Remote sensing analyses suggest that 72.4% of the remaining extent of this ecosystem meets criteria to be classified as primary forest (Potapov et al., 2019). If 100% of the ecosystem is assumed to be primary forest in 1750, there has been an 27.6% loss in primary forest extent since 1750. We assume that loss of primary forest has a relative severity of >90%, and use the extent of primary forest loss as a biotic variable for assessing Criterion D. With an 27.6% loss of primary forest extent, the ecosystem is assessed as Least Concern under Criterion D3. Analyses of the time-series of primary forest data (n = 18 time points) indicate that there has been 8.4% reduction in primary forest cover over the period 2000-2017. A linear model fit to this dataset, assuming that collapse occurs at 100% loss of primary forest cover, suggests that primary forest loss in this ecosystem will not occur to an extent to meet any category thresholds over a 50 year period (1984- 2034). The ecosystem is assessed as Least Concern under Criterion D2b. **Least Concern**.
 
 
 <!-- Criterion E -->
-
-[Criterion E]{.parameter .ecosystem-description-list}
+{span .parameter}`Criterion E:`&nbsp;
 No models were used to assess Criterion E. **Not Evaluated**.

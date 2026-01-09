@@ -1,8 +1,5 @@
 /* Quarto styling
-.parameter {
-  color: red;
-  font-weight: bold;
-}
+
 
 td, th {
   line-height: 1.0;
@@ -21,6 +18,11 @@ td {
   font-weight: bold;
 }
 */
+
+.parameter {
+    color: red;
+    font-weight: bold;
+  }
 
 /* Custom header colors and fonts */
 .article h1,

@@ -1,5 +1,16 @@
-```{python}
-#| echo: false
+---
+kernelspec:
+  name: python3
+  display_name: Python 3
+  language: python
+---
+
+```{code-cell} python
+import gee_redlist
+print(f'{gee_redlist.__version__ = }')
+```
+
+```{code-cell} python
 from IPython.display import Markdown, display
 
 country_name = '{{ params.country_name | default("COUNTRY_PLACEHOLDER")}}'
@@ -19,9 +30,8 @@ iucn_status = '{{ params.iucn_status | default("IUCN_STATUS_PLACEHOLDER")}}'
 ```
 
 <!-- Title -->
-
 {%- if not params.country_name %}
-::: {.callout-note}
+::: {note}
 The country-level configuration file (`config/country_config.yaml`) does not
 specify the **country name**.
 Please add this information to the YAML configuration file, using the following format:
@@ -30,17 +40,15 @@ country_name: Wakanda Forever
 ```
 :::
 {% endif %}
-
-## {{ params.ecosystem_name }} {.unnumbered}
+## {{ params.ecosystem_name }}
 
 <!-- Authors -->
-
-[Authors:]{.parameter .ecosystem-description-list}
+{span .parameter}`Authors:`&nbsp;
 {%- if params.authors %}
-`{python} ", ".join(authors)`
+{{ params.authors | join(", ") }}
 {%- else %}
 
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the **authors**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -52,22 +60,15 @@ authors:
 {% endif %}
 
 <!-- Local ecosystem names -->
-
-{%- if ecosystem_names_local != None %}
-    {%- if params.ecosystem_names_local is defined %}
-
-```{python}
-#| echo: false
-ecosystem_name_str = Markdown(", ".join([
-    f"{ecosystem_name['name']} [{ecosystem_name['reference']}]"
-    for ecosystem_name in ecosystem_names_local
-]))
-```
-
-[`{python} country_name` ecosystem names:]{.parameter .ecosystem-description-list}
-`{python} ecosystem_name_str`
-    {% else %}
-::: {.callout-note}
+{%- if params.ecosystem_names_local is defined %}
+{span .parameter}``{eco}`{{ params.global_classification }}:country_name` ecosystem names:``&nbsp;
+    {%- if params.ecosystem_names_local %}
+        {%- for item in params.ecosystem_names_local -%}
+{{ item.name }} [{{ item.reference }}]{% if not loop.last %}, {% endif %}
+        {%- endfor %}
+    {%- endif %}
+{%- else -%}
+::: {note}
 The ecosystem assessment configuration file does not specify the **local ecosystem names**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -78,17 +79,15 @@ ecosystem_names_local:
     reference: "@bibtexReference2"
 ```
 :::
-    {% endif %} {# if params.ecosystem_names_local is defined #}
-{% endif %} {# if ecosystem_names_local != None #}
+{%- endif -%} {# if params.ecosystem_names_local is defined #}
 
 <!-- Biome -->
-
-[Biome:]{.parameter .ecosystem-description-list}
+{span .parameter}`Biome:`&nbsp;
 {%- if params.biome %}
 {{ params.biome }}
 {%- else %}
 
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the **biome**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -98,13 +97,12 @@ biome: Tropical and subtropical forests (T1)
 {% endif %}
 
 <!-- Functional Group -->
-
-[Functional Group:]{.parameter .ecosystem-description-list}
+{span .parameter}`Functional Group:`&nbsp;
 {%- if params.functional_group %}
 {{ params.functional_group }}
 {%- else %}
 
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the **functional group**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -114,13 +112,12 @@ functional_group: T1.1
 {% endif %}
 
 <!-- Global classification -->
-
-[Global classification:]{.parameter .ecosystem-description-list}
+{span .parameter}`Global classification:`&nbsp;
 {%- if params.global_classification %}
 {{ params.global_classification }}
 {%- else %}
 
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the **global classification**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -130,13 +127,12 @@ global_classification: MMR-T1.1.3
 {% endif %}
 
 <!-- IUCN Status -->
-
-[IUCN Status:]{.parameter .ecosystem-description-list}
+{span .parameter}`IUCN Status:`&nbsp;
 {%- if params.iucn_status %}
 {{ params.iucn_status }}
 {%- else %}
 
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the **IUCN status**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -146,65 +142,53 @@ iucn_status: Endangered
 {% endif %}
 
 <!-- Ecosystem Photo -->
-
 {%- if params.ecosystem_photo != None %}
-[Ecosystem Photo]{.parameter .ecosystem-description-list}
-
+{span .parameter}`Ecosystem Photo:`&nbsp;
   {%- if params.ecosystem_photo is defined %}
+    {%- if path_exists('content', '3_ecosystem_assessments', params.global_classification, params.ecosystem_photo) %}
+```{image} {{params.ecosystem_photo}}
+:alt: Photo of the ecosystem {{ params.ecosystem_name }}
+:width: 400px
+:align: center
+```
+    {%- else %}  {# if path_exists() #}
+::: {important} Unable to find ecosystem photo image
+Unable to find ecosystem photo image named:
 
-    {% if path_exists('ecosystem_assessments', params.global_classification, params.ecosystem_photo) %}
-```{python}
-#| echo: false
-Markdown(f'<img src="{ecosystem_photo}" alt="Photo of the ecosystem {ecosystem_name}" height="400"/>')
-```
-    {% else %}  {# if path_exists() #}
-::: {.callout-important title="Unable to find ecosystem photo image"}
-```{python}
-#| echo: false
-Markdown(f'Unable to find ecosystem photo image named: **ecosystem_assessments/{global_classification}/{ecosystem_photo}**')
-```
+**content/3_ecosystem_assessments/{{params.global_classification}}/{{params.ecosystem_photo}}**
 :::
-    {% endif %} {# if path_exists() #}
-
-  {% else %}  {# if params.ecosystem_photo is defined #}
-
-::: {.callout-warning}
+    {%- endif %} {# if path_exists() #}
+  {%- else %}  {# if params.ecosystem_photo is defined #}
+::: {warning}
 The ecosystem assessment configuration file does not specify the **ecosystem photo**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
 ecosystem_photo: {params.global_classification}/{params.ecosystem_photo}
 ```
 :::
-
-  {% endif %}  {# if params.ecosystem_photo is defined #}
-
-{% else %}  {# if params.ecosystem_photo != None #}
-
-{% endif %}  {# if params.ecosystem_photo != None #}
+  {%- endif %}  {# if params.ecosystem_photo is defined #}
+{%- else %}  {# if params.ecosystem_photo != None #}
+{%- endif -%}  {# if params.ecosystem_photo != None #}
 
 <!-- Ecosystem Map -->
-
 {%- if params.ecosystem_map != None %}
-[Ecosystem Map]{.parameter .ecosystem-description-list}
-{%- if params.ecosystem_map is defined %}
+{span .parameter}`Ecosystem Map:`&nbsp;
+    {%- if params.ecosystem_map is defined -%}
+        {% if path_exists('content', '3_ecosystem_assessments', params.global_classification, params.ecosystem_map) %}
+```{image} {{params.ecosystem_map}}
+:alt: Map of the ecosystem {{ params.ecosystem_name }}
+:width: 400px
+:align: center
+```
+        {%- else %}  {# if path_exists() #}
+::: {important} Unable to find ecosystem map image
+Unable to find ecosystem photo image named:
 
-{% if path_exists('ecosystem_assessments', params.global_classification, params.ecosystem_map) %}
-```{python}
-#| echo: false
-Markdown(f'<img src="../{global_classification}/{ecosystem_map}" alt="Map of the ecosystem {ecosystem_name}" height="400"/>')
-```
-{% else %}  {# if path_exists() #}
-::: {.callout-important title="Unable to find ecosystem map image"}
-```{python}
-#| echo: false
-Markdown(f'Unable to find ecosystem map image named: **ecosystem_assessments/{global_classification}/{ecosystem_map}**')
-```
+**content/3_ecosystem_assessments/{{params.global_classification}}/{{params.ecosystem_map}}**
 :::
-{% endif %} {# if path_exists() #}
-
-{% else %}  {# if params.ecosystem_map is defined #}
-
-::: {.callout-warning}
+        {%- endif %} {# if path_exists() #}
+    {%- else %}  {# if params.ecosystem_map is defined #}
+::: {warning}
 The ecosystem assessment configuration file does not specify the **ecosystem map**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -216,18 +200,15 @@ To suppress this warning, set the `show_ecosystem_map` parameter to `false` in t
 ecosystem_map: null
 ```
 :::
-
-{% endif %}  {# if params.ecosystem_map is defined #}
-{% endif %}  {# if params.ecosystem_map != None #}
+    {% endif %}  {# if params.ecosystem_map is defined #}
+{%- endif %}  {# if params.ecosystem_map != None #}
 
 <!-- Description -->
-
-[Description]{.parameter .ecosystem-description-list}
+{span .parameter}`Description:`&nbsp;
 {%- if params.description %}
 {{ params.description }}
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the **ecosystem description**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -238,13 +219,11 @@ description: >
 {% endif %}
 
 <!-- Distribution -->
-
-[Distribution]{.parameter .ecosystem-description-list}
+{span .parameter}`Distribution:`&nbsp;
 {%- if params.distribution %}
 {{ params.distribution }}
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the **ecosystem distribution**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -255,13 +234,11 @@ distribution: >
 {% endif %}
 
 <!-- Characteristic Native Biota -->
-
-[Characteristic Native Biota]{.parameter .ecosystem-description-list}
+{span .parameter}`Characteristic Native Biota:`&nbsp;
 {%- if params.characteristic_native_biota %}
 {{ params.characteristic_native_biota }}
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **characteristic native biota**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -272,13 +249,11 @@ characteristic_native_biota: >
 {% endif %}
 
 <!-- Abiotic environment -->
-
-[Abiotic environment]{.parameter .ecosystem-description-list}
+{span .parameter}`Abiotic environment:`&nbsp;
 {%- if params.abiotic_environment %}
 {{ params.abiotic_environment }}
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **abiotic environment**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -289,13 +264,11 @@ abiotic_environment: >
 {% endif %}
 
 <!-- Key processes and interactions -->
-
-[Key processes and interactions]{.parameter .ecosystem-description-list}
+{span .parameter}`Key processes and interactions:`&nbsp;
 {%- if params.key_processes_and_interactions %}
 {{ params.key_processes_and_interactions }}
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **key processes and interactions**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -306,13 +279,11 @@ key_processes_and_interactions: >
 {% endif %}
 
 <!-- Major threats -->
-
-[Major threats]{.parameter .ecosystem-description-list}
+{span .parameter}`Major threats:`&nbsp;
 {%- if params.major_threats %}
 {{ params.major_threats }}  
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **major threats**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -323,13 +294,11 @@ major_threats: >
 {% endif %}
 
 <!-- Ecosystem collapse definition -->
-
-[Ecosystem collapse definition]{.parameter .ecosystem-description-list}
+{span .parameter}`Ecosystem collapse definition:`&nbsp;
 {%- if params.ecosystem_collapse_definition %}
 {{ params.ecosystem_collapse_definition }}
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **ecosystem collapse definition**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -340,13 +309,11 @@ ecosystem_collapse_definition: >
 {% endif %}
 
 <!-- Assessment summary -->
-
-[Assessment summary]{.parameter .ecosystem-description-list}
+{span .parameter}`Assessment summary:`&nbsp;
 {%- if params.assessment_summary %}
 **{{ params.assessment_summary }}**
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **assessment summary**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -357,8 +324,7 @@ assessment_summary: >
 {% endif %}
 
 <!-- Assessment information -->
-
-[Assessment information]{.parameter .ecosystem-description-list}
+{span .parameter}`Assessment information:`&nbsp;
 {%- if params.criteria_status %}
 <table class="criteria-table">
   <thead>
@@ -444,8 +410,7 @@ assessment_summary: >
     </tbody>
   </table>
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **criteria status** information.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -487,13 +452,11 @@ where `STATUS` is one of the following:
 {% endif %}
 
 <!-- Assessment outcome -->
-
-[Assessment outcome]{.parameter .ecosystem-description-list}
+{span .parameter}`Assessment outcome:`&nbsp;
 {%- if params.assessment_outcome %}
 **{{ params.assessment_outcome }}**
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **assessment outcome**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -504,13 +467,11 @@ assessment_outcome: >
 {% endif %}
 
 <!-- Year published -->
-
-[Year published]{.parameter .ecosystem-description-list}
+{span .parameter}`Year published:`&nbsp;
 {%- if params.year_published %}
 {{ params.year_published }}
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **year published**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -521,13 +482,11 @@ year_published: The ecosystem's year published goes here (e.g. 2020)
 
 
 <!-- Date assessed -->
-
-[Date assessed]{.parameter .ecosystem-description-list}
+{span .parameter}`Date assessed:`&nbsp;
 {%- if params.year_published %}
 {{ params.date_assessed }}
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **date assessed**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -537,8 +496,7 @@ date_assessed: The ecosystem's date assessed goes here (e.g. 24th January 2020)
 {% endif %}
 
 <!-- Assessment credits -->
-
-[Assessment credits]{.parameter .ecosystem-description-list}
+{span .parameter}`Assessment credits:`&nbsp;
 {%- if params.assessment_credits %}
 {% if params.assessment_credits.assessed_by %}
 Assessed by: {{ params.assessment_credits.assessed_by }}
@@ -550,8 +508,7 @@ Reviewed by: {{ params.assessment_credits.reviewed_by }}
 Contributions by: {{ params.assessment_credits.contributions_by }}
 {%- endif %}
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **assessment credits**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -564,13 +521,11 @@ assessment_credits:
 {% endif %}
 
 <!-- Criterion A -->
-
-[Criterion A]{.parameter .ecosystem-description-list}
+{span .parameter}`Criterion A:`&nbsp;
 {%- if params.criterion_a_description %}
 {{ params.criterion_a_description }}
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **criterion A description**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -581,13 +536,11 @@ criterion_a_description: >
 {% endif %}
 
 <!-- Criterion B -->
-
-[Criterion B]{.parameter .ecosystem-description-list}
+{span .parameter}`Criterion B:`&nbsp;
 {%- if params.criterion_b_description %}
 {{ params.criterion_b_description }}
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **criterion B description**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -597,10 +550,8 @@ criterion_b_description: >
 :::
 {% endif %}
 
-[TEST]{.parameter .ecosystem-description-list}
-
-```{python}
-#| echo: true
+{span .parameter}`TEST:`&nbsp;
+```{code-cell} python
 import ee
 from gee_redlist.ee_rle import make_eoo, area_km2
 from google.auth import default
@@ -628,13 +579,11 @@ print(f'EOO area: {area_km2(eoo_polygon).getInfo()} km²')
 ```
 
 <!-- Criterion C -->
-
-[Criterion C]{.parameter .ecosystem-description-list}
+{span .parameter}`Criterion C:`&nbsp;
 {%- if params.criterion_c_description %}
 {{ params.criterion_c_description }}
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **criterion C description**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -645,13 +594,11 @@ criterion_c_description: >
 {% endif %}
 
 <!-- Criterion D -->
-
-[Criterion D]{.parameter .ecosystem-description-list}
+{span .parameter}`Criterion D:`&nbsp;
 {%- if params.criterion_d_description %}
 {{ params.criterion_d_description }}
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **criterion D description**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml
@@ -662,13 +609,11 @@ criterion_d_description: >
 {% endif %}
 
 <!-- Criterion E -->
-
-[Criterion E]{.parameter .ecosystem-description-list}
+{span .parameter}`Criterion E:`&nbsp;
 {%- if params.criterion_e_description %}
 {{ params.criterion_e_description }}
 {%- else %}
-
-::: {.callout-note}
+::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **criterion E description**.
 Please add this information to the YAML configuration file, using the following format:
 ```yaml

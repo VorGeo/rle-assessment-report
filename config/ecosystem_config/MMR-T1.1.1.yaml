@@ -117,7 +117,7 @@ criterion_c_description: >
   and therefore the ecosystem is assessed as Vulnerable (the most commonly
   returned result from all scenarios), with plausible bounds of Least Concern –
   Vulnerable. **Vulnerable (Least Concern – Vulnerable).**
-criterion_d_description: >
+criterion_d_description: >+
   Analyses of a dataset that depicts the distribution of primary forests in
   South-East Asia (Potapov et al. 2019) suggest that 74.9% of the remaining
   extent of this ecosystem is primary forest. If 100% of the ecosystem is
@@ -129,8 +129,13 @@ criterion_d_description: >
   over the period 2000-2017. A linear model fit to this dataset suggests that
   primary forest cover in this ecosystem will not decline sufficiently to meet
   any category thresholds over a 50 year period (1984-2034). The ecosystem is
-  assessed as Least Concern under Criterion D2b. **Least Concern.** <img
-  src="MMR-T1.1.1_crit_D_chart.png" alt="Chart of Criterion D" height="400"/>
+  assessed as Least Concern under Criterion D2b. **Least Concern.**
+
+
+  <img src="MMR-T1.1.1_crit_D_chart.png" height="300"/>
+
+
+  (Note, the HTML image gets resized unless there is content following it.)
 
 criterion_e_description: >
   No models were used to assess Criterion E. **Not Evaluated.**

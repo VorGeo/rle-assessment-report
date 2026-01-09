@@ -1,6 +1,16 @@
-```{code-cell} python
-:tags: [hide-cell]
+---
+kernelspec:
+  name: python3
+  display_name: Python 3
+  language: python
+---
 
+```{code-cell} python
+import gee_redlist
+print(f'{gee_redlist.__version__ = }')
+```
+
+```{code-cell} python
 from IPython.display import Markdown, display
 
 country_name = 'Myanmar'
@@ -19,75 +29,90 @@ ecosystem_image = {
 iucn_status = 'Endangered'
 ```
 
+<!-- Title -->
 ## Tropical forest
 
-**Authors:** {eval}`", ".join(authors)`
+<!-- Authors -->
+{span .parameter}`Authors:`&nbsp;
+J. Smith, J. Pérez
 
-```{code-cell} python
-:tags: [hide-cell]
+<!-- Local ecosystem names -->
+{span .parameter}``{eco}`MMR-TSAMPLE:country_name` ecosystem names:``&nbsp;Ecosystem Name 1 [@bibtexReference1], Ecosystem Name 2 [@bibtexReference2]
 
-ecosystem_name_str = Markdown(", ".join([
-    f"{ecosystem_name['name']} [{ecosystem_name['reference']}]"
-    for ecosystem_name in ecosystem_names_local
-]))
-```
+<!-- Biome -->
+{span .parameter}`Biome:`&nbsp;
+Tropical and subtropical forests (T1)
 
-**{eval}`country_name` ecosystem names:** {eval}`ecosystem_name_str`
+<!-- Functional Group -->
+{span .parameter}`Functional Group:`&nbsp;
+T1.1
 
-**Biome:** Tropical and subtropical forests (T1)
+<!-- Global classification -->
+{span .parameter}`Global classification:`&nbsp;
+MMR-TSAMPLE
 
-**Functional Group:** T1.1
+<!-- IUCN Status -->
+{span .parameter}`IUCN Status:`&nbsp;
+Endangered
 
-**Global classification:** MMR-TSAMPLE
+<!-- Ecosystem Photo -->
+{span .parameter}`Ecosystem Photo:`&nbsp;  
+::: {important} Unable to find ecosystem photo image
+Unable to find ecosystem photo image named:
 
-**IUCN Status:** Endangered
+**content/3_ecosystem_assessments/MMR-TSAMPLE/images/MMR-TSAMPLE_photo.png**
+:::   
 
-**Ecosystem Photo**
+<!-- Ecosystem Map -->
+{span .parameter}`Ecosystem Map:`&nbsp;  
+::: {important} Unable to find ecosystem map image
+Unable to find ecosystem photo image named:
 
-```{warning}
-Unable to find ecosystem photo image named: **ecosystem_assessments/MMR-TSAMPLE/images/MMR-TSAMPLE_photo.png**
-```
+**content/3_ecosystem_assessments/MMR-TSAMPLE/images/MMR-TSAMPLE_map.png**
+:::     
 
-**Ecosystem Map**
-
-```{warning}
-Unable to find ecosystem map image named: **ecosystem_assessments/MMR-TSAMPLE/images/MMR-TSAMPLE_map.png**
-```
-
-**Description**
-
+<!-- Description -->
+{span .parameter}`Description:`&nbsp;
 The ecosystem description goes here.
 
-**Distribution**
 
+<!-- Distribution -->
+{span .parameter}`Distribution:`&nbsp;
 The ecosystem distribution text goes here.
 
-**Characteristic Native Biota**
 
+<!-- Characteristic Native Biota -->
+{span .parameter}`Characteristic Native Biota:`&nbsp;
 The ecosystem's characteristic native biota text goes here.
 
-**Abiotic environment**
 
+<!-- Abiotic environment -->
+{span .parameter}`Abiotic environment:`&nbsp;
 The ecosystem's abiotic environment text goes here.
 
-**Key processes and interactions**
 
+<!-- Key processes and interactions -->
+{span .parameter}`Key processes and interactions:`&nbsp;
 The ecosystem's key processes and interactions text goes here.
 
-**Major threats**
 
+<!-- Major threats -->
+{span .parameter}`Major threats:`&nbsp;
 The ecosystem's major threats text goes here.
 
-**Ecosystem collapse definition**
 
+<!-- Ecosystem collapse definition -->
+{span .parameter}`Ecosystem collapse definition:`&nbsp;
 The ecosystem's ecosystem collapse definition text goes here.
 
-**Assessment summary**
 
-The ecosystem's assessment summary text goes here.
+<!-- Assessment summary -->
+{span .parameter}`Assessment summary:`&nbsp;
+**The ecosystem's assessment summary text goes here.
+**
 
-**Assessment information**
-
+<!-- Assessment information -->
+{span .parameter}`Assessment information:`&nbsp;
 <table class="criteria-table">
   <thead>
     <tr>
@@ -172,19 +197,22 @@ The ecosystem's assessment summary text goes here.
     </tbody>
   </table>
 
-**Assessment outcome**
+<!-- Assessment outcome -->
+{span .parameter}`Assessment outcome:`&nbsp;
+**The ecosystem's assessment outcome text goes here.
+**
 
-The ecosystem's assessment outcome text goes here.
-
-**Year published**
-
+<!-- Year published -->
+{span .parameter}`Year published:`&nbsp;
 1999
 
-**Date assessed**
 
+<!-- Date assessed -->
+{span .parameter}`Date assessed:`&nbsp;
 24th January 2000
 
-**Assessment credits**
+<!-- Assessment credits -->
+{span .parameter}`Assessment credits:`&nbsp;
 
 Assessed by: Jane Smith
 
@@ -192,22 +220,53 @@ Reviewed by: Jose Pérez
 
 Contributions by: Kevin Bacon
 
-**Criterion A**
-
+<!-- Criterion A -->
+{span .parameter}`Criterion A:`&nbsp;
 The ecosystem's criterion A description text goes here.
 
-**Criterion B**
 
-The ecosystem's criterion B description text goes here.
+<!-- Criterion B -->
+{span .parameter}`Criterion B:`&nbsp;
+{'text': "The ecosystem's criterion B description text goes here."}
 
-**Criterion C**
+{span .parameter}`TEST:`&nbsp;
+```{code-cell} python
+import ee
+from gee_redlist.ee_rle import make_eoo, area_km2
+from google.auth import default
 
+# Use Application Default Credentials (ADC) from GOOGLE_APPLICATION_CREDENTIALS
+# This works both locally (after gcloud auth) and in CI/CD (with Workload Identity)
+credentials, _ = default(scopes=[
+    'https://www.googleapis.com/auth/earthengine',
+    'https://www.googleapis.com/auth/cloud-platform'
+])
+ee.Initialize(credentials=credentials, project='goog-rle-assessments')
+
+asset_id = ecosystem_image['asset_id']
+pixel_value = int(ecosystem_image['pixel_value'])
+
+ee_image = (
+    ee.Image(ecosystem_image['asset_id'])
+      .eq(pixel_value)
+      .selfMask()
+)
+print(f'ee_image: {ee_image.getInfo()}')
+
+eoo_polygon = make_eoo(ee_image)
+print(f'EOO area: {area_km2(eoo_polygon).getInfo()} km²')
+```
+
+<!-- Criterion C -->
+{span .parameter}`Criterion C:`&nbsp;
 The ecosystem's criterion C description text goes here.
 
-**Criterion D**
 
+<!-- Criterion D -->
+{span .parameter}`Criterion D:`&nbsp;
 The ecosystem's criterion D description text goes here.
 
-**Criterion E**
 
+<!-- Criterion E -->
+{span .parameter}`Criterion E:`&nbsp;
 The ecosystem's criterion E description text goes here.

@@ -14,7 +14,7 @@ project:
     - file: content/0.2_preface.md
     - file: content/0.3_acknowledgments.md
     - file: content/0.4_coordinating-orgs.md
-    - file: content/test.md
+    - file: content/0.4_burmese.md
       title: TEST TITLE
     - file: content/0.5_summary.md
     - file: content/1_intro.md
@@ -22,17 +22,13 @@ project:
     - title: Ecosystem Assessments
       file: content/3_ecosystem_description.md
       children:
-        - file: ecosystem_assessments/overview.md
-        - title: Sample Ecosystem
-          children:
-            - file: ecosystem_assessments/MMR-TSAMPLE/SAMPLE.md
         - title: Tanintharyi Island Rainforest
           children:
-            - file: ecosystem_assessments/MMR-T1.1.1/MMR-T1.1.1.md
-            - file: ecosystem_assessments/MMR-T1.1.1/MMR-T1.1.1_crit_b_test.ipynb
+            - file: content/3_ecosystem_assessments/MMR-T1.1.1/MMR-T1.1.1.md
+            - file: content/3_ecosystem_assessments/MMR-T1.1.1/MMR-T1.1.1_crit_b_test.ipynb
         - title: Tanintharyi Limestone Tropical Evergreen Forest
           children:
-            - file: ecosystem_assessments/MMR-T1.1.3/MMR-T1.1.3.md
+            - file: content/3_ecosystem_assessments/MMR-T1.1.3/MMR-T1.1.3.md
     - file: content/4_assessment_outcomes.md
     - file: content/5_recommendations.md
     - file: content/6_references.md
@@ -40,6 +36,9 @@ project:
     - title: Setup
       children:
         - file: setup/EARTHENGINE_SETUP.md
+  plugins:
+    - type: executable
+      path: scripts/ecosystem_config_plugin.py
 
 site:
   template: book-theme
