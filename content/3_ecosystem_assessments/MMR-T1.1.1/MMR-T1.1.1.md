@@ -1,4 +1,5 @@
 ---
+title: Tanintharyi island rainforest
 kernelspec:
   name: python3
   display_name: Python 3
@@ -6,26 +7,14 @@ kernelspec:
 ---
 
 ```{code-cell} python
+:tags: [remove-input]
 from IPython.display import Markdown, display
 
-country_name = 'Myanmar'
-ecosystem_name = 'Tanintharyi island rainforest'
-ecosystem_names_local = [{'name': 'Tropical rainforest', 'reference': '@kress2003checklist'}, {'name': 'Lowland evergreen rainforest', 'reference': '@connette2016mapping'}]
-authors = ['N.J. Murray', 'R. Tizard', 'D.A. Keith']
-biome = 'Tropical and subtropical forests (T1)'
-functional_group = 'T1.1'
-global_classification = 'MMR-T1.1.1'
-ecosystem_photo = 'MMR-T1.1.1_photo.png'
-ecosystem_map = 'MMR-T1.1.1_map.png'
 ecosystem_image = {
     'asset_id': 'projects/goog-rle-assessments/assets/mm_ecosys_v7b',
     'pixel_value': '52'
 }
-iucn_status = 'Vulnerable (Least Concern – Vulnerable)'
 ```
-
-<!-- Title -->
-## Tanintharyi island rainforest
 
 <!-- Authors -->
 {span .parameter}`Authors:`&nbsp;

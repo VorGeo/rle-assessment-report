@@ -1,4 +1,5 @@
 ---
+title: {{ params.ecosystem_name }}
 kernelspec:
   name: python3
   display_name: Python 3
@@ -6,36 +7,14 @@ kernelspec:
 ---
 
 ```{code-cell} python
+:tags: [remove-input]
 from IPython.display import Markdown, display
 
-country_name = '{{ params.country_name | default("COUNTRY_PLACEHOLDER")}}'
-ecosystem_name = '{{ params.ecosystem_name | default("PLACEHOLDER")}}'
-ecosystem_names_local = {{ params.ecosystem_names_local | default([{'name': 'PLACEHOLDER', 'reference': '@placeholder_reference'}])}}
-authors = {{ params.authors | default(["PLACEHOLDER"])}}
-biome = '{{ params.biome | default("PLACEHOLDER")}}'
-functional_group = '{{ params.functional_group | default("PLACEHOLDER")}}'
-global_classification = '{{ params.global_classification | default("GLOBAL_CLASSIFICATION_PLACEHOLDER")}}'
-ecosystem_photo = '{{ params.ecosystem_photo | default("ECOSYSTEM_PHOTO_PLACEHOLDER")}}'
-ecosystem_map = '{{ params.ecosystem_map | default("ECOSYSTEM_MAP_PLACEHOLDER")}}'
 ecosystem_image = {
     'asset_id': '{{ params.ecosystem_image.asset_id | default(None)}}',
     'pixel_value': '{{ params.ecosystem_image.pixel_value | default(None)}}'
 }
-iucn_status = '{{ params.iucn_status | default("IUCN_STATUS_PLACEHOLDER")}}'
 ```
-
-<!-- Title -->
-{%- if not params.country_name %}
-::: {note}
-The country-level configuration file (`config/country_config.yaml`) does not
-specify the **country name**.
-Please add this information to the YAML configuration file, using the following format:
-```yaml
-country_name: Wakanda Forever
-```
-:::
-{% endif %}
-## {{ params.ecosystem_name }}
 
 <!-- Authors -->
 {span .parameter}`Authors:`&nbsp;
