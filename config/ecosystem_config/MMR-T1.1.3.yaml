@@ -10,8 +10,8 @@ ecosystem_names_local:
     reference: "@connette2016mapping"
   - name: Forest on Limestone
     reference: Whitten et al., 1997 # Not in reference list, so added manually.
-biome: Tropical and subtropical forests (T1)
-functional_group: T1.1
+biome: Tropical-subtropical forests biome (T1)
+functional_group: Tropical/Subtropical lowland rainforests (T1.1)
 global_classification: MMR-T1.1.3
 iucn_status: Endangered
 ecosystem_photo: null

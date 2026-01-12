@@ -3,7 +3,7 @@ authors = [{name = "Tyler Erickson", email = "tyler@vorgeo.com"}]
 name = "rle-assessment-report"
 requires-python = ">= 3.11"
 version = "0.1.0"
-dependencies = ["quarto>=0.1.0,<0.2"]
+dependencies = []
 
 [build-system]
 build-backend = "hatchling.build"
@@ -20,12 +20,13 @@ preview = ["pixi-build"]
 [tool.pixi.pypi-dependencies]
 rle_assessment_report = { path = ".", editable = true }
 gee-redlist-python = { git = "https://github.com/VorGeo/gee-redlist-python.git" }
+geoarrow-pyarrow = "*"
+lonboard = "==0.13.0"
 
 [tool.pixi.tasks]
 
 [tool.pixi.dependencies]
 python = "==3.11"
-quarto = ">=1.8.24,<2"
 pyyaml = ">=6.0.3,<7"
 jupyter = ">=1.1.1,<2"
 yaml = ">=0.2.5,<0.3"
@@ -39,3 +40,8 @@ proj = ">=9.7.0,<10"
 gdal = ">=3.12.0,<4"
 numpy = ">=2.3.5,<3"
 matplotlib = ">=3.10.8,<4"
+# lonboard moved to pypi-dependencies for version 0.13.0
+geopandas = ">=1.1.1,<2"
+pyarrow = ">=22.0.0,<23"
+mystmd = ">=1.7.1,<2"
+tectonic = ">=0.15.0,<0.16"

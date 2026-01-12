@@ -3,7 +3,9 @@
     "IUCN",
     "organisation"
   ],
-  "python.defaultInterpreterPath": "/Users/tylere/Documents/GitHub/VorGeo/rle-assessment-report/.pixi/envs/default/bin/python",
+  "python.defaultInterpreterPath": "${workspaceFolder}/.pixi/envs/default/bin/python",
+  "python.terminal.activateEnvironment": false,
+  "python.envFile": "${workspaceFolder}/.env",
   "editor.rulers": [
         80
   ],

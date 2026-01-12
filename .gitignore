@@ -219,4 +219,8 @@ _book/*
 .DS_Store
 
 # Ignore the sample ecosystem
-ecosystem_assessments/MMR-TSAMPLE/SAMPLE_map.png
+config/ecosystem_config/SAMPLE.yaml
+content/3_ecosystem_assessments/MMR-TSAMPLE/*
+
+# MyST build outputs
+_build

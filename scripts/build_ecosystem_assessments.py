@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Build ecosystem assessment QMD files from YAML templates.
+Build ecosystem assessment MD files from YAML templates.
 
-For each YAML file in ecosystem_config/, generates a corresponding QMD file
-in ecosystem_assessments/ using the TEMPLATE_ecosystem_assessment.qmd template
+For each YAML file in ecosystem_config/, generates a corresponding MD file
+in ecosystem_assessments/ using the TEMPLATE_ecosystem_assessment.md template
 and populating Jinja2 variables with YAML data.
 """
 
@@ -31,12 +31,12 @@ def load_yaml(yaml_path):
 
 
 def load_template(template_path):
-    """Load QMD template file."""
+    """Load MD template file."""
     with open(template_path, 'r') as f:
         return f.read()
 
 
-def render_qmd(
+def render_md(
     template_content,
     ecosystem_data,
     country_data,
@@ -84,7 +84,7 @@ def main():
     # Setup paths
     ecosystem_config_dir = Path('config/ecosystem_config')
     template_path = Path('content_templates/TEMPLATE_ecosystem_assessment.jinja')
-    output_dir = Path('ecosystem_assessments')
+    output_dir = Path('content/3_ecosystem_assessments')
     output_images_dir = Path('images')
 
     # Load country-level data
@@ -124,7 +124,7 @@ def main():
             print(f"Ecosystem map already exists: {map_path}")
 
         print("Rendering template...")
-        rendered_content = render_qmd(
+        rendered_content = render_md(
             template_content=template_content,
             ecosystem_data=ecosystem_data,
             country_data=country_data,
@@ -134,7 +134,7 @@ def main():
         print("Writing output file...")
         file_path = Path(
             output_folder,
-            f"{yaml_file.stem}.qmd"
+            f"{yaml_file.stem}.md"
         )
         with open(file_path, 'w') as f:
             f.write(rendered_content)

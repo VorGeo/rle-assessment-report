@@ -9,8 +9,8 @@ ecosystem_names_local:
     reference: "@kress2003checklist"
   - name: Lowland evergreen rainforest
     reference: "@connette2016mapping"
-biome: Tropical and subtropical forests (T1)
-functional_group: T1.1
+biome: Tropical-subtropical forests biome (T1)
+functional_group: Tropical/Subtropical lowland rainforests (T1.1)
 global_classification: MMR-T1.1.1
 iucn_status: Vulnerable (Least Concern – Vulnerable)
 ecosystem_photo: MMR-T1.1.1_photo.png
@@ -25,23 +25,23 @@ description: >
   ocean seaspray and historically received much of its nutrient input from
   nesting seabird populations that have subsequently collapsed. It occurs across
   a wide range of island types including limestone, rubble and sand islands. The
-  canopy is primarily evergreen Dipterocarpaceae (Tagane et al., 2019). Stamp
-  (1924b) reported forests of “tall varied trees who dense canopy, cutting off
-  nearly all light from the ground, is made more intense by the wealth of woody
-  climbers which have struggled upwards to reach the light”.
+  canopy is primarily evergreen Dipterocarpaceae [@tagane2019contributions].
+  @stamp1925vegetation reported forests of “tall varied trees who dense canopy,
+  cutting off nearly all light from the ground, is made more intense by the
+  wealth of woody climbers which have struggled upwards to reach the light”.
 distribution: >
   Occurs on offshore islands in Tanintharyi state.
 characteristic_native_biota: >
   Largely unknown but probably moderately diverse. A recent survey of the Myiek
   archipelago reported a total of 305 species belonging to 241 genera and 91
-  families (Tagane et al. 2019). Surveys of Lampi Island marine park indicated
-  20 species of Dipterocarpaceae. The islands support several localized species
-  along the coastal edges including Great-billed Heron Ardea sumatrana, Beach
-  Thick-knee Esacus magnirostris (NT) and Black-naped Tern Sterna sumatrana, and
-  Collared Kingfisher Todiramphus chloris. The islands also support a range of
-  nomadic frugivores including Nicobar Pigeon Caloenas nicobarica (NT), Large
-  Green-pigeon Treron capellei (VU), Pied Imperialpigeon Ducula bicolor, and
-  Plain-pouched Hornbill Rhyticeros subruficollis (VU).
+  families [@tagane2019contributions]. Surveys of Lampi Island marine park
+  indicated 20 species of Dipterocarpaceae. The islands support several
+  localized species along the coastal edges including Great-billed Heron Ardea
+  sumatrana, Beach Thick-knee Esacus magnirostris (NT) and Black-naped Tern
+  Sterna sumatrana, and Collared Kingfisher Todiramphus chloris. The islands
+  also support a range of nomadic frugivores including Nicobar Pigeon Caloenas
+  nicobarica (NT), Large Green-pigeon Treron capellei (VU), Pied Imperialpigeon
+  Ducula bicolor, and Plain-pouched Hornbill Rhyticeros subruficollis (VU).
 
   The islands also support a population of tool using Long-tailed Macaque Macaca
   fascicularis (VU).
@@ -57,7 +57,7 @@ key_processes_and_interactions: >
   fauna, and endemism due to isolation is likely to be high.
 major_threats: >
   Unregulated tourism development is the principal threat to this ecosystem
-  (UNESCO, 2014).
+  [@centreMyeikArchipelago].
 ecosystem_collapse_definition: >
   This ecosystem is regarded as collapsed when its area has declined to zero,
   when the proportion of the ecosystem considered primary forest declines to 0.
@@ -109,15 +109,15 @@ criterion_b_description: >
   the criteria to be listed as Near Threatened. The ecosystem is assessed as
   Least Concern under Criterion B1 and B2. **Least Concern.**
 criterion_c_description: >
-  An environmental suitability model (Ferrer-Paris et al. 2019; see methods)
-  suggests that reductions in climate suitability will occur with an extent and
-  severity to meet the category thresholds for Vulnerable under Criterion C2a.
-  Variation in the outcomes of the modelled scenarios suggested that the
-  ecosystem could potentially meet thresholds for Least Concern to Vulnerable,
-  and therefore the ecosystem is assessed as Vulnerable (the most commonly
-  returned result from all scenarios), with plausible bounds of Least Concern –
-  Vulnerable. **Vulnerable (Least Concern – Vulnerable).**
-criterion_d_description: >
+  An environmental suitability model [@ferrer2019ecosystem see methods] suggests
+  that reductions in climate suitability will occur with an extent and severity
+  to meet the category thresholds for Vulnerable under Criterion C2a. Variation
+  in the outcomes of the modelled scenarios suggested that the ecosystem could
+  potentially meet thresholds for Least Concern to Vulnerable, and therefore the
+  ecosystem is assessed as Vulnerable (the most commonly returned result from
+  all scenarios), with plausible bounds of Least Concern – Vulnerable.
+  **Vulnerable (Least Concern – Vulnerable).**
+criterion_d_description: >+
   Analyses of a dataset that depicts the distribution of primary forests in
   South-East Asia (Potapov et al. 2019) suggest that 74.9% of the remaining
   extent of this ecosystem is primary forest. If 100% of the ecosystem is
@@ -129,8 +129,13 @@ criterion_d_description: >
   over the period 2000-2017. A linear model fit to this dataset suggests that
   primary forest cover in this ecosystem will not decline sufficiently to meet
   any category thresholds over a 50 year period (1984-2034). The ecosystem is
-  assessed as Least Concern under Criterion D2b. **Least Concern.** <img
-  src="MMR-T1.1.1_crit_D_chart.png" alt="Chart of Criterion D" height="400"/>
+  assessed as Least Concern under Criterion D2b. **Least Concern.**
+
+
+  <img src="MMR-T1.1.1_crit_D_chart.png" height="300"/>
+
+
+  (Note, the HTML image gets resized unless there is content following it.)
 
 criterion_e_description: >
   No models were used to assess Criterion E. **Not Evaluated.**
