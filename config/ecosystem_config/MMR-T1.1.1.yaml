@@ -109,14 +109,14 @@ criterion_b_description: >
   the criteria to be listed as Near Threatened. The ecosystem is assessed as
   Least Concern under Criterion B1 and B2. **Least Concern.**
 criterion_c_description: >
-  An environmental suitability model (Ferrer-Paris et al. 2019; see methods)
-  suggests that reductions in climate suitability will occur with an extent and
-  severity to meet the category thresholds for Vulnerable under Criterion C2a.
-  Variation in the outcomes of the modelled scenarios suggested that the
-  ecosystem could potentially meet thresholds for Least Concern to Vulnerable,
-  and therefore the ecosystem is assessed as Vulnerable (the most commonly
-  returned result from all scenarios), with plausible bounds of Least Concern –
-  Vulnerable. **Vulnerable (Least Concern – Vulnerable).**
+  An environmental suitability model [@ferrer2019ecosystem see methods] suggests
+  that reductions in climate suitability will occur with an extent and severity
+  to meet the category thresholds for Vulnerable under Criterion C2a. Variation
+  in the outcomes of the modelled scenarios suggested that the ecosystem could
+  potentially meet thresholds for Least Concern to Vulnerable, and therefore the
+  ecosystem is assessed as Vulnerable (the most commonly returned result from
+  all scenarios), with plausible bounds of Least Concern – Vulnerable.
+  **Vulnerable (Least Concern – Vulnerable).**
 criterion_d_description: >+
   Analyses of a dataset that depicts the distribution of primary forests in
   South-East Asia (Potapov et al. 2019) suggest that 74.9% of the remaining
