@@ -9,7 +9,7 @@ ecosystem_names_local:
     reference: "@kress2003checklist"
   - name: Lowland evergreen rainforest
     reference: "@connette2016mapping"
-biome: Tropical and subtropical forests (T1)
+biome: "{term}`Tropical-subtropical forests biome (T1)`"
 functional_group: T1.1
 global_classification: MMR-T1.1.1
 iucn_status: Vulnerable (Least Concern – Vulnerable)
@@ -25,23 +25,23 @@ description: >
   ocean seaspray and historically received much of its nutrient input from
   nesting seabird populations that have subsequently collapsed. It occurs across
   a wide range of island types including limestone, rubble and sand islands. The
-  canopy is primarily evergreen Dipterocarpaceae (Tagane et al., 2019). Stamp
-  (1924b) reported forests of “tall varied trees who dense canopy, cutting off
-  nearly all light from the ground, is made more intense by the wealth of woody
-  climbers which have struggled upwards to reach the light”.
+  canopy is primarily evergreen Dipterocarpaceae [@tagane2019contributions].
+  @stamp1925vegetation reported forests of “tall varied trees who dense canopy,
+  cutting off nearly all light from the ground, is made more intense by the
+  wealth of woody climbers which have struggled upwards to reach the light”.
 distribution: >
   Occurs on offshore islands in Tanintharyi state.
 characteristic_native_biota: >
   Largely unknown but probably moderately diverse. A recent survey of the Myiek
   archipelago reported a total of 305 species belonging to 241 genera and 91
-  families (Tagane et al. 2019). Surveys of Lampi Island marine park indicated
-  20 species of Dipterocarpaceae. The islands support several localized species
-  along the coastal edges including Great-billed Heron Ardea sumatrana, Beach
-  Thick-knee Esacus magnirostris (NT) and Black-naped Tern Sterna sumatrana, and
-  Collared Kingfisher Todiramphus chloris. The islands also support a range of
-  nomadic frugivores including Nicobar Pigeon Caloenas nicobarica (NT), Large
-  Green-pigeon Treron capellei (VU), Pied Imperialpigeon Ducula bicolor, and
-  Plain-pouched Hornbill Rhyticeros subruficollis (VU).
+  families [@tagane2019contributions]. Surveys of Lampi Island marine park
+  indicated 20 species of Dipterocarpaceae. The islands support several
+  localized species along the coastal edges including Great-billed Heron Ardea
+  sumatrana, Beach Thick-knee Esacus magnirostris (NT) and Black-naped Tern
+  Sterna sumatrana, and Collared Kingfisher Todiramphus chloris. The islands
+  also support a range of nomadic frugivores including Nicobar Pigeon Caloenas
+  nicobarica (NT), Large Green-pigeon Treron capellei (VU), Pied Imperialpigeon
+  Ducula bicolor, and Plain-pouched Hornbill Rhyticeros subruficollis (VU).
 
   The islands also support a population of tool using Long-tailed Macaque Macaca
   fascicularis (VU).

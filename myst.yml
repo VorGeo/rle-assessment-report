@@ -5,6 +5,17 @@ project:
   title: Threatened ecosystems of Myanmar
   subtitle: An IUCN Red List of Ecosystems Assessment
   # keywords: []
+  abbreviations:
+    AOO: Area of occupancy
+    EOO: Extent of occurrence
+    NT: Near Threatened
+    VU: Vulnerable
+    EN: Endangered
+    CR: Critically Endangered
+    DD: Data Deficient
+    LC: Least Concern
+    NE: Not Evaluated
+    CO: Collapsed
 
   github: https://github.com/VorGeo/rle-assessment-report
   # To autogenerate a Table of Contents, run "myst init --write-toc"
@@ -32,6 +43,7 @@ project:
     - file: content/4_assessment_outcomes.md
     - file: content/5_recommendations.md
     - file: content/6_references.md
+    - file: content/7_glossary.md
     - file: content/appendix_1.md
     - title: Setup
       children:
