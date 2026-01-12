@@ -9,8 +9,8 @@ ecosystem_names_local:
     reference: "@kress2003checklist"
   - name: Lowland evergreen rainforest
     reference: "@connette2016mapping"
-biome: "{term}`Tropical-subtropical forests biome (T1)`"
-functional_group: T1.1
+biome: Tropical-subtropical forests biome (T1)
+functional_group: Tropical/Subtropical lowland rainforests (T1.1)
 global_classification: MMR-T1.1.1
 iucn_status: Vulnerable (Least Concern – Vulnerable)
 ecosystem_photo: MMR-T1.1.1_photo.png

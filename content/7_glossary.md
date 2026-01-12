@@ -9,6 +9,11 @@ Tropical-subtropical forests biome (T1)
 : The Tropical-subtropical forests biome includes moderate to highly productive ecosystems with closed tree canopies occurring at lower latitudes north and south of the equator.<br/>
 *(source: [IUCN Global Ecosystem Typology](https://global-ecosystems.org/explore/biomes/T1))*
 
+Tropical/Subtropical lowland rainforests (T1.1)
+: These closed-canopy forests are renowned for their complex structure and high primary productivity, which support high functional and taxonomic diversity.<br/>
+*(source: [IUCN Global Ecosystem Typology, T1.1](https://global-ecosystems.org/explore/groups/T1.1))*
+
+
 :::
 
 
