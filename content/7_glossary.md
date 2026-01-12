@@ -13,6 +13,20 @@ Tropical/Subtropical lowland rainforests (T1.1)
 : These closed-canopy forests are renowned for their complex structure and high primary productivity, which support high functional and taxonomic diversity.<br/>
 *(source: [IUCN Global Ecosystem Typology, T1.1](https://global-ecosystems.org/explore/groups/T1.1))*
 
+Criterion A
+: Reduction in geographic distribution
+
+Criterion B
+: Restricted geographic distribution
+
+Criterion C
+: Criterion C assesses declines in ecosystem functions or processes based on symptoms of abiotic (environmental) degradation.
+
+Criterion D
+: Criterion D assesses declines in ecosystem functions or processes disruption of biotic processes, including declines of biota with key functional roles.
+
+Criterion E
+: Quantitative risk analysis
 
 :::
 
