@@ -428,7 +428,7 @@ where `STATUS` is one of the following:
 <!-- Assessment outcome -->
 {span .parameter}`Assessment outcome:`&nbsp;
 {%- if params.assessment_outcome %}
-**{{ params.assessment_outcome }}**
+**{{ params.assessment_outcome|trim }}**
 {%- else %}
 ::: {note}
 The ecosystem assessment configuration file does not specify the ecosystem's **assessment outcome**.
