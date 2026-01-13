@@ -4,9 +4,9 @@ numbering:
   title: true
   headings: true
   figure:
-    enumerator: 3.%s
+    enumerator: 4.%s
   table:
-    enumerator: 3.%s
+    enumerator: 4.%s
 ---
 
 # Assessment Outcomes
