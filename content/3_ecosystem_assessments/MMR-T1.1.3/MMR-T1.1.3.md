@@ -1,4 +1,5 @@
 ---
+title: Tanintharyi limestone tropical evergreen forest
 kernelspec:
   name: python3
   display_name: Python 3
@@ -6,31 +7,14 @@ kernelspec:
 ---
 
 ```{code-cell} python
-import gee_redlist
-print(f'{gee_redlist.__version__ = }')
-```
-
-```{code-cell} python
+:tags: [remove-input]
 from IPython.display import Markdown, display
 
-country_name = 'Myanmar'
-ecosystem_name = 'Tanintharyi limestone tropical evergreen forest'
-ecosystem_names_local = [{'name': 'Tropical rainforest', 'reference': '@kress2003checklist'}, {'name': 'Lowland evergreen rainforest', 'reference': '@connette2016mapping'}, {'name': 'Forest on Limestone', 'reference': 'Whitten et al., 1997'}]
-authors = ['N.J. Murray', 'R. Tizard', 'D.A. Keith']
-biome = 'Tropical and subtropical forests (T1)'
-functional_group = 'T1.1'
-global_classification = 'MMR-T1.1.3'
-ecosystem_photo = 'None'
-ecosystem_map = 'MMR-T1.1.3_map.png'
 ecosystem_image = {
     'asset_id': 'projects/goog-rle-assessments/assets/mm_ecosys_v7b',
     'pixel_value': '53'
 }
-iucn_status = 'Endangered'
 ```
-
-<!-- Title -->
-## Tanintharyi limestone tropical evergreen forest
 
 <!-- Authors -->
 {span .parameter}`Authors:`&nbsp;
@@ -41,11 +25,11 @@ N.J. Murray, R. Tizard, D.A. Keith
 
 <!-- Biome -->
 {span .parameter}`Biome:`&nbsp;
-Tropical and subtropical forests (T1)
+{term}`Tropical-subtropical forests biome (T1)`
 
 <!-- Functional Group -->
 {span .parameter}`Functional Group:`&nbsp;
-T1.1
+{term}`Tropical/Subtropical lowland rainforests (T1.1)`
 
 <!-- Global classification -->
 {span .parameter}`Global classification:`&nbsp;
@@ -105,8 +89,7 @@ This ecosystem is regarded as collapsed when its area has declined to zero, or w
 
 <!-- Assessment summary -->
 {span .parameter}`Assessment summary:`&nbsp;
-**This ecosystem is highly restricted to limestone substrates and ongoing threats, particularly from quarrying, suggest that this ecosystem is undergoing a continuing decline.
-**
+**This ecosystem is highly restricted to limestone substrates and ongoing threats, particularly from quarrying, suggest that this ecosystem is undergoing a continuing decline.**
 
 <!-- Assessment information -->
 {span .parameter}`Assessment information:`&nbsp;
@@ -217,12 +200,12 @@ Reviewed by: David Keith
 Contributions by: Lee Grismer
 
 <!-- Criterion A -->
-{span .parameter}`Criterion A:`&nbsp;
+{span .parameter}``{term}`Criterion A`:``&nbsp;
 No time-series map data was available for assessing reduction in distribution of this ecosystem over any of the assessment time frames. **Data Deficient**.
 
 
 <!-- Criterion B -->
-{span .parameter}`Criterion B:`&nbsp;
+{span .parameter}``{term}`Criterion B`:``&nbsp;
 This ecosystem is highly restricted in limestone landscapes and has an AOO of 56 10 x 10 km grid cells and an EOO of 3,796 km2 There is evidence that limestone quarrying and other threats are leading to continuing decline, meeting subcriteria a(i) and a(iii). The ecosystem is assessed as **Endangered**.
 
 
@@ -255,15 +238,15 @@ print(f'EOO area: {area_km2(eoo_polygon).getInfo()} km²')
 ```
 
 <!-- Criterion C -->
-{span .parameter}`Criterion C:`&nbsp;
+{span .parameter}``{term}`Criterion C`:``&nbsp;
 Climate simulation models suggest that environmental conditions within the limestone landscapes of southern Myanmar are unlikely to reduce suitable areas sufficiently to result in this ecosystem becoming threatened by 2050. It should be noted that the occurrence of Karst landscapes is a key distributional driver of this ecosystem, and the scale at which the suitability models were run may not adequately depict the fine-scale changes expected over the next three decades. We recommend further work to refine maps of Karst landscape to better limit the distribution of our model. **Least Concern**.
 
 
 <!-- Criterion D -->
-{span .parameter}`Criterion D:`&nbsp;
+{span .parameter}``{term}`Criterion D`:``&nbsp;
 Remote sensing analyses suggest that 72.4% of the remaining extent of this ecosystem meets criteria to be classified as primary forest (Potapov et al., 2019). If 100% of the ecosystem is assumed to be primary forest in 1750, there has been an 27.6% loss in primary forest extent since 1750. We assume that loss of primary forest has a relative severity of >90%, and use the extent of primary forest loss as a biotic variable for assessing Criterion D. With an 27.6% loss of primary forest extent, the ecosystem is assessed as Least Concern under Criterion D3. Analyses of the time-series of primary forest data (n = 18 time points) indicate that there has been 8.4% reduction in primary forest cover over the period 2000-2017. A linear model fit to this dataset, assuming that collapse occurs at 100% loss of primary forest cover, suggests that primary forest loss in this ecosystem will not occur to an extent to meet any category thresholds over a 50 year period (1984- 2034). The ecosystem is assessed as Least Concern under Criterion D2b. **Least Concern**.
 
 
 <!-- Criterion E -->
-{span .parameter}`Criterion E:`&nbsp;
+{span .parameter}``{term}`Criterion E`:``&nbsp;
 No models were used to assess Criterion E. **Not Evaluated**.
