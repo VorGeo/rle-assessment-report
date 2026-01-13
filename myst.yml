@@ -44,6 +44,9 @@ project:
     - file: content/5_recommendations.md
     - file: content/6_references.md
     - file: content/7_glossary.md
+    - title: Appendix
+      children:
+        - file: content/appendix_1.md
     - file: content/appendix_1.md
     - title: Setup
       children:
