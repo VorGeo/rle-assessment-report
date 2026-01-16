@@ -24,6 +24,11 @@ geoarrow-pyarrow = "*"
 lonboard = "==0.13.0"
 
 [tool.pixi.tasks]
+# Use local mystmd installation
+myst = "node /Users/tylere/Documents/GitHub/jupyter-book/mystmd/packages/mystmd/dist/myst.cjs"
+myst-build = "node /Users/tylere/Documents/GitHub/jupyter-book/mystmd/packages/mystmd/dist/myst.cjs build"
+myst-start = "node /Users/tylere/Documents/GitHub/jupyter-book/mystmd/packages/mystmd/dist/myst.cjs start"
+myst-clean = "node /Users/tylere/Documents/GitHub/jupyter-book/mystmd/packages/mystmd/dist/myst.cjs clean"
 
 [tool.pixi.dependencies]
 python = "==3.11"
