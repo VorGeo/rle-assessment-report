@@ -8399,7 +8399,7 @@ packages:
 - pypi: ./
   name: rle-assessment-report
   version: 0.1.0
-  sha256: 5ca58371f442737d6a23ef516edcd3c4e7de82808fcdb763e440a99867e9509e
+  sha256: 4280a8b63bbfec6ea99fc65bae280b82aae04251a5b0eb8a7588663b241593fe
   requires_python: '>=3.11'
   editable: true
 - conda: https://conda.anaconda.org/conda-forge/linux-64/rpds-py-0.30.0-py311h902ca64_0.conda

@@ -29,6 +29,8 @@ quarto-preview = "quarto preview"
 quarto-render = "quarto render"
 quarto-check = "quarto check"
 quarto-clean = "rm -rf _book"
+# TinyTeX installation
+tinytex-install = "quarto install tinytex"
 
 [tool.pixi.dependencies]
 python = "==3.11"
