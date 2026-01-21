@@ -51,6 +51,9 @@ project:
     - title: Setup
       children:
         - file: setup/EARTHENGINE_SETUP.md
+  numbering:
+    title: true
+    headings: true
   plugins:
     - type: executable
       path: scripts/ecosystem_config_plugin.py

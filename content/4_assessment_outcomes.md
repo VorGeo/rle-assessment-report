@@ -1,8 +1,8 @@
 ---
 title: Assessment Outcomes
 numbering:
-  title: true
-  headings: true
+  headings:
+    start: 4
   figure:
     enumerator: 4.%s
   table:

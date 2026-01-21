@@ -1,8 +1,6 @@
 ---
 title: Introduction
 numbering:
-  title: true
-  headings: true
   figure:
     enumerator: 1.%s
 ---

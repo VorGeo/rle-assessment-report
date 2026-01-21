@@ -1,8 +1,6 @@
 ---
 title: Ecosystem description and assessment
 numbering:
-  title: true
-  headings: true
   table:
     enumerator: 3.%s
 ---
