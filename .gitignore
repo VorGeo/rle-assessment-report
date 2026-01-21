@@ -206,16 +206,12 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-/.quarto/
-*/libs/quarto-html/tippy.umd.min.js
-
 # pixi environments
 .pixi
 *.egg-info
 
 _book/*
 
-**/*.quarto_ipynb
 .DS_Store
 
 # Ignore the sample ecosystem
