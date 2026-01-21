@@ -1,7 +1,6 @@
 ---
-title: Threatened ecosystems of Myanmar
 subtitle: An IUCN Red List of Ecosystems Assessment
-numbering: false
+number-sections: false
 authors:
     - name: Nicholas J. Murray
     - name: David A. Keith
@@ -14,6 +13,9 @@ authors:
     - name: Hedley Grantham
 date: 2025-09-18
 ---
+
+# Threatened ecosystems of Myanmar {.unnumbered}
+
 
 2020 | Version 1.0
 

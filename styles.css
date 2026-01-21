@@ -1,5 +1,4 @@
-/* Quarto styling
-
+/* Quarto table styling */
 
 td, th {
   line-height: 1.0;
@@ -17,7 +16,6 @@ td {
 .criteria-table td:last-child {
   font-weight: bold;
 }
-*/
 
 .parameter {
     color: red;

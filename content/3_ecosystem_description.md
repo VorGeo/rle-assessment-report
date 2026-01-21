@@ -1,5 +1,4 @@
 ---
-title: Ecosystem description and assessment
 numbering:
   table:
     enumerator: 3.%s
@@ -20,12 +19,10 @@ The associated assessment section provides the details the Red List assessments,
 including the data sources, methods of analysis, evidence statements and key
 references.
 
-:::{table} Components of ecosystem description
-:label: table
-:align: center
+: Components of ecosystem description {#tbl-components}
 
 | Component | Description |
-|-----|-----|
+|-----------|-------------|
 | Authors | Authors of the description and the assessment. |
 | Myanmar ecosystem names | Alternative names of the ecosystem. |
 | Biome | Biome membership according to the global ecosystem typology. |
@@ -50,5 +47,3 @@ references.
 | Criterion C | Description of data, analysis and methods used to assess the criterion and the status outcome. |
 | Criterion D | Description of data, analysis and methods used to assess the criterion and the status outcome. |
 | Criterion E | Description of data, analysis and methods used to assess the criterion and the status outcome. |
-
-:::

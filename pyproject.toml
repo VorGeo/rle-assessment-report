@@ -24,11 +24,11 @@ geoarrow-pyarrow = "*"
 lonboard = "==0.13.0"
 
 [tool.pixi.tasks]
-# Use local mystmd installation
-myst = "node /Users/tylere/Documents/GitHub/jupyter-book/mystmd/packages/mystmd/dist/myst.cjs"
-myst-build = "node /Users/tylere/Documents/GitHub/jupyter-book/mystmd/packages/mystmd/dist/myst.cjs build"
-myst-start = "node /Users/tylere/Documents/GitHub/jupyter-book/mystmd/packages/mystmd/dist/myst.cjs start"
-myst-clean = "node /Users/tylere/Documents/GitHub/jupyter-book/mystmd/packages/mystmd/dist/myst.cjs clean"
+# Quarto commands
+quarto-preview = "quarto preview"
+quarto-render = "quarto render"
+quarto-check = "quarto check"
+quarto-clean = "rm -rf _book"
 
 [tool.pixi.dependencies]
 python = "==3.11"
@@ -48,5 +48,5 @@ matplotlib = ">=3.10.8,<4"
 # lonboard moved to pypi-dependencies for version 0.13.0
 geopandas = ">=1.1.1,<2"
 pyarrow = ">=22.0.0,<23"
-mystmd = ">=1.7.1,<2"
+quarto = ">=1.4.0,<2"
 tectonic = ">=0.15.0,<0.16"

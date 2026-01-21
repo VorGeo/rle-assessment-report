@@ -133,7 +133,7 @@ def main():
         print("Writing output file...")
         file_path = Path(
             output_folder,
-            f"{yaml_file.stem}.md"
+            f"{yaml_file.stem}.qmd"
         )
         with open(file_path, 'w') as f:
             f.write(rendered_content)

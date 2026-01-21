@@ -1,13 +1,11 @@
 ---
-title: Tanintharyi island rainforest
-kernelspec:
-  name: python3
-  display_name: Python 3
-  language: python
+suppress-bibliography: true
 ---
 
-```{code-cell} python
-:tags: [remove-input]
+# Tanintharyi island rainforest {.unnumbered}
+
+```{python}
+#| echo: false
 from IPython.display import Markdown, display
 
 ecosystem_image = {
@@ -17,49 +15,38 @@ ecosystem_image = {
 ```
 
 <!-- Authors -->
-{span .parameter}`Authors:`&nbsp;
+[Authors:]{.parameter}&nbsp;
 N.J. Murray, R. Tizard, D.A. Keith
 
 <!-- Local ecosystem names -->
-{span .parameter}``{eco}`MMR-T1.1.1:country_name` ecosystem names:``&nbsp;Tropical rainforest [@kress2003checklist], Lowland evergreen rainforest [@connette2016mapping]
+[Ecosystem names:]{.parameter}&nbsp;Tropical rainforest [@kress2003checklist], Lowland evergreen rainforest [@connette2016mapping]
 
 <!-- Biome -->
-{span .parameter}`Biome:`&nbsp;
-{term}`Tropical-subtropical forests biome (T1)`
+[Biome:]{.parameter}&nbsp;
+[Tropical-subtropical forests biome (T1)](../../7_glossary.md)
 
 <!-- Functional Group -->
-{span .parameter}`Functional Group:`&nbsp;
-{term}`Tropical/Subtropical lowland rainforests (T1.1)`
+[Functional Group:]{.parameter}&nbsp;
+[Tropical/Subtropical lowland rainforests (T1.1)](../../7_glossary.md)
 
 <!-- Global classification -->
-{span .parameter}`Global classification:`&nbsp;
+[Global classification:]{.parameter}&nbsp;
 MMR-T1.1.1
 
 <!-- IUCN Status -->
-{span .parameter}`IUCN Status:`&nbsp;
+[IUCN Status:]{.parameter}&nbsp;
 Vulnerable (Least Concern – Vulnerable)
 
 <!-- Ecosystem Photo -->
-{span .parameter}`Ecosystem Photo:`&nbsp;
-```{image} MMR-T1.1.1_photo.png
-:alt: Photo of the ecosystem Tanintharyi island rainforest
-:width: 400px
-:align: center
-```   
+[Ecosystem Photo:]{.parameter}&nbsp;
+![Photo of the ecosystem Tanintharyi island rainforest](MMR-T1.1.1_photo.png){width=400px fig-align="center"}   
 
 <!-- Ecosystem Map -->
-{span .parameter}`Ecosystem Map:`&nbsp;
-```{image} MMR-T1.1.1_map.png
-:alt: Map of the ecosystem Tanintharyi island rainforest
-:width: 400px
-:align: center
-```     
+[Ecosystem Map:]{.parameter}&nbsp;
+![Map of the ecosystem Tanintharyi island rainforest](MMR-T1.1.1_map.png){width=400px fig-align="center"}     
 
 <!-- Description -->
-{span .parameter}`Description:`&nbsp;
-Tanintharyi island rainforest occurs on offshore islands across Tanintharyi, including the Myeik archipelago. It is a lowland, primarily evergreen, forest ecosystem that has some maritime influence. It shows a tolerance of salty ocean seaspray and historically received much of its nutrient input from nesting seabird populations that have subsequently collapsed. It occurs across a wide range of island types including limestone, rubble and sand islands. The canopy is primarily evergreen Dipterocarpaceae [@tagane2019contributions]. @stamp1925vegetation reported forests of “tall varied trees who dense canopy, cutting off nearly all light from the ground, is made more intense by the wealth of woody climbers which have struggled upwards to reach the light”.
-
-{span .parameter}`Description:`&nbsp;Tanintharyi island rainforest occurs on offshore islands across Tanintharyi,
+[Description:]{.parameter}&nbsp;Tanintharyi island rainforest occurs on offshore islands across Tanintharyi,
 including the Myeik archipelago. It is a lowland, primarily evergreen, forest
 ecosystem that has some maritime influence. It shows a tolerance of salty
 ocean seaspray and historically received much of its nutrient input from
@@ -72,42 +59,42 @@ wealth of woody climbers which have struggled upwards to reach the light”.
 
 
 <!-- Distribution -->
-{span .parameter}`Distribution:`&nbsp;
+[Distribution:]{.parameter}&nbsp;
 Occurs on offshore islands in Tanintharyi state.
 
 
 <!-- Characteristic Native Biota -->
-{span .parameter}`Characteristic Native Biota:`&nbsp;
+[Characteristic Native Biota:]{.parameter}&nbsp;
 Largely unknown but probably moderately diverse. A recent survey of the Myiek archipelago reported a total of 305 species belonging to 241 genera and 91 families [@tagane2019contributions]. Surveys of Lampi Island marine park indicated 20 species of Dipterocarpaceae. The islands support several localized species along the coastal edges including Great-billed Heron Ardea sumatrana, Beach Thick-knee Esacus magnirostris (NT) and Black-naped Tern Sterna sumatrana, and Collared Kingfisher Todiramphus chloris. The islands also support a range of nomadic frugivores including Nicobar Pigeon Caloenas nicobarica (NT), Large Green-pigeon Treron capellei (VU), Pied Imperialpigeon Ducula bicolor, and Plain-pouched Hornbill Rhyticeros subruficollis (VU).
 The islands also support a population of tool using Long-tailed Macaque Macaca fascicularis (VU).
 
 
 <!-- Abiotic environment -->
-{span .parameter}`Abiotic environment:`&nbsp;
+[Abiotic environment:]{.parameter}&nbsp;
 This ecosystem occurs on offshore islands exposed to the influence of maritime salt. Largely monsoonal, with a minimum temperature of 21 degrees in December to a maximum of 28.8 in August. Precipitation is highly seasonal, with a dry season occurring from November to March followed by a strong wet season from May to October (Oo et al., 2019).
 
 
 <!-- Key processes and interactions -->
-{span .parameter}`Key processes and interactions:`&nbsp;
+[Key processes and interactions:]{.parameter}&nbsp;
 This ecosystem received much of its nutrients from nesting seabird populations that are mostly no longer present. Dispersal is similarly mediated by mobile fauna, and endemism due to isolation is likely to be high.
 
 
 <!-- Major threats -->
-{span .parameter}`Major threats:`&nbsp;
+[Major threats:]{.parameter}&nbsp;
 Unregulated tourism development is the principal threat to this ecosystem [@centreMyeikArchipelago].
 
 
 <!-- Ecosystem collapse definition -->
-{span .parameter}`Ecosystem collapse definition:`&nbsp;
+[Ecosystem collapse definition:]{.parameter}&nbsp;
 This ecosystem is regarded as collapsed when its area has declined to zero, when the proportion of the ecosystem considered primary forest declines to 0.
 
 
 <!-- Assessment summary -->
-{span .parameter}`Assessment summary:`&nbsp;
+[Assessment summary:]{.parameter}&nbsp;
 **This ecosystem is broadly distributed across many isolated islands in southern Myanmar, but there is an expected reduction in climate suitability over the next three decades. Threats from humans and biotic degradation are expected to be low, as confirmed by an analysis of the Forest Landscape Integrity Index. The ecosystem qualified for listing as Vulnerable under Criterion C, with a plausible range of Least Concern – Vulnerable. Vulnerable (Least Concern – Vulnerable).**
 
 <!-- Assessment information -->
-{span .parameter}`Assessment information:`&nbsp;
+[Assessment information:]{.parameter}&nbsp;
 <table class="criteria-table">
   <thead>
     <tr>
@@ -193,20 +180,20 @@ This ecosystem is regarded as collapsed when its area has declined to zero, when
   </table>
 
 <!-- Assessment outcome -->
-{span .parameter}`Assessment outcome:`&nbsp;
+[Assessment outcome:]{.parameter}&nbsp;
 **Vulnerable (Least Concern – Vulnerable)**
 
 <!-- Year published -->
-{span .parameter}`Year published:`&nbsp;
+[Year published:]{.parameter}&nbsp;
 2020
 
 
 <!-- Date assessed -->
-{span .parameter}`Date assessed:`&nbsp;
+[Date assessed:]{.parameter}&nbsp;
 20th January 2020
 
 <!-- Assessment credits -->
-{span .parameter}`Assessment credits:`&nbsp;
+[Assessment credits:]{.parameter}&nbsp;
 
 Assessed by: Nicholas Murray
 
@@ -215,17 +202,17 @@ Reviewed by: David Keith
 Contributions by: Lee Grismer
 
 <!-- Criterion A -->
-{span .parameter}``{term}`Criterion A`:``&nbsp;
+[[Criterion A](../../7_glossary.md#criterion-a):]{.parameter}&nbsp;
 No time-series map data was available for assessing reduction in distribution of this ecosystem over any of the assessment time frames. **Data Deficient.**
 
 
 <!-- Criterion B -->
-{span .parameter}``{term}`Criterion B`:``&nbsp;{embed}`mmr-t1.1.1-crit-b-summary`
+[[Criterion B](../../7_glossary.md#criterion-b):]{.parameter}&nbsp;{embed}`mmr-t1.1.1-crit-b-summary`
 
 There is no evidence that suggests this ecosystem should meet the criteria to be listed as Near Threatened. The ecosystem is assessed as Least Concern under Criterion B1 and B2. **Least Concern.**
 
 
-{span .parameter}`TEST:`&nbsp;
+[TEST:]{.parameter}&nbsp;
 ```{code-cell} python
 import ee
 from gee_redlist.ee_rle import make_eoo, area_km2
@@ -254,12 +241,12 @@ print(f'EOO area: {area_km2(eoo_polygon).getInfo()} km²')
 ```
 
 <!-- Criterion C -->
-{span .parameter}``{term}`Criterion C`:``&nbsp;
+[[Criterion C](../../7_glossary.md#criterion-c):]{.parameter}&nbsp;
 An environmental suitability model [@ferrer2019ecosystem see methods] suggests that reductions in climate suitability will occur with an extent and severity to meet the category thresholds for Vulnerable under Criterion C2a. Variation in the outcomes of the modelled scenarios suggested that the ecosystem could potentially meet thresholds for Least Concern to Vulnerable, and therefore the ecosystem is assessed as Vulnerable (the most commonly returned result from all scenarios), with plausible bounds of Least Concern – Vulnerable. **Vulnerable (Least Concern – Vulnerable).**
 
 
 <!-- Criterion D -->
-{span .parameter}``{term}`Criterion D`:``&nbsp;
+[[Criterion D](../../7_glossary.md#criterion-d):]{.parameter}&nbsp;
 Analyses of a dataset that depicts the distribution of primary forests in South-East Asia (Potapov et al. 2019) suggest that 74.9% of the remaining extent of this ecosystem is primary forest. If 100% of the ecosystem is assumed to be primary forest in 1750, we estimate a 25.1% loss in primary forest extent since 1750. Here we assume that loss of primary forest extent has a relative severity of >90%, and the ecosystem is assessed as Least Concern under Criterion D3. Analyses of the full time-series of primary forest data (n = 18) suggests an 8.1% reduction of primary forest in this ecosystem over the period 2000-2017. A linear model fit to this dataset suggests that primary forest cover in this ecosystem will not decline sufficiently to meet any category thresholds over a 50 year period (1984-2034). The ecosystem is assessed as Least Concern under Criterion D2b. **Least Concern.**
 
 <img src="MMR-T1.1.1_crit_D_chart.png" height="300"/>
@@ -269,5 +256,5 @@ Analyses of a dataset that depicts the distribution of primary forests in South-
 
 
 <!-- Criterion E -->
-{span .parameter}``{term}`Criterion E`:``&nbsp;
+[[Criterion E](../../7_glossary.md#criterion-e):]{.parameter}&nbsp;
 No models were used to assess Criterion E. **Not Evaluated.**

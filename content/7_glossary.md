@@ -1,34 +1,33 @@
-:::{glossary}
+# Glossary {.unnumbered}
+
 Area of occupancy (AOO)
-: A standardised measure of the area that is occupied by an ecosystem type.
+:   A standardised measure of the area that is occupied by an ecosystem type.
 
 Extent of occurrence (EOO)
-: A standardised measure of the area within which all occurrences of an ecosystem type exist
+:   A standardised measure of the area within which all occurrences of an ecosystem type exist
 
-Tropical-subtropical forests biome (T1)
-: The Tropical-subtropical forests biome includes moderate to highly productive ecosystems with closed tree canopies occurring at lower latitudes north and south of the equator.<br/>
-*(source: [IUCN Global Ecosystem Typology](https://global-ecosystems.org/explore/biomes/T1))*
+Tropical-subtropical forests biome (T1) {#term-tropical-subtropical-forests-biome}
+:   The Tropical-subtropical forests biome includes moderate to highly productive ecosystems with closed tree canopies occurring at lower latitudes north and south of the equator.
+    *(source: [IUCN Global Ecosystem Typology](https://global-ecosystems.org/explore/biomes/T1))*
 
-Tropical/Subtropical lowland rainforests (T1.1)
-: These closed-canopy forests are renowned for their complex structure and high primary productivity, which support high functional and taxonomic diversity.<br/>
-*(source: [IUCN Global Ecosystem Typology, T1.1](https://global-ecosystems.org/explore/groups/T1.1))*
+Tropical/Subtropical lowland rainforests (T1.1) {#term-tropical-subtropical-lowland-rainforests}
+:   These closed-canopy forests are renowned for their complex structure and high primary productivity, which support high functional and taxonomic diversity.
+    *(source: [IUCN Global Ecosystem Typology, T1.1](https://global-ecosystems.org/explore/groups/T1.1))*
 
-Criterion A
-: Reduction in geographic distribution
+Criterion A {#term-criterion-a}
+:   Reduction in geographic distribution
 
-Criterion B
-: Restricted geographic distribution
+Criterion B {#term-criterion-b}
+:   Restricted geographic distribution
 
-Criterion C
-: Criterion C assesses declines in ecosystem functions or processes based on symptoms of abiotic (environmental) degradation.
+Criterion C {#term-criterion-c}
+:   Criterion C assesses declines in ecosystem functions or processes based on symptoms of abiotic (environmental) degradation.
 
-Criterion D
-: Criterion D assesses declines in ecosystem functions or processes disruption of biotic processes, including declines of biota with key functional roles.
+Criterion D {#term-criterion-d}
+:   Criterion D assesses declines in ecosystem functions or processes disruption of biotic processes, including declines of biota with key functional roles.
 
-Criterion E
-: Quantitative risk analysis
-
-:::
+Criterion E {#term-criterion-e}
+:   Quantitative risk analysis
 
 
 Sources:

@@ -220,3 +220,7 @@ content/3_ecosystem_assessments/MMR-TSAMPLE/*
 
 # MyST build outputs
 _build
+
+/.quarto/
+
+**/*.quarto_ipynb
