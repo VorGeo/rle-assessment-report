@@ -205,7 +205,8 @@ No time-series map data was available for assessing reduction in distribution of
 
 
 <!-- Criterion B -->
-{span .parameter}``{term}`Criterion B`:``&nbsp;
+{span .parameter}``{term}`Criterion B`:``&nbsp;{embed}`mmr-t1.1.1-crit-b-summary`
+
 This ecosystem is highly restricted in limestone landscapes and has an AOO of 56 10 x 10 km grid cells and an EOO of 3,796 km2 There is evidence that limestone quarrying and other threats are leading to continuing decline, meeting subcriteria a(i) and a(iii). The ecosystem is assessed as **Endangered**.
 
 

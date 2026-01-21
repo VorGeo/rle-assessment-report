@@ -182,7 +182,7 @@ echo '{"frontmatter": {"ecosystem_id": "MMR-T1.1.1"}}' | \
 After making changes to the plugin source code, restart the MyST development server to see updates:
 
 ```bash
-quarto preview  # or myst start
+myst start
 ```
 
 ## Troubleshooting

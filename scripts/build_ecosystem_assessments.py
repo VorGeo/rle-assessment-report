@@ -9,7 +9,7 @@ and populating Jinja2 variables with YAML data.
 
 import yaml
 from pathlib import Path
-from jinja2 import Template
+from jinja2 import Environment, FileSystemLoader
 import matplotlib as mpl
 import os
 import ee
@@ -30,19 +30,21 @@ def load_yaml(yaml_path):
         return yaml.safe_load(f)
 
 
-def load_template(template_path):
-    """Load MD template file."""
-    with open(template_path, 'r') as f:
-        return f.read()
-
-
 def render_md(
-    template_content,
+    template_path,
     ecosystem_data,
     country_data,
 ):
     """Render template with data using Jinja2."""
-    template = Template(template_content)
+    # Get the directory containing the template
+    template_dir = os.path.dirname(template_path)
+    template_name = os.path.basename(template_path)
+
+    # Create Jinja2 environment with FileSystemLoader
+    # Search path includes template directory and project root for relative includes
+    env = Environment(loader=FileSystemLoader([template_dir, os.getcwd()]))
+    template = env.get_template(template_name)
+
     return template.render(
         params=ecosystem_data | country_data,
         path_exists=path_exists,
@@ -91,9 +93,6 @@ def main():
     country_config_path = Path('config/country_config.yaml')
     country_data = load_yaml(country_config_path)
 
-    # Load ecosystem assessment template
-    template_content = load_template(template_path)
-
     # Process each YAML file
     yaml_files = list(ecosystem_config_dir.glob('*.yaml'))
     print(f"Found {len(yaml_files)} YAML configuration files")
@@ -125,7 +124,7 @@ def main():
 
         print("Rendering template...")
         rendered_content = render_md(
-            template_content=template_content,
+            template_path=str(template_path),
             ecosystem_data=ecosystem_data,
             country_data=country_data,
         )

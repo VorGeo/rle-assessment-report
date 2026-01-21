@@ -59,6 +59,17 @@ Vulnerable (Least Concern – Vulnerable)
 {span .parameter}`Description:`&nbsp;
 Tanintharyi island rainforest occurs on offshore islands across Tanintharyi, including the Myeik archipelago. It is a lowland, primarily evergreen, forest ecosystem that has some maritime influence. It shows a tolerance of salty ocean seaspray and historically received much of its nutrient input from nesting seabird populations that have subsequently collapsed. It occurs across a wide range of island types including limestone, rubble and sand islands. The canopy is primarily evergreen Dipterocarpaceae [@tagane2019contributions]. @stamp1925vegetation reported forests of “tall varied trees who dense canopy, cutting off nearly all light from the ground, is made more intense by the wealth of woody climbers which have struggled upwards to reach the light”.
 
+{span .parameter}`Description:`&nbsp;Tanintharyi island rainforest occurs on offshore islands across Tanintharyi,
+including the Myeik archipelago. It is a lowland, primarily evergreen, forest
+ecosystem that has some maritime influence. It shows a tolerance of salty
+ocean seaspray and historically received much of its nutrient input from
+nesting seabird populations that have subsequently collapsed. It occurs across
+a wide range of island types including limestone, rubble and sand islands. The
+canopy is primarily evergreen Dipterocarpaceae [@tagane2019contributions].
+@stamp1925vegetation reported forests of “tall varied trees who dense canopy,
+cutting off nearly all light from the ground, is made more intense by the
+wealth of woody climbers which have struggled upwards to reach the light”.
+
 
 <!-- Distribution -->
 {span .parameter}`Distribution:`&nbsp;
@@ -209,8 +220,9 @@ No time-series map data was available for assessing reduction in distribution of
 
 
 <!-- Criterion B -->
-{span .parameter}``{term}`Criterion B`:``&nbsp;
-AOO and EOO were measured as 206 10 x 10 km grid cells and 50,337 km2, respectively. There is no evidence that suggests this ecosystem should meet the criteria to be listed as Near Threatened. The ecosystem is assessed as Least Concern under Criterion B1 and B2. **Least Concern.**
+{span .parameter}``{term}`Criterion B`:``&nbsp;{embed}`mmr-t1.1.1-crit-b-summary`
+
+There is no evidence that suggests this ecosystem should meet the criteria to be listed as Near Threatened. The ecosystem is assessed as Least Concern under Criterion B1 and B2. **Least Concern.**
 
 
 {span .parameter}`TEST:`&nbsp;

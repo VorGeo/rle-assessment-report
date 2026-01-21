@@ -104,10 +104,9 @@ criterion_a_description: >
   No time-series map data was available for assessing reduction in distribution
   of this ecosystem over any of the assessment time frames. **Data Deficient.**
 criterion_b_description: >
-  AOO and EOO were measured as 206 10 x 10 km grid cells and 50,337 km2,
-  respectively. There is no evidence that suggests this ecosystem should meet
-  the criteria to be listed as Near Threatened. The ecosystem is assessed as
-  Least Concern under Criterion B1 and B2. **Least Concern.**
+  There is no evidence that suggests this ecosystem should meet the criteria to
+  be listed as Near Threatened. The ecosystem is assessed as Least Concern under
+  Criterion B1 and B2. **Least Concern.**
 criterion_c_description: >
   An environmental suitability model [@ferrer2019ecosystem see methods] suggests
   that reductions in climate suitability will occur with an extent and severity

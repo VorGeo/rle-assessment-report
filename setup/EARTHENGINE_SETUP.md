@@ -155,7 +155,7 @@ To verify the setup works:
 1. Push a commit to the `main` branch or trigger the workflow manually
 2. Check the GitHub Actions run log
 3. The "Authenticate to Google Cloud" step should succeed and show credential file creation
-4. The "Render Quarto Project" step should be able to access Earth Engine without additional authentication
+4. The "Render MyST Project" step should be able to access Earth Engine without additional authentication
 
 ## Troubleshooting
 

@@ -192,6 +192,11 @@ description: >
 :::
 {% endif %}
 
+{%- if path_exists('config', 'ecosystem_config', params.global_classification, 'description.md') %}
+{%- set description_path = 'config/ecosystem_config/' + params.global_classification + '/description.md' %}
+{span .parameter}`Description:`&nbsp;{% include description_path %}
+{% endif %}
+
 <!-- Distribution -->
 {span .parameter}`Distribution:`&nbsp;
 {%- if params.distribution %}
@@ -510,8 +515,8 @@ criterion_a_description: >
 {% endif %}
 
 <!-- Criterion B -->
-{span .parameter}``{term}`Criterion B`:``&nbsp;
-{%- if params.criterion_b_description %}
+{span .parameter}``{term}`Criterion B`:``&nbsp;{embed}`mmr-t1.1.1-crit-b-summary`
+{% if params.criterion_b_description %}
 {{ params.criterion_b_description }}
 {%- else %}
 ::: {note}
