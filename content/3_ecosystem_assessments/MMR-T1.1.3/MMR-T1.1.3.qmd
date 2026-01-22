@@ -201,34 +201,6 @@ No time-series map data was available for assessing reduction in distribution of
 This ecosystem is highly restricted in limestone landscapes and has an AOO of 56 10 x 10 km grid cells and an EOO of 3,796 km2 There is evidence that limestone quarrying and other threats are leading to continuing decline, meeting subcriteria a(i) and a(iii). The ecosystem is assessed as **Endangered**.
 
 
-[TEST:]{.parameter}&nbsp;
-```{code-cell} python
-import ee
-from gee_redlist.ee_rle import make_eoo, area_km2
-from google.auth import default
-
-# Use Application Default Credentials (ADC) from GOOGLE_APPLICATION_CREDENTIALS
-# This works both locally (after gcloud auth) and in CI/CD (with Workload Identity)
-credentials, _ = default(scopes=[
-    'https://www.googleapis.com/auth/earthengine',
-    'https://www.googleapis.com/auth/cloud-platform'
-])
-ee.Initialize(credentials=credentials, project='goog-rle-assessments')
-
-asset_id = ecosystem_image['asset_id']
-pixel_value = int(ecosystem_image['pixel_value'])
-
-ee_image = (
-    ee.Image(ecosystem_image['asset_id'])
-      .eq(pixel_value)
-      .selfMask()
-)
-print(f'ee_image: {ee_image.getInfo()}')
-
-eoo_polygon = make_eoo(ee_image)
-print(f'EOO area: {area_km2(eoo_polygon).getInfo()} km²')
-```
-
 <!-- Criterion C -->
 [[Criterion C](../../7_glossary.md#criterion-c):]{.parameter}&nbsp;
 Climate simulation models suggest that environmental conditions within the limestone landscapes of southern Myanmar are unlikely to reduce suitable areas sufficiently to result in this ecosystem becoming threatened by 2050. It should be noted that the occurrence of Karst landscapes is a key distributional driver of this ecosystem, and the scale at which the suitability models were run may not adequately depict the fine-scale changes expected over the next three decades. We recommend further work to refine maps of Karst landscape to better limit the distribution of our model. **Least Concern**.
