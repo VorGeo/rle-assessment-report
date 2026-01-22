@@ -248,15 +248,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#use-application-default-credentials-adc-from-google_application_credentials" id="toc-use-application-default-credentials-adc-from-google_application_credentials" class="nav-link active" data-scroll-target="#use-application-default-credentials-adc-from-google_application_credentials">Use Application Default Credentials (ADC) from GOOGLE_APPLICATION_CREDENTIALS</a></li>
-  <li><a href="#this-works-both-locally-after-gcloud-auth-and-in-cicd-with-workload-identity" id="toc-this-works-both-locally-after-gcloud-auth-and-in-cicd-with-workload-identity" class="nav-link" data-scroll-target="#this-works-both-locally-after-gcloud-auth-and-in-cicd-with-workload-identity">This works both locally (after gcloud auth) and in CI/CD (with Workload Identity)</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/VorGeo/rle-assessment-report/edit/main/content/3_ecosystem_assessments/MMR-T1.1.3/MMR-T1.1.3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/VorGeo/rle-assessment-report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -296,7 +289,6 @@ ul.task-list li input[type="checkbox"] {
 <!-- Ecosystem Map -->
 <p><span class="parameter">Ecosystem Map:</span>&nbsp; <img src="MMR-T1.1.3_map.png" class="img-fluid quarto-figure quarto-figure-center" width="400" alt="Map of the ecosystem Tanintharyi limestone tropical evergreen forest"></p>
 <!-- Description -->
-<p>[Description:`&nbsp; Tanintharyi has extensive patches of limestone karst scattered across the region. In these karst landscapes Tanintharyi limestone tropical evergreen forest occurs. Primary tree species are Dipterocarps that form a closed canopy, although they occur at lower density and lower tree height than surrounding lowland and upland evergreen forest ecosystems. Soils are characteristically extremely shallow and acidic, and may be humusrich. These forests can be found across the Tanintharyi lowlands on limestone hills and slopes, and in some cases may occur on very steep slopes and cliffs. As a result of the discontinuous distribution of limestone in Myanmar, which can frequently become very dry, endemism is very high. For example, 12 new karst-adapted species of gecko were recently discovered in karst environments, some of which are restricted to isolated caves and limestone towers (Grismer et al.&nbsp;2018). Reliable year round rainfall, averaging in excess of 100 mm per month and between around 1,900 mm and 3,000 mm per year.</p>
 <!-- Distribution -->
 <p><span class="parameter">Distribution:</span>&nbsp; Occurs in karst landscapes in southern Tanintharyi. We used a global karst layer to refine our maps of this ecosystem type, and further work to map karst landscapes in southern Myanmar is recommended.</p>
 <!-- Characteristic Native Biota -->
@@ -494,16 +486,6 @@ NE
 <!-- Criterion B -->
 <p><span class="parameter"><a href="../../../content/7_glossary.html#criterion-b">Criterion B</a>:</span>&nbsp;{embed}<code>mmr-t1.1.1-crit-b-summary</code></p>
 <p>This ecosystem is highly restricted in limestone landscapes and has an AOO of 56 10 x 10 km grid cells and an EOO of 3,796 km2 There is evidence that limestone quarrying and other threats are leading to continuing decline, meeting subcriteria a(i) and a(iii). The ecosystem is assessed as <strong>Endangered</strong>.</p>
-<p><span class="parameter">TEST:</span>&nbsp; ```arrvzncaiup python import ee from gee_redlist.ee_rle import make_eoo, area_km2 from google.auth import default</p>
-<section id="use-application-default-credentials-adc-from-google_application_credentials" class="level1">
-<h1>Use Application Default Credentials (ADC) from GOOGLE_APPLICATION_CREDENTIALS</h1>
-</section>
-<section id="this-works-both-locally-after-gcloud-auth-and-in-cicd-with-workload-identity" class="level1">
-<h1>This works both locally (after gcloud auth) and in CI/CD (with Workload Identity)</h1>
-<p>credentials, _ = default(scopes=[ ‘https://www.googleapis.com/auth/earthengine’, ‘https://www.googleapis.com/auth/cloud-platform’]) ee.Initialize(credentials=credentials, project=‘goog-rle-assessments’)</p>
-<p>asset_id = ecosystem_image[‘asset_id’] pixel_value = int(ecosystem_image[‘pixel_value’])</p>
-<p>ee_image = ( ee.Image(ecosystem_image[‘asset_id’]) .eq(pixel_value) .selfMask() ) print(f’ee_image: {ee_image.getInfo()}’)</p>
-<p>eoo_polygon = make_eoo(ee_image) print(f’EOO area: {area_km2(eoo_polygon).getInfo()} km²’) ```</p>
 <!-- Criterion C -->
 <p><span class="parameter"><a href="../../../content/7_glossary.html#criterion-c">Criterion C</a>:</span>&nbsp; Climate simulation models suggest that environmental conditions within the limestone landscapes of southern Myanmar are unlikely to reduce suitable areas sufficiently to result in this ecosystem becoming threatened by 2050. It should be noted that the occurrence of Karst landscapes is a key distributional driver of this ecosystem, and the scale at which the suitability models were run may not adequately depict the fine-scale changes expected over the next three decades. We recommend further work to refine maps of Karst landscape to better limit the distribution of our model. <strong>Least Concern</strong>.</p>
 <!-- Criterion D -->
@@ -512,7 +494,6 @@ NE
 <p><span class="parameter"><a href="../../../content/7_glossary.html#criterion-e">Criterion E</a>:</span>&nbsp; No models were used to assess Criterion E. <strong>Not Evaluated</strong>.</p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -937,4 +918,4 @@ NE
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/VorGeo/rle-assessment-report/edit/main/content/3_ecosystem_assessments/MMR-T1.1.3/MMR-T1.1.3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/VorGeo/rle-assessment-report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/VorGeo/rle-assessment-report/edit/main/content/3_ecosystem_assessments/MMR-T1.1.3/MMR-T1.1.3.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/VorGeo/rle-assessment-report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>

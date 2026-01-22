@@ -248,15 +248,8 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#use-application-default-credentials-adc-from-google_application_credentials" id="toc-use-application-default-credentials-adc-from-google_application_credentials" class="nav-link active" data-scroll-target="#use-application-default-credentials-adc-from-google_application_credentials">Use Application Default Credentials (ADC) from GOOGLE_APPLICATION_CREDENTIALS</a></li>
-  <li><a href="#this-works-both-locally-after-gcloud-auth-and-in-cicd-with-workload-identity" id="toc-this-works-both-locally-after-gcloud-auth-and-in-cicd-with-workload-identity" class="nav-link" data-scroll-target="#this-works-both-locally-after-gcloud-auth-and-in-cicd-with-workload-identity">This works both locally (after gcloud auth) and in CI/CD (with Workload Identity)</a></li>
-  </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/VorGeo/rle-assessment-report/edit/main/content/3_ecosystem_assessments/MMR-T1.1.1/MMR-T1.1.1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/VorGeo/rle-assessment-report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -297,7 +290,6 @@ ul.task-list li input[type="checkbox"] {
 <!-- Ecosystem Map -->
 <p><span class="parameter">Ecosystem Map:</span>&nbsp; <img src="MMR-T1.1.1_map.png" class="img-fluid quarto-figure quarto-figure-center" width="400" alt="Map of the ecosystem Tanintharyi island rainforest"></p>
 <!-- Description -->
-<p>[Description:`&nbsp; Tanintharyi island rainforest occurs on offshore islands across Tanintharyi, including the Myeik archipelago. It is a lowland, primarily evergreen, forest ecosystem that has some maritime influence. It shows a tolerance of salty ocean seaspray and historically received much of its nutrient input from nesting seabird populations that have subsequently collapsed. It occurs across a wide range of island types including limestone, rubble and sand islands. The canopy is primarily evergreen Dipterocarpaceae <span class="citation" data-cites="tagane2019contributions">(Tagane et al. 2019)</span>. <span class="citation" data-cites="stamp1925vegetation">Stamp (1925)</span> reported forests of “tall varied trees who dense canopy, cutting off nearly all light from the ground, is made more intense by the wealth of woody climbers which have struggled upwards to reach the light”.</p>
 <p><span class="parameter">Description:</span>&nbsp;Tanintharyi island rainforest occurs on offshore islands across Tanintharyi, including the Myeik archipelago. It is a lowland, primarily evergreen, forest ecosystem that has some maritime influence. It shows a tolerance of salty ocean seaspray and historically received much of its nutrient input from nesting seabird populations that have subsequently collapsed. It occurs across a wide range of island types including limestone, rubble and sand islands. The canopy is primarily evergreen Dipterocarpaceae <span class="citation" data-cites="tagane2019contributions">(Tagane et al. 2019)</span>. <span class="citation" data-cites="stamp1925vegetation">Stamp (1925)</span> reported forests of “tall varied trees who dense canopy, cutting off nearly all light from the ground, is made more intense by the wealth of woody climbers which have struggled upwards to reach the light”.</p>
 <!-- Distribution -->
 <p><span class="parameter">Distribution:</span>&nbsp; Occurs on offshore islands in Tanintharyi state.</p>
@@ -496,16 +488,6 @@ NE
 <!-- Criterion B -->
 <p><span class="parameter"><a href="../../../content/7_glossary.html#criterion-b">Criterion B</a>:</span>&nbsp;{embed}<code>mmr-t1.1.1-crit-b-summary</code></p>
 <p>There is no evidence that suggests this ecosystem should meet the criteria to be listed as Near Threatened. The ecosystem is assessed as Least Concern under Criterion B1 and B2. <strong>Least Concern.</strong></p>
-<p><span class="parameter">TEST:</span>&nbsp; ```qowieypsevr python import ee from gee_redlist.ee_rle import make_eoo, area_km2 from google.auth import default</p>
-<section id="use-application-default-credentials-adc-from-google_application_credentials" class="level1">
-<h1>Use Application Default Credentials (ADC) from GOOGLE_APPLICATION_CREDENTIALS</h1>
-</section>
-<section id="this-works-both-locally-after-gcloud-auth-and-in-cicd-with-workload-identity" class="level1">
-<h1>This works both locally (after gcloud auth) and in CI/CD (with Workload Identity)</h1>
-<p>credentials, _ = default(scopes=[ ‘https://www.googleapis.com/auth/earthengine’, ‘https://www.googleapis.com/auth/cloud-platform’]) ee.Initialize(credentials=credentials, project=‘goog-rle-assessments’)</p>
-<p>asset_id = ecosystem_image[‘asset_id’] pixel_value = int(ecosystem_image[‘pixel_value’])</p>
-<p>ee_image = ( ee.Image(ecosystem_image[‘asset_id’]) .eq(pixel_value) .selfMask() ) print(f’ee_image: {ee_image.getInfo()}’)</p>
-<p>eoo_polygon = make_eoo(ee_image) print(f’EOO area: {area_km2(eoo_polygon).getInfo()} km²’) ```</p>
 <!-- Criterion C -->
 <p><span class="parameter"><a href="../../../content/7_glossary.html#criterion-c">Criterion C</a>:</span>&nbsp; An environmental suitability model <span class="citation" data-cites="ferrer2019ecosystem">(Ferrer-Paris et al. 2019 see methods)</span> suggests that reductions in climate suitability will occur with an extent and severity to meet the category thresholds for Vulnerable under Criterion C2a. Variation in the outcomes of the modelled scenarios suggested that the ecosystem could potentially meet thresholds for Least Concern to Vulnerable, and therefore the ecosystem is assessed as Vulnerable (the most commonly returned result from all scenarios), with plausible bounds of Least Concern – Vulnerable. <strong>Vulnerable (Least Concern – Vulnerable).</strong></p>
 <!-- Criterion D -->
@@ -516,7 +498,6 @@ NE
 <p><span class="parameter"><a href="../../../content/7_glossary.html#criterion-e">Criterion E</a>:</span>&nbsp; No models were used to assess Criterion E. <strong>Not Evaluated.</strong></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -941,4 +922,4 @@ NE
 
 
 
-<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/VorGeo/rle-assessment-report/edit/main/content/3_ecosystem_assessments/MMR-T1.1.1/MMR-T1.1.1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/VorGeo/rle-assessment-report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
+<footer class="footer"><div class="nav-footer"><div class="nav-footer-center"><div class="toc-actions"><ul><li><a href="https://github.com/VorGeo/rle-assessment-report/edit/main/content/3_ecosystem_assessments/MMR-T1.1.1/MMR-T1.1.1.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/VorGeo/rle-assessment-report/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div></div></footer></body></html>
