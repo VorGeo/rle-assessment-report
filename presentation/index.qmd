@@ -31,7 +31,7 @@ Improve the process for creating ecosystem assessment reports
 
 # Data Flow Overview
 
-![](images/RLE-processing.excalidraw.svg){fig-align="center"}
+![](images/RLE-processing.excalidraw.png){fig-align="center"}
 
 
 # GitHub Repository
