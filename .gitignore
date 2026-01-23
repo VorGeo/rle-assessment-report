@@ -211,9 +211,12 @@ __marimo__/
 *.egg-info
 
 _book/*
+!_book/presentation/
+!_book/presentation/**
 _freeze/
 *_files/
 !_book/presentation/index_files/
+!_book/presentation/index_files/**
 
 .DS_Store
 
