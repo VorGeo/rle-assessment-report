@@ -213,6 +213,7 @@ __marimo__/
 _book/*
 _freeze/
 *_files/
+!_book/presentation/index_files/
 
 .DS_Store
 
