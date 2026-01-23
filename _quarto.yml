@@ -36,7 +36,6 @@ book:
     - content/7_glossary.md
   appendices:
     - content/appendix_1.md
-    - setup/EARTHENGINE_SETUP.md
     - content/8_presentation.qmd
 
 crossref:
