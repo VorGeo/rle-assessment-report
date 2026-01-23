@@ -1,0 +1,446 @@
+---
+format: html
+jupyter: python3
+number-sections: false
+---
+
+# MMR-T1.1.1 Criterion B Details {.unnumbered}
+
+This notebook provides step-by-step details on Criterion B calculations.
+
+# Setup
+
+Import Python modules
+
+```{python}
+import os
+
+import ee
+import geopandas as gpd
+from lonboard import Map, PolygonLayer, BitmapTileLayer
+
+from gee_redlist.ee_auth import initialize_ee
+from gee_redlist.ee_rle import load_yaml, make_eoo, area_km2, get_aoo_grid_projection
+```
+
+Initialize Earth Engine
+
+```{python}
+initialize_ee(project=os.environ['GOOGLE_CLOUD_PROJECT'])
+```
+
+# Analysis
+
+```{python}
+# Define the ecosystem that this notebook is analyzing
+ecosystem_code = 'MMR-T1.1.1'
+```
+
+```{python}
+# Load the country config
+country_config_path = os.environ['PIXI_PROJECT_ROOT'] + '/config/country_config.yaml'
+country_config = load_yaml(country_config_path)
+
+# Extract the GEE project path from the country config
+gee_project_path = country_config['gee_project_path']
+
+# Extract the class info for the ecosystem
+class_info = [x for x in country_config['classified_image']['classes'] if x['code'] == ecosystem_code][0]
+print(f'{class_info = }')
+
+ecosystem_image = {
+    'asset_id': f"{gee_project_path}/{ecosystem_code}/{class_info['id']}",
+    'pixel_value': class_info['id']
+}
+print(f'{ecosystem_image = }')
+```
+
+```{python}
+classified_image_asset_id = f"{country_config['gee_project_path']}/{country_config['classified_image']['asset_id']}"
+print(f'{classified_image_asset_id = }')
+
+class_img = (
+    ee.Image(classified_image_asset_id)
+      .eq(ecosystem_image['pixel_value'])
+      .selfMask()
+)
+print(f'class_img: {class_img.getInfo()}')
+```
+
+<!-- 
+```{python}
+# Commented out until bug is fixed: https://github.com/developmentseed/lonboard/issues/1064
+# # Determine the coordinates for viewing the image
+# longitude, latitude = class_img.geometry().centroid().getInfo()['coordinates']
+# longitude, latitude
+```
+-->
+
+# Extent of occurrence (EOO) (subcriterion B1)
+
+Set the scale (in meters) for reducing the image pixels to polygons. Use the image's nominal scale unless is is less than 50 meters per pixel.
+
+```{python}
+reduction_scale = max(class_img.projection().nominalScale().getInfo(), 50)
+reduction_scale
+```
+
+Convert the classified image to vectors.
+
+```{python}
+ecosystem_polygons = class_img.updateMask(1).reduceToVectors(
+    scale=reduction_scale,
+    geometry=class_img.geometry(),
+    geometryType='polygon',
+    maxPixels=1e12,
+    bestEffort=False
+)
+```
+
+Create a convex hull that encompasses the ecosystem polygons.
+
+```{python}
+# convexHull() is called twice as a workaround for a bug
+# (https://issuetracker.google.com/issues/465490917)
+hull = ecosystem_polygons.geometry().convexHull(maxError=1).convexHull(maxError=1)
+```
+
+```{python}
+# Note:
+#   - area() without the projection argument calculates the geodesic area.
+#   - area(proj=) calculates the planar area. the area is calculated in projected units (10 km x 10 km grid cells)!
+# This is different than the javascript version, which calculates the area without reprojection
+aoo_area_km2 = hull.area(1, proj=get_aoo_grid_projection()).getInfo() * 1e2
+print(f'The area of the hull is {aoo_area_km2:.2f} km²')
+```
+
+```{python}
+aoo_area_km2_geodesic = hull.area().getInfo() * 1e-6
+print(f'The geodesic area of the hull is {aoo_area_km2_geodesic:.2f} km²')
+```
+
+<!--
+Calculate the difference between the geodesic and projected areas.
+```{python}
+(aoo_area_km2_geodesic - aoo_area_km2) / aoo_area_km2
+```
+-->
+
+<!--
+# TRY calculating area in projected coords
+
+```{python}
+# hull_projected = hull.transform(get_aoo_grid_projection(), maxError=1)
+# hull_projected.getInfo()
+```
+
+```{python}
+# hull_projected.projection().getInfo()
+```
+
+```{python}
+# hull_projected.area(1, get_aoo_grid_projection()).getInfo() * 1e2
+```
+-->
+
+<!--
+# DEBUG using shapely for convex hull
+
+```{python}
+ecosystem_polygons_gdf = gpd.GeoDataFrame.from_features(
+    ecosystem_polygons.getInfo()['features'],
+    crs='EPSG:4326'
+)
+
+# Save to file
+ecosystem_polygons_gdf.to_parquet('test_ecosystem_polygons.parquet')
+```
+
+```{python}
+ecosystem_polygons_gdf
+```
+
+```{python}
+from shapely.ops import unary_union
+hull_geom = unary_union(ecosystem_polygons_gdf.geometry).convex_hull
+```
+
+```{python}
+# Reproject the geometry to ESRI:54034 (World Cylindrical Equal Area) and compute area in projected units (square meters)
+from pyproj import CRS, Transformer
+import shapely
+
+# Define projections
+wgs84 = CRS("EPSG:4326")
+cea = CRS("ESRI:54034")
+project_to_cea = Transformer.from_crs(wgs84, cea, always_xy=True).transform
+
+# Project hull geometry
+hull_geom_projected = shapely.ops.transform(project_to_cea, hull_geom)
+```
+
+```{python}
+# Area is calculated in square meters (ESRI:54034's units)
+hull_geom_projected.area * 1e-6
+```
+
+```{python}
+# Try to project first, then calculate hull
+ecosystem_polygons_gdf_projected = ecosystem_polygons_gdf.set_crs(wgs84).to_crs(cea)
+hull_geom_projected = ecosystem_polygons_gdf_projected.geometry.union_all().convex_hull
+hull_geom_projected.area * 1e-6
+```
+
+```{python}
+diff = (hull_geom_projected.area  * 1e-6 - aoo_area_km2 ) / aoo_area_km2
+diff
+```
+
+# END TEST
+-->
+
+## Display EOO Layers
+
+## Ecosystem Tiles
+
+Define a tile layer for the displaying the ecosystem image on a Lonboard map.
+The tiles are served by the Earth Engine API.
+
+```{python}
+tile_url = class_img.getMapId(
+    vis_params={
+        'palette': ['blue'],
+        'opacity': 0.5
+    }
+)['tile_fetcher'].url_format
+
+tile_layer = BitmapTileLayer(
+    data=tile_url,
+    tile_size=256,
+    max_requests=-1,
+    min_zoom=0,
+    max_zoom=19,
+)
+```
+
+## Ecosystem Polygons Layer
+
+```{python}
+ecosystem_polygons_layer = PolygonLayer.from_geopandas(
+    ecosystem_polygons_gdf,
+    get_fill_color=[255, 0, 0, 127],
+    stroked=True,
+    get_line_width=2,
+    get_line_color=[0, 0, 0, 150],
+)
+```
+
+## Ecosystem Hull Layer
+
+```{python}
+type(hull_geom_projected)
+```
+
+```{python}
+hull_gdf = gpd.GeoDataFrame.from_features(
+    ee.FeatureCollection(hull).getInfo(),
+    crs='EPSG:4326'
+)
+
+hull_layer = PolygonLayer.from_geopandas(
+    hull_gdf,
+    get_fill_color=[0, 0, 255, 63],
+    stroked=True,
+    get_line_width=200,
+    get_line_color=[0, 0, 0, 150],
+)
+```
+
+Display the map.
+
+```{python}
+m = Map(
+    layers=[
+        ecosystem_polygons_layer,
+        tile_layer,
+        hull_layer,
+    ],
+)
+
+m
+```
+
+<!--
+## Verify that the step-by-step results are consistent
+
+```{python}
+# Direct call to `make_eoo()`
+aoo_area_km2_direct_call = area_km2(make_eoo(class_img)).getInfo()
+print(f'EOO area: {aoo_area_km2_direct_call:.0f} km²')
+```
+
+```{python}
+# Assert the two values are close to each other.
+# assert math.isclose(aoo_area_km2, aoo_area_km2_direct_call, abs_tol=1e-4)
+```
+-->
+
+# Area of Occupancy (AOO) (subcriterion B2)
+
+The protocol for this adjustment includes the following steps:
+
+> - Intersect AOO grid with the ecosystem's distribution map.
+> - Calculate extent of the ecosystem type in each grid cell ('area') and sum these areas to obtain the total ecosystem area ('total area').
+> - Arrange grid cells in ascending order based on their area (smaller first).
+> - Calculate accumulated sum of area per cell ('cumulative area').
+> - Calculate 'cumulative proportion' by dividing 'cumulative area' by 'total area' (cumulative proportion takes values between 0 and 1).
+> - Calculate AOO by counting the number of cells with a 'cumulative proportion' greater than 0.01 (i.e. exclude cells that in combination account for up to 1% of the total mapped extent of the ecosystem type).
+
+## Intersect AOO grid with the ecosystem's distribution map
+
+Load the AOO grid projection
+
+```{python}
+aoo_grid_proj = get_aoo_grid_projection()
+
+aoo_grid_proj.getInfo()
+```
+
+Extract the grid scale parameters
+
+```{python}
+aoo_x_scale, _, _, _, aoo_y_scale, _ = aoo_grid_proj.getInfo()['transform']
+print(f'{aoo_x_scale = } meters')
+print(f'{aoo_y_scale = } meters')
+```
+
+> - Create an Earth Engine feature collection of AOO grid cells that intersect with the ecosystem, and calculate the fractional coverage of the ecosystem within the grid cell.
+
+```{python}
+fractional_coverage_fc = class_img.unmask().reduceRegions(
+  collection=class_img.geometry().coveringGrid(aoo_grid_proj),
+  reducer=ee.Reducer.mean(),
+).filter(ee.Filter.gt('mean', 0))
+
+# Convert the Earth Engine feature collection to a GeoPandas GeoDataFrame.
+fractional_coverage_gdf = ee.data.computeFeatures({
+    "expression": fractional_coverage_fc,
+    "fileFormat": "GEOPANDAS_GEODATAFRAME",
+})
+fractional_coverage_gdf.rename(columns={"mean": "coverage"}, inplace=True)
+
+# Set the CRS (Earth Engine data is in EPSG:4326)
+fractional_coverage_gdf = fractional_coverage_gdf.set_crs('EPSG:4326')
+```
+
+```{python}
+aoo_grid_cell_count = len(fractional_coverage_gdf)
+aoo_grid_cell_count
+```
+
+## Calculate grid cell area and the total ecosystem area
+
+> - Calculate extent of the ecosystem type in each grid cell ('area') and sum these areas to obtain the total ecosystem area ('total area').
+
+```{python}
+fractional_coverage_gdf['area'] = fractional_coverage_gdf['coverage'] * aoo_x_scale * aoo_y_scale
+
+fractional_coverage_gdf.sort_values(by="area")[0:4]
+```
+
+```{python}
+total_area_km2 = fractional_coverage_gdf['area'].sum() / 1e6
+print(f'Total ecosystem area: {total_area_km2:.0f} km²')
+```
+
+## Calculate cumulative area in ordered cells
+
+> - Arrange grid cells in ascending order based on their area (smaller first).
+> - Calculate accumulated sum of area per cell ('cumulative area').
+
+```{python}
+fractional_coverage_gdf = fractional_coverage_gdf.sort_values(by="area")
+fractional_coverage_gdf["cumulative_area"] = fractional_coverage_gdf["area"].cumsum()
+
+fractional_coverage_gdf.sort_values(by="area").head()
+```
+
+## Calculate the cumulative proportion
+
+> - Calculate 'cumulative proportion' by dividing 'cumulative area' by 'total area' (cumulative proportion takes values between 0 and 1).
+
+```{python}
+fractional_coverage_gdf["cumulative_proportion"] = fractional_coverage_gdf["cumulative_area"] / 1e6 / total_area_km2
+
+fractional_coverage_gdf
+```
+
+## Calculate AOO
+
+> - Calculate AOO by counting the number of cells with a 'cumulative proportion' greater than 0.01 (i.e. exclude cells that in combination account for up to 1% of the total mapped extent of the ecosystem type).
+
+```{python}
+aoo_grid_cells = fractional_coverage_gdf[fractional_coverage_gdf["cumulative_proportion"] > 0.01]
+print(f"AOO (number of cells with cumulative proportion > 0.01): {len(aoo_grid_cells)}")
+```
+
+```{python}
+aoo_grid_cells_dropped = fractional_coverage_gdf[fractional_coverage_gdf["cumulative_proportion"] <= 0.01]
+```
+
+## Display the layers
+
+```{python}
+aoo_grid_cells_layer = PolygonLayer.from_geopandas(
+    aoo_grid_cells,
+    get_fill_color=[0, 255, 0, 63],
+)
+
+aoo_grid_cells_layer_dropped = PolygonLayer.from_geopandas(
+    aoo_grid_cells_dropped,
+    get_fill_color=[255, 0, 0, 63],
+)
+
+m = Map(
+    layers=[
+        tile_layer,
+        aoo_grid_cells_layer,
+        aoo_grid_cells_layer_dropped
+    ],
+)
+
+m
+```
+
+<!--
+## Verify that the step-by-step results are consistent
+
+```{python}
+# # Direct call to `make_aoo()`
+# aoo_cells_direct_call = make_aoo(class_img)
+
+# print(f'AOO: {aoo_grid_cell_count_direct_call} grid cells')
+```
+
+```{python}
+# assert aoo_grid_cell_count == aoo_grid_cell_count_direct_call
+```
+-->
+
+# Criterion B Summary
+
+```{python}
+#| label: mmr-t1.1.1-crit-b-summary
+from IPython.display import Markdown, display
+display(
+    Markdown(f'AOO and EOO were measured as '
+      f'{aoo_grid_cell_count} 10 x 10 km grid cells '
+      f'and {aoo_area_km2:.0f} km², respectively. '
+      f'See [Criterion B Details](mmr-t1-1-1-crit-b-test) for more information. '
+      f'There is no evidence that suggests this ecosystem should meet the criteria to '
+      f'be listed as Near Threatened. The ecosystem is assessed as Least Concern under '
+      f'Criterion B1 and B2. '
+      f'**Least Concern.**'
+    )
+)
+```

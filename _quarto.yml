@@ -28,7 +28,10 @@ book:
     - part: content/3_ecosystem_description.md
       chapters:
         - content/3_ecosystem_assessments/MMR-T1.1.1/MMR-T1.1.1.qmd
-        - content/3_ecosystem_assessments/MMR-T1.1.1/MMR-T1.1.1_crit_b_test.ipynb
+        - text: "MMR-T1.1.1 Criterion B (Jupyter notebook)"
+          file: content/3_ecosystem_assessments/MMR-T1.1.1/MMR-T1.1.1_crit_b_test.ipynb
+        - text: "MMR-T1.1.1 Criterion B (Quarto markdown)"
+          file: content/3_ecosystem_assessments/MMR-T1.1.1/MMR-T1.1.1_crit_b.qmd
         - content/3_ecosystem_assessments/MMR-T1.1.3/MMR-T1.1.3.qmd
     - content/4_assessment_outcomes.md
     - content/5_recommendations.md
