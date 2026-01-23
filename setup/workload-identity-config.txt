@@ -1,0 +1,17 @@
+Workload Identity Federation Configuration
+===========================================
+
+Project ID: goog-rle-assessments
+Project Number: 144940831167
+Service Account Email: github-actions-ee@goog-rle-assessments.iam.gserviceaccount.com
+
+GitHub Secrets to Add:
+----------------------
+
+GCP_WORKLOAD_IDENTITY_PROVIDER:
+projects/144940831167/locations/global/workloadIdentityPools/github-actions/providers/github-provider
+
+GCP_SERVICE_ACCOUNT:
+github-actions-ee@goog-rle-assessments.iam.gserviceaccount.com
+
+Repository: VorGeo/rle-assessment-report

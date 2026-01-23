@@ -40,7 +40,14 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pixi run tinytex-install
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GCP_SERVICE_ACCOUNT }}
       - name: Render Quarto Project
+        env:
+          GOOGLE_CLOUD_PROJECT: goog-rle-assessments
         run: pixi run quarto-render
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

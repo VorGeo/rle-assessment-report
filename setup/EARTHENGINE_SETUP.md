@@ -19,63 +19,74 @@ The project uses **Workload Identity Federation** to authenticate with Google Ea
 
 ## Setup Instructions
 
-### 1. Create a Service Account
+### Automated Setup (Recommended)
+
+The repository includes an automated setup script:
+
+```bash
+cd /path/to/rle-assessment-report
+./scripts/setup-workload-identity.sh
+```
+
+This script will:
+1. Create the Workload Identity Pool (`github-actions`)
+2. Create the Workload Identity Provider (`github-provider`)
+3. Create the service account (`github-actions-ee`)
+4. Grant Earth Engine Writer permissions
+5. Configure the identity binding for the repository
+6. Display the GitHub secrets you need to add
+
+After running the script, it will save configuration details to `setup/workload-identity-config.txt`.
+
+### Manual Setup (Alternative)
+
+If you prefer to set up manually or need to troubleshoot:
+
+#### 1. Create Workload Identity Pool
 
 ```bash
 # Set your GCP project
 export PROJECT_ID="goog-rle-assessments"
 
-# Create a service account for GitHub Actions
-gcloud iam service-accounts create github-actions-ee \
-  --display-name="GitHub Actions Earth Engine" \
-  --project=$PROJECT_ID
-```
-
-### 2. Grant Earth Engine Permissions
-
-```bash
-# Get the service account email
-export SA_EMAIL="github-actions-ee@${PROJECT_ID}.iam.gserviceaccount.com"
-
-# Grant Service Usage Consumer role (required to use the project's services)
-gcloud projects add-iam-policy-binding $PROJECT_ID \
-  --member="serviceAccount:${SA_EMAIL}" \
-  --role="roles/serviceusage.serviceUsageConsumer"
-
-# Grant Earth Engine API access
-# Note: You may need to grant specific Earth Engine roles or permissions
-# depending on your organization's setup
-gcloud projects add-iam-policy-binding $PROJECT_ID \
-  --member="serviceAccount:${SA_EMAIL}" \
-  --role="roles/earthengine.viewer"
-
-# If you need write access for EE assets:
-# gcloud projects add-iam-policy-binding $PROJECT_ID \
-#   --member="serviceAccount:${SA_EMAIL}" \
-#   --role="roles/earthengine.writer"
-```
-
-### 3. Create Workload Identity Pool
-
-```bash
 # Create a Workload Identity Pool
-gcloud iam workload-identity-pools create "github-actions-pool" \
+gcloud iam workload-identity-pools create "github-actions" \
   --location="global" \
   --display-name="GitHub Actions Pool" \
   --project=$PROJECT_ID
+```
 
+#### 2. Create Workload Identity Provider
+
+```bash
 # Create a Workload Identity Provider for GitHub
 gcloud iam workload-identity-pools providers create-oidc "github-provider" \
   --location="global" \
-  --workload-identity-pool="github-actions-pool" \
+  --workload-identity-pool="github-actions" \
   --display-name="GitHub Provider" \
-  --attribute-mapping="google.subject=assertion.sub,attribute.actor=assertion.actor,attribute.repository=assertion.repository,attribute.repository_owner=assertion.repository_owner" \
+  --attribute-mapping="google.subject=assertion.sub,attribute.repository=assertion.repository,attribute.repository_owner=assertion.repository_owner" \
   --attribute-condition="assertion.repository_owner == 'VorGeo'" \
   --issuer-uri="https://token.actions.githubusercontent.com" \
   --project=$PROJECT_ID
 ```
 
-### 4. Allow GitHub to Impersonate the Service Account
+#### 3. Create Service Account and Grant Permissions
+
+```bash
+# Create a service account for GitHub Actions
+gcloud iam service-accounts create github-actions-ee \
+  --display-name="GitHub Actions Earth Engine" \
+  --project=$PROJECT_ID
+
+# Get the service account email
+export SA_EMAIL="github-actions-ee@${PROJECT_ID}.iam.gserviceaccount.com"
+
+# Grant Earth Engine Writer permissions
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+  --member="serviceAccount:${SA_EMAIL}" \
+  --role="roles/earthengine.writer"
+```
+
+#### 4. Allow GitHub to Impersonate the Service Account
 
 ```bash
 # Get the project number
@@ -84,37 +95,39 @@ export PROJECT_NUMBER=$(gcloud projects describe $PROJECT_ID --format="value(pro
 # Allow the specific GitHub repository to impersonate the service account
 gcloud iam service-accounts add-iam-policy-binding "${SA_EMAIL}" \
   --role="roles/iam.workloadIdentityUser" \
-  --member="principalSet://iam.googleapis.com/projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/github-actions-pool/attribute.repository/VorGeo/rle-assessment-report" \
+  --member="principalSet://iam.googleapis.com/projects/${PROJECT_NUMBER}/locations/global/workloadIdentityPools/github-actions/attribute.repository/VorGeo/rle-assessment-report" \
   --project=$PROJECT_ID
 ```
 
-### 5. Get the Workload Identity Provider Resource Name
+#### 5. Get Configuration Values
 
 ```bash
-# Get the full provider resource name
+# Get the Workload Identity Provider resource name
 gcloud iam workload-identity-pools providers describe "github-provider" \
   --location="global" \
-  --workload-identity-pool="github-actions-pool" \
+  --workload-identity-pool="github-actions" \
   --project=$PROJECT_ID \
   --format="value(name)"
 ```
 
 This will output something like:
 ```
-projects/123456789/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider
+projects/144940831167/locations/global/workloadIdentityPools/github-actions/providers/github-provider
 ```
 
-### 6. Configure GitHub Secrets
+### Configure GitHub Secrets
 
-Add the following secrets to your GitHub repository (Settings → Secrets and variables → Actions → New repository secret):
+Add the following secrets to your GitHub repository:
 
-1. **`WIF_PROVIDER`**
-   - Value: The full Workload Identity Provider resource name from step 5
-   - Example: `projects/123456789/locations/global/workloadIdentityPools/github-actions-pool/providers/github-provider`
+Go to: https://github.com/VorGeo/rle-assessment-report/settings/secrets/actions
 
-2. **`WIF_SERVICE_ACCOUNT`**
+1. **`GCP_WORKLOAD_IDENTITY_PROVIDER`**
+   - Value: The full Workload Identity Provider resource name from above
+   - Example: `projects/144940831167/locations/global/workloadIdentityPools/github-actions/providers/github-provider`
+
+2. **`GCP_SERVICE_ACCOUNT`**
    - Value: The service account email
-   - Example: `github-actions-ee@goog-rle-assessments.iam.gserviceaccount.com`
+   - Value: `github-actions-ee@goog-rle-assessments.iam.gserviceaccount.com`
 
 ## How It Works
 
