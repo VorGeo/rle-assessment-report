@@ -216,6 +216,9 @@ _freeze/
 
 .DS_Store
 
+# Large source SVG file (using PNG version instead)
+images/RLE-processing.excalidraw.svg
+
 # Ignore the sample ecosystem
 config/ecosystem_config/SAMPLE.yaml
 content/3_ecosystem_assessments/MMR-TSAMPLE/*
