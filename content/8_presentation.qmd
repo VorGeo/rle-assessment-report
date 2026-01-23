@@ -4,6 +4,10 @@ slide-format: revealjs
 
 # Overview Presentation {.unnumbered}
 
+[Open Full Presentation in New Window](../presentation/){.btn .btn-primary target="_blank"}
+
+Or view the embedded presentation below:
+
 ```{=html}
 <iframe class="slide-deck" src="../presentation/" width="1000" height="600"></iframe>
 ```
