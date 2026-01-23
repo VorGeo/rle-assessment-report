@@ -76,7 +76,9 @@ occur.^[Currently this is limited to a Earth Engine image assets with a categori
 :::
 
 ::: {.column width="50%"}
-![](images/myanmar_ecosystem_map.png)
+```{=html}
+<iframe src="https://goog-rle-assessments.projects.earthengine.app/view/myanmar-ecosystem-map" width="1000" height="500"></iframe>
+```
 :::
 
 ::::
