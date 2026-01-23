@@ -37,6 +37,8 @@ jobs:
         with:
           pixi-version: latest
       - name: Install TinyTeX
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: pixi run tinytex-install
       - name: Render Quarto Project
         run: pixi run quarto-render
