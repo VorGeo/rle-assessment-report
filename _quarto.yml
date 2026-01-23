@@ -1,6 +1,11 @@
 project:
   type: book
   output-dir: _book
+  resources:
+    - presentation/
+    - images/
+  post-render:
+    - cp -r images _book/presentation/
 
 book:
   title: "Threatened ecosystems of Myanmar"
@@ -31,6 +36,7 @@ book:
   appendices:
     - content/appendix_1.md
     - setup/EARTHENGINE_SETUP.md
+    - content/8_presentation.qmd
 
 crossref:
   appendix-title: "App."

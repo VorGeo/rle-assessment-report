@@ -212,6 +212,7 @@ __marimo__/
 
 _book/*
 _freeze/
+*_files/
 
 .DS_Store
 
@@ -219,7 +220,6 @@ _freeze/
 config/ecosystem_config/SAMPLE.yaml
 content/3_ecosystem_assessments/MMR-TSAMPLE/*
 
-# MyST build outputs
 _build
 
 /.quarto/

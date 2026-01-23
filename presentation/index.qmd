@@ -1,0 +1,157 @@
+---
+title: "RLE Report Generation"
+subtitle: "Tools for building IUCN Red List of Ecosystem (RLE) assessment reports"
+author: "Tyler Erickson"
+format:
+    revealjs:
+        theme: default
+        navigation-mode: vertical
+        logo: images/IUCN_Red_List.svg
+---
+
+
+## Goals
+
+:::: {.columns}
+
+::: {.column width="60%"}
+Improve the process for creating ecosystem assessment reports
+
+- Reduce the effort needed to create and update reports
+- Simplify document styling
+- Facilitate replication
+- Increase transparency
+:::
+
+::: {.column width="40%"}
+![](images/columbia_report_spanish.png)
+:::
+
+::::
+
+# Data Flow Overview
+
+![](images/RLE-processing.excalidraw.svg){fig-align="center"}
+
+
+# GitHub Repository
+
+:::: {.columns}
+
+::: {.column width="40%"}
+Content, code, and the execution environment details are all stored in a
+code repository on GitHub to facilitate:
+
+    - tracking of changes
+    - collaboration
+    - reproducibility
+:::
+
+::: {.column width="60%"}
+![](images/github_rle-assessment-report.png){fig-align="center"}
+:::
+
+::::
+
+
+# User Supplied Data & Configuration
+
+The report authors will need to provide information about
+the country and where the ecosystems are.
+
+## Country-Level Configuration
+
+Example: 
+```{.yaml filename="config/country_config.yaml"}
+{{< include config/country_config.yaml >}}
+```
+
+## Ecosystem Maps
+
+:::: {.columns}
+
+::: {.column width="50%"}
+- The authors need to provide a geospatial data file that describes where the ecosystems 
+occur.^[Currently this is limited to a Earth Engine image assets with a categorical data type. We plan to support vector feature assets in the future.]
+:::
+
+::: {.column width="50%"}
+![](images/myanmar_ecosystem_map.png)
+:::
+
+::::
+
+## Ecosystem-Level Configuration
+
+Example: 
+```{.yaml filename="config/ecosystem_config/MMR-T1.1.1.yaml"}
+{{< include config/ecosystem_config/MMR-T1.1.1.yaml >}}
+```
+
+<!--
+# Country Ecosystem Assessment Reports
+
+:::: {.columns}
+
+::: {.column width="40%"}
+- yada
+:::
+
+::: {.column width="30%"}
+![](images/columbia_report_spanish.png)
+:::
+
+::: {.column width="30%"}
+![](images/myanmar_report_english.png)
+:::
+
+::::
+-->
+
+
+
+
+# IUCN Guidelines for RLE
+
+:::: {.columns}
+
+::: {.column width="60%"}
+- Assessment Criteria Definitions
+- Ecosystem Metric Calculations (e.g. `AOO`, `EOO`)
+:::
+
+::: {.column width="40%"}
+![](images/iucn_guidelines_for_rle.png)
+:::
+
+::::
+ 
+# Python Package for RLE Calculations
+
+:::: {.columns}
+
+::: {.column width="60%"}
+Calculations and constants from the IUCN guidelines document and other resources
+are implemented in Python.
+:::
+
+::: {.column width="40%"}
+![](images/github_gee-redlist-python.png)
+:::
+
+::::
+
+
+# Example Website
+
+```{=html}
+<iframe src="https://vorgeo.github.io/rle-assessment-report/" width="1000" height="600"></iframe>
+```
+
+
+# Future Work
+
+- Reducing the need for user supplied data, by automating calculations
+- Allow for vector ecosystem data files
+- Creating a template repository that countries can use as a starting point
+- PDF document generation
