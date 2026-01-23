@@ -1,5 +1,4 @@
 ---
-title: Expert group on Myanmar Ecosystem Assessment
 numbering: false
 ---
 

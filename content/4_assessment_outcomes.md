@@ -1,5 +1,4 @@
 ---
-title: Assessment Outcomes
 numbering:
   headings:
     start: 4

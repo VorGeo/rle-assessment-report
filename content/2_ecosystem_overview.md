@@ -1,10 +1,8 @@
 ---
-title: Terrestrial Ecosystems of Myanmar
 numbering:
   figure:
     enumerator: 2.%s
 ---
-
 
 # Terrestrial Ecosystems of Myanmar
 
