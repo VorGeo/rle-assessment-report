@@ -19,8 +19,8 @@ import ee
 import geopandas as gpd
 from lonboard import Map, PolygonLayer, BitmapTileLayer
 
-from gee_redlist.ee_auth import initialize_ee
-from gee_redlist.ee_rle import load_yaml, make_eoo, area_km2, get_aoo_grid_projection
+from rle_python_gee.ee_auth import initialize_ee
+from rle_python_gee.ee_rle import load_yaml, make_eoo, area_km2, get_aoo_grid_projection
 ```
 
 Initialize Earth Engine

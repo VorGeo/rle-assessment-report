@@ -9,8 +9,8 @@ from pathlib import Path
 project_root = Path(__file__).parent.parent
 sys.path.insert(0, str(project_root))
 
-from gee_redlist.ee_rle import export_fractional_coverage_on_aoo_grid
-from gee_redlist.ee_rle import create_asset_folder
+from rle_python_gee.ee_rle import export_fractional_coverage_on_aoo_grid
+from rle_python_gee.ee_rle import create_asset_folder
 from src.rle_assessment_report.helpers import load_yaml, initialize_ee
 import ee
 

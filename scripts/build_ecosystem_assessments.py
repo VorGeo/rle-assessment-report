@@ -15,10 +15,10 @@ import os
 import ee
 from google.auth import default
 
-import gee_redlist
-from gee_redlist import create_country_map
+import rle_python_gee
+from rle_python_gee import create_country_map
 
-print(f'{gee_redlist.__version__=}')
+print(f'{rle_python_gee.__version__=}')
 
 def path_exists(*paths):
     base_dir = os.getcwd()

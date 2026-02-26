@@ -2,7 +2,7 @@
 Generate country map images for ecosystem assessments.
 
 This script checks if country_map.png exists in the images folder.
-If not, it uses gee-redlist-python to create a PNG map and save it.
+If not, it uses rle-python-gee to create a PNG map and save it.
 """
 
 import os
@@ -10,7 +10,7 @@ from pathlib import Path
 
 import yaml
 
-from gee_redlist import create_country_map
+from rle_python_gee import create_country_map
 
 # Configuration
 IMAGES_DIR = Path("images")
@@ -28,7 +28,7 @@ def check_map_exists() -> bool:
 
 
 def create_map_for_country(country_code):
-    """Create a country map using gee-redlist-python."""
+    """Create a country map using rle-python-gee."""
     print(f"Creating country map: {map_path}")
     map_image = create_country_map(
         country_code=country_code,
