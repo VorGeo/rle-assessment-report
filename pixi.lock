@@ -5,6 +5,8 @@ environments:
     - url: https://conda.anaconda.org/conda-forge/
     indexes:
     - https://pypi.org/simple
+    options:
+      pypi-prerelease-mode: if-necessary-or-explicit
     packages:
       linux-64:
       - conda: https://conda.anaconda.org/conda-forge/linux-64/_openmp_mutex-4.5-20_gnu.conda
@@ -8406,9 +8408,8 @@ packages:
 - pypi: ./
   name: rle-assessment-report
   version: 0.1.0
-  sha256: 1c2fd9f93a641ac9af3399ae1c40933007256a1e030d4322f9b6d615d75dfbd5
+  sha256: b32f93b55c59a937a774d416cb12a53cc662aa03b839b6eea9cfd363e1c8aaa2
   requires_python: '>=3.11'
-  editable: true
 - pypi: git+https://github.com/RLE-Assessment/rle-python-gee#e16467c8abace3145363224ae6cc1ae89d708123
   name: rle-python-gee
   version: 0.1.13

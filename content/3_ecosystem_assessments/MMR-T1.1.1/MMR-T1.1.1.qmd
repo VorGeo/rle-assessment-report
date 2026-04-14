@@ -9,7 +9,7 @@ suppress-bibliography: true
 from IPython.display import Markdown, display
 
 ecosystem_image = {
-    'asset_id': 'projects/goog-rle-assessments/assets/mm_ecosys_v7b',
+    'asset_id': 'projects/goog-rle-assessments/assets/myanmar/mm_ecosys_v7b',
     'pixel_value': '52'
 }
 ```

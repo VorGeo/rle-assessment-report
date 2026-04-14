@@ -17,7 +17,7 @@ iucn_status: Endangered
 ecosystem_photo: null
 ecosystem_map: MMR-T1.1.3_map.png
 ecosystem_image:
-  asset_id: projects/goog-rle-assessments/assets/mm_ecosys_v7b
+  asset_id: projects/goog-rle-assessments/assets/myanmar/mm_ecosys_v7b
   pixel_value: 53
 assessment_outcome: Endangered
 year_published: 2020

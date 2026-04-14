@@ -24,7 +24,7 @@ Improve the process for creating ecosystem assessment reports
 :::
 
 ::: {.column width="40%"}
-![](images/columbia_report_spanish.png)
+![](images/colombia_report_spanish.png)
 :::
 
 ::::
@@ -100,7 +100,7 @@ Example:
 :::
 
 ::: {.column width="30%"}
-![](images/columbia_report_spanish.png)
+![](images/colombia_report_spanish.png)
 :::
 
 ::: {.column width="30%"}
